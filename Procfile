@@ -1,2 +1,2 @@
-web: gunicorn bridal-union.wsgi
+web: gunicorn bridalunion.wsgi
 
