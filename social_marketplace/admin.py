@@ -6,4 +6,7 @@ from .models import Designer
 
 @admin.register(Designer)
 class DesignerAdmin(admin.ModelAdmin):
-    pass
+    
+    list_display = ('first_name', 'last_name', 'location')
+    search_fields = ['first_name', 'last_name']
+
