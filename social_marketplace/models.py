@@ -16,6 +16,7 @@ STATUS = ((0, "Draft"), (1, "Published"))
 
 # designer model
 
+
 class Designer(models.Model):
     '''designer model for designer page'''
 
