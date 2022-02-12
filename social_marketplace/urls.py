@@ -8,10 +8,10 @@ from . import views
 urlpatterns = [
     path("favicon.ico", RedirectView.as_view(url=staticfiles_storage.url("favicon.ico"))),
     path('', views.ViewHome.as_view(), name='home'),
-    path('discover-designer/', views.ViewDiscoverDesigners.as_view(), name='post_detail'),
-    path('designer/', views.ViewDesigner.as_view(), name='view_designers'),
-    path('designer-portfolio/', views.ViewDesignerPortfolio.as_view(), name='view_portfolio'),
+    path('discover_designers/', views.ViewDiscoverDesigners.as_view(), name='discover_designers'),
+    path('designer/', views.ViewDesigner.as_view(), name='view_designer'),
+    path('designer_portfolio/', views.ViewDesignerPortfolio.as_view(), name='view_portfolio'),
     path('booking/', views.ViewBooking.as_view(), name='view_booking'),
     path('login/', views.ViewLogin.as_view(), name='login'),
-    path('customer-account/', views.ViewCustomerAccount.as_view(), name='view_account'),
+    path('customer_account/', views.ViewCustomerAccount.as_view(), name='view_account'),
 ]
