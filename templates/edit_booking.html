@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>Booking details</h2> 
+
+<!--Reschedule booking form-->
+<div>
+    <h3>Reschedule</h3>
+    <p>Please select a new date and time</p>
+    <!--New Date and Time-->
+    <div>
+        <!--Confirm Reschedule Button (button from bootswatch lux theme) -->
+        <button type="button" class="btn btn-primary">Confirm Reschedule</button>
+    <div>
+</div>
+
+<!--Modal to show up to confirm reschedule and redirect back to account page-->
+<div>
+</div>
+
+<!--Cancel booking form-->
+<div>
+    <h3>Cancel</h3>
+    <p>Please select a reason</p>
+    <div>
+        <!--Drop Down Button (button from bootswatch lux theme) -->
+        <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+            <button type="button" class="btn btn-primary">I wish to cancel because...</button>
+            <div class="btn-group" role="group">
+              <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+              <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                <a class="dropdown-item" href="#">Dropdown link</a>
+                <a class="dropdown-item" href="#">Dropdown link</a>
+              </div>
+            </div>
+          </div>
+    <div>
+</div>
+
+<!--Modal to show up to confirm cancellation and redirect back to account page-->
+<div>
+</div>
+
+
+{% endblock %}
