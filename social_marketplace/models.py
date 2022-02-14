@@ -27,7 +27,7 @@ class Imageposts(models.Model):
 
     image = CloudinaryField('image', default='placeholder')
     image_description = models.TextField()
-    designer = models.ForeignKey(Designer, on_delete=models.CASCADE, related_name="imageposts")
+    # designer = models.ForeignKey(Designer, on_delete=models.CASCADE, related_name="imageposts")
     date_posted = models.DateTimeField(auto_now=True)
     status = models.IntegerField(choices=STATUS, default=0)
     likes = models.ManyToManyField(Designer, related_name="imageposts", blank=True)
