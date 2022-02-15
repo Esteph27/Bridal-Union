@@ -1,63 +1,96 @@
-from django.db import models
-from django.forms import ModelForm
-from cloudinary.models import CloudinaryField
 from datetime import datetime
-
-# from django.contrib.auth.models import User
+from django.db import models
+from django.contrib.auth.models import User
+from cloudinary.models import CloudinaryField
+from django_resized import ResizedImageField
 
 # status of images:
 STATUS = ((0, "Draft"), (1, "Published"))
 
 
-# ------> designer model
 class Designer(models.Model):
-    '''designer model for designer info'''
+    '''
+    model for designer information
+    '''
 
+    # field variables
     first_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=30)
     location = models.CharField(max_length=50)
     starting_price = models.DecimalField(max_digits=10, decimal_places=5)
+    date_joined = models.DateField(auto_now=False)
     bio = models.TextField()
-    bookingref = models.TextField()  # --->placeholder for now, relationship needs to be defined with booking and client model
-
-
-# ------> image model
-class Imageposts(models.Model):
-    '''Imageposts model for images posted by Designers'''
-
-    image = CloudinaryField('image', default='placeholder')
-    image_description = models.TextField()
-    # designer = models.ForeignKey(Designer, on_delete=models.CASCADE, related_name="imageposts")
-    date_posted = models.DateTimeField(auto_now=True)
-    status = models.IntegerField(choices=STATUS, default=0)
-    likes = models.ManyToManyField(Designer, related_name="imageposts", blank=True)
-
-    class Meta:
-        ordering = ['-date_posted']
 
     def __str__(self):
-        return self.image_description
+        return self.first_name
 
-    def number_of_like(self):
+
+class ImagePosts(models.Model):
+    '''
+    model for images posted by Designer(s)
+    '''
+
+    # field variables
+    image = CloudinaryField('image', default='placeholder')
+    image_size = ResizedImageField(
+        size=[1000, 1000], crop=['middle', 'center'],
+        default='default_portfolio.jpg', upload_to='portfolio')
+    image_description = models.TextField(null=True, blank=True)
+    hashtags = models.CharField(null=True, blank=True, max_length=300)
+    date_posted = models.DateTimeField(auto_now=True)
+    status = models.IntegerField(choices=STATUS, default=0)
+
+    # Related Fiels
+    designer_name = models.ForeignKey(
+        Designer, null=True, blank=True, on_delete=models.CASCADE)
+    likes = models.ManyToManyField(
+        User, related_name='imagepost_like', blank=True)
+
+    # helpers
+    class Meta:
+        '''
+        class to order images posted by descending date 
+        '''
+        ordering = ['-date_posted']
+
+    def number_of_likes(self):
+        '''
+        function to get number of likes
+        '''
         return self.likes.count()
 
 
-# ------> client model
-class Customerinfo(models.Model):
-    '''customerinfo model for customer informaiton'''
+# class ImageComments(models.Model):
 
-    first_name = models.CharField(max_length=30)
-    last_name = models.CharField(max_length=30)
-    email = models.EmailField(max_length=245)
-    contact_number = models.CharField(max_length=30)  # ---> placeholder for now,
-    password = models.CharField(max_length=8)
-    budget = models.DecimalField(max_digits=10, decimal_places=5)
-    wedding_date = models.DateField()  # ---> placeholder for now,
-    bookingref = models.TextField()  # ---> placeholder for now, relationship needs to be defined with booking and client model
+#     post = models.ForeignKey(ImagePosts(), on_delete=models.CASCADE,
+#                              related_name="comments")
+#     name = models.CharField(max_length=80)
+#     email = models.EmailField()
+#     body = models.TextField()
+#     created_on = models.DateTimeField(auto_now_add=True)
+#     approved = models.BooleanField(default=False)
+
+#     class Meta:
+#         ordering = ["created_on"]
+
+#     def __str__(self):
+#         return f"Comment {self.body} by {self.name}"
 
 
-# ------> booking modelform
-class Bookingform(ModelForm):
-    pass
+# class Customerinfo(models.Model):
+#     '''customerinfo model for customer informaiton'''
+
+#     first_name = models.CharField(max_length=30)
+#     last_name = models.CharField(max_length=30)
+#     email = models.EmailField(max_length=245)
+#     contact_number = models.CharField(max_length=30)
+#     password = models.CharField(max_length=8)
+#     budget = models.DecimalField(max_digits=10, decimal_places=5)
+#     wedding_date = models.DateField()
+#     bookingref = models.TextField()
+
+
+# class Bookingform(ModelForm):
+#     pass
 
 # ------> review model
