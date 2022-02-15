@@ -7,12 +7,30 @@ body {
     background-color: white;
 }
 
+body p {
+    font-family: Raleway;
+}
+
+/* -------------------------------> navbar */ 
+
+.navbar  {
+    font-weight: 500;
+    margin-left: 3%;
+    margin-right: 3%;
+}
+
+.navbar-brand {
+	font-size: 1.5rem;
+}
+
+
 /* -------------------------------> footer */ 
 
 #footer-container {
-    background-color: lavender;
+    background-color: #F7F7F9;
 	height: 130px;
 	width: 100vw;
+	margin-top: 10%;
 }
 
 #footer-container span {
@@ -20,12 +38,40 @@ body {
 	margin-top: 5%;
 }
 
-.social-icons i {
-	margin-right: 5%;
-	margin-top: 5%;
-	color: red;
+
+/* -------------------------------> index.html */ 
+
+#hero-image {
+	background-color: #C6C6C7;
+	height: 150vw;
+	width: 100vw;
 }
 
+.container-fluid {
+	padding: 0;
+}
+
+#tag-line {
+	margin-top: 10%;
+	margin-bottom: 10%;
+}
+
+#tag-line p {
+	text-align: center;
+	padding-left: 10%;
+	padding-right: 10%;
+	font-size: 22px;
+	font-weight: bold;
+}
+
+.button-container {
+	margin-top: 10%;
+}
+
+.button-container a {
+	color: white;
+	text-decoration: none;
+}
 
 
 /* -------------------------------> media queries */ 

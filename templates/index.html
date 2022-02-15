@@ -3,17 +3,20 @@
 {% block content %}
 
 <!--hero image-->
-<div class="container-fluid">
+<div id="hero-image" class="container-fluid">
+    <img src="https://res.cloudinary.com/dllwurooy/image/fetch/https://res.cloudinary.com/dllwurooy/image/upload/v1644340472/birdal-union/duo-chen-s-unsplash_mvembb.jpg" class="img-fluid">
 </div>
 
  <!--tag line -->
-<div class="container-fluid">
-    <h3>Find the Designer to create the dress of your dreams for your Big Day.</h3>
+<div id="tag-line" class="container-fluid">
+    <p>Connecting you and the Designer for your Big day.</p>
 </div>
 
 <!--Discover Designer Button links to discover designer page (button from bootswatch lux theme) -->
-<div>
-    <button type="button" class="btn btn-primary">Discover Designers</button>
+<div class="button-container d-flex justify-content-center">
+    <button type="button" class="btn btn-primary btn-lg">
+        <a href="{% url 'discover_designers' %}">Discover Our Designers</a>
+    </button>
 </div>
 
 
