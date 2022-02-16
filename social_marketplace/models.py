@@ -1,11 +1,10 @@
-from datetime import datetime
 from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
-from django_resized import ResizedImageField
+# from django_resized import ResizedImageField
 
 # status of images:
-STATUS = ((0, "Draft"), (1, "Published"))
+STATUS = ((0, "Draft"), (1, "Posted"))
 
 
 class Designer(models.Model):
@@ -18,7 +17,7 @@ class Designer(models.Model):
     last_name = models.CharField(max_length=30)
     location = models.CharField(max_length=50)
     starting_price = models.DecimalField(max_digits=10, decimal_places=5)
-    date_joined = models.DateField(auto_now=False)
+    date_joined = models.DateTimeField(auto_now_add=True)
     bio = models.TextField()
 
     def __str__(self):
@@ -32,9 +31,6 @@ class ImagePosts(models.Model):
 
     # field variables
     image = CloudinaryField('image', default='placeholder')
-    image_size = ResizedImageField(
-        size=[1000, 1000], crop=['middle', 'center'],
-        default='default_portfolio.jpg', upload_to='portfolio')
     image_description = models.TextField(null=True, blank=True)
     hashtags = models.CharField(null=True, blank=True, max_length=300)
     date_posted = models.DateTimeField(auto_now=True)
@@ -49,7 +45,7 @@ class ImagePosts(models.Model):
     # helpers
     class Meta:
         '''
-        class to order images posted by descending date 
+        class to order images posted by most recent
         '''
         ordering = ['-date_posted']
 
@@ -59,38 +55,54 @@ class ImagePosts(models.Model):
         '''
         return self.likes.count()
 
-
-# class ImageComments(models.Model):
-
-#     post = models.ForeignKey(ImagePosts(), on_delete=models.CASCADE,
-#                              related_name="comments")
-#     name = models.CharField(max_length=80)
-#     email = models.EmailField()
-#     body = models.TextField()
-#     created_on = models.DateTimeField(auto_now_add=True)
-#     approved = models.BooleanField(default=False)
-
-#     class Meta:
-#         ordering = ["created_on"]
-
-#     def __str__(self):
-#         return f"Comment {self.body} by {self.name}"
+    def __str__(self):
+        return f"{self.image_description} by {self.designer_name}"
 
 
-# class Customerinfo(models.Model):
-#     '''customerinfo model for customer informaiton'''
+class ImageComments(models.Model):
+    '''
+    model for comments on images
+    '''
 
-#     first_name = models.CharField(max_length=30)
-#     last_name = models.CharField(max_length=30)
-#     email = models.EmailField(max_length=245)
-#     contact_number = models.CharField(max_length=30)
-#     password = models.CharField(max_length=8)
-#     budget = models.DecimalField(max_digits=10, decimal_places=5)
-#     wedding_date = models.DateField()
-#     bookingref = models.TextField()
+    # field variables
+    name = models.CharField(max_length=80)
+    body = models.TextField()
+    created_on = models.DateTimeField(auto_now_add=True)
+    approved = models.BooleanField(default=False)
+
+    # related field
+    post = models.ForeignKey(
+        ImagePosts, on_delete=models.CASCADE, related_name="comments")
+
+    # helpers
+    class Meta:
+        '''
+        order comments by most recent 
+        '''
+        ordering = ["-created_on"]
+
+    def __str__(self):
+        return f"Comment {self.body} by {self.name}"
 
 
-# class Bookingform(ModelForm):
-#     pass
+class CustomerAccountInfo(models.Model):
+    '''
+    model for customer account information
+    '''
+
+    # field variables
+    first_name = models.CharField(max_length=30)
+    last_name = models.CharField(max_length=30)
+    email = models.EmailField(max_length=245)
+    contact_number = models.CharField(max_length=30)
+    password = models.CharField(max_length=8)
+    budget = models.DecimalField(max_digits=10, decimal_places=5)
+    wedding_date = models.DateField()
+
+    # related fields
+    # bookingref = models.TextField()
+
+
+
 
 # ------> review model
