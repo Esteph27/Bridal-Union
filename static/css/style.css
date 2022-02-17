@@ -123,7 +123,6 @@ p {
 	margin-left: 1%;
 }
 
-
 #designer_info h2, p {
 	padding-top: 5%;
 }
@@ -141,6 +140,26 @@ p {
 	text-align: left;
 	margin-right: 2%;
 }
+
+.button-container-left a {
+	color: white;
+	text-decoration: none;
+}
+
+
+/* -------------------------------> booking.html */ 
+
+#booking-section {
+	margin-top: 10%;
+	margin-bottom: 10%;
+	height: 130px;
+}
+
+#booking-form {
+	margin-left: 1%;
+	margin-right: 1%;
+}
+
 
 /* -------------------------------> media queries */ 
 
