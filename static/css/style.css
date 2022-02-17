@@ -1,3 +1,6 @@
+/* font awsome */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,400;0,900;1,100&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400&display=swap');
+
 * {
 	margin: 0;
 	padding: 0;
@@ -8,8 +11,9 @@ body {
 	font-weight: 100;
 }
 
-body p {
+p {
     font-family: Raleway;
+	font-weight: 400;
 }
 
 /* -------------------------------> navbar */ 
@@ -83,7 +87,6 @@ body p {
 	padding-left: 10%;
 	padding-right: 10%;
 	font-size: 22px;
-	font-weight: bold;
 }
 
 .button-container {
@@ -108,6 +111,37 @@ body p {
 	text-align: center;
 }
 
+.button-container-left {
+	margin-top: 10%;
+	margin-bottom: 10%;
+}
+
+
+/* -------------------------------> designer.html */ 
+
+#designer_info {
+	margin-left: 1%;
+}
+
+
+#designer_info h2, p {
+	padding-top: 5%;
+}
+
+#designer_info p {
+	font-size: 22px;
+}
+
+#designer-bio-container, #designer-review-container {
+	margin: 5% 2% 10% 2%;
+}
+
+
+#designer-bio-container p {
+	text-align: left;
+	margin-right: 2%;
+}
+
 /* -------------------------------> media queries */ 
 
 /* Large devices (laptops/desktops, 992px and up) */
@@ -116,6 +150,17 @@ body p {
 	#tag-line p {
 		font-size: 35px;
 	}
+
+	/* designer.html */
+	.button-container-left {
+		margin-top: 3%;
+	}
+
+	#designer_info h2, p {
+		padding-top: 3%;
+	}
+
+
 
 
 
