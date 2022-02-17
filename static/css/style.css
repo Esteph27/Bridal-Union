@@ -5,6 +5,7 @@
 
 body {
     background-color: white;
+	font-weight: 100;
 }
 
 body p {
@@ -15,8 +16,8 @@ body p {
 
 .navbar  {
     font-weight: 500;
-    margin-left: 3%;
-    margin-right: 3%;
+	margin-left: 1%;
+	margin-right: 1%;
 }
 
 .navbar-brand {
@@ -27,10 +28,10 @@ body p {
 /* -------------------------------> footer */ 
 
 #footer-container {
-    background-color: #F7F7F9;
+    /* background-color: #F7F7F9; */
 	height: 130px;
 	width: 100vw;
-	margin-top: 10%;
+	margin-top: 15%;
 }
 
 #footer-container span {
@@ -41,10 +42,31 @@ body p {
 
 /* -------------------------------> index.html */ 
 
+#hero-outer-container {
+	height: 150vw;
+	width: 100vw;
+	overflow: hidden;
+}
+
 #hero-image {
 	background-color: #C6C6C7;
 	height: 150vw;
 	width: 100vw;
+
+	/* animates zoom effect on loading page */
+    animation-name: hero-zoom;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+}
+
+/* level of zoom */
+@keyframes hero-zoom {
+    from{
+        transform: scale(1);
+    }
+    to{
+        transform: scale(1.1);
+    }
 }
 
 .container-fluid {
@@ -66,6 +88,7 @@ body p {
 
 .button-container {
 	margin-top: 10%;
+	margin-bottom: 10%;
 }
 
 .button-container a {
@@ -73,6 +96,27 @@ body p {
 	text-decoration: none;
 }
 
+/* -------------------------------> discover_designers.html */ 
+
+.discover-designers-header-container {
+	margin-top: 5%;
+	margin-bottom: 5%;
+	height: 130px;
+}
+
+.discover-designers-header-container h1 {
+	text-align: center;
+}
 
 /* -------------------------------> media queries */ 
 
+/* Large devices (laptops/desktops, 992px and up) */
+@media screen and (min-width: 992px) {
+
+	#tag-line p {
+		font-size: 35px;
+	}
+
+
+
+}
