@@ -42,7 +42,14 @@ class ViewLogin(TemplateView):
     template_name = 'login.html'
 
 
+class ViewCreateAccount(TemplateView):
+    '''render create account template'''
+
+    template_name = 'create_account.html'
+
+
 class ViewCustomerAccount(TemplateView):
     '''render customer account template'''
 
     template_name = 'customer_account.html'
+

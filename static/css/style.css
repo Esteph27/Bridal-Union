@@ -176,11 +176,13 @@ p {
 
 /* -------------------------------> Login.html */ 
 
-
 .login-header-container {
 	margin-top: 10%;
-	margin-bottom: 5%;
-	height: 130px;
+	height: 110px;
+}
+
+.login-header-container h1 {
+	margin-left: 1%;
 }
 
 #background-image {
@@ -210,12 +212,25 @@ p {
 	position: relative
 }
 
-#login-out-btns {
+.centre-btns {
 	margin-top: 10%;
 }
 
 #emailHelp {
 	color: black;
+}
+
+.form-check {
+	margin-top: 5%;
+}
+
+/* -------------------------------> Create Account */ 
+
+
+#bottom-image {
+	margin-top: 10%;
+	width: 100vw;
+	opacity: 0.9;
 }
 
 

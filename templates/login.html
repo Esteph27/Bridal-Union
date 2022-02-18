@@ -3,7 +3,7 @@
 {% block content %}
 
 <div class="login-header-container container-fluid">
-     <h1>Log In / Out</h1>
+     <h1>Log In</h1>
 </div>
 
 <!--Log in from with background image-->
@@ -22,11 +22,12 @@
     </div>
 
     <!--buttons from bootswatch lux theme-->
-    <div id="login-out-btns" class="d-grid gap-4 col-4 mx-auto ontop-of-opacity">
+    <div class="d-grid gap-4 col-4 mx-auto ontop-of-opacity button-container centre-btns">
         <button type="button" class="btn btn-primary">Log In</button>
-        <button type="button" class="btn btn-primary">Log Out</button>
         <!--Create Account Button redirects to create account page-->
-        <button type="button" class="btn btn-primary">Create Account</button>
+        <button type="button" class="btn btn-primary">
+            <a href="{% url 'create_account' %}">Create Account</a>
+        </button>
     </div>
 </div>
 

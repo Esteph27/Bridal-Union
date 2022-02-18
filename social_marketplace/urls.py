@@ -13,5 +13,6 @@ urlpatterns = [
     path('designer_portfolio/', views.ViewDesignerPortfolio.as_view(), name='view_portfolio'),
     path('booking/', views.ViewBooking.as_view(), name='view_booking'),
     path('login/', views.ViewLogin.as_view(), name='login'),
+    path('create_account/', views.ViewCreateAccount.as_view(), name='create_account'),
     path('customer_account/', views.ViewCustomerAccount.as_view(), name='view_account'),
 ]
