@@ -176,12 +176,12 @@ p {
 
 /* -------------------------------> Login.html */ 
 
-.login-header-container {
+.title-container {
 	margin-top: 10%;
 	height: 110px;
 }
 
-.login-header-container h1 {
+.title-container h1 {
 	margin-left: 1%;
 }
 
@@ -224,13 +224,56 @@ p {
 	margin-top: 5%;
 }
 
-/* -------------------------------> Create Account */ 
-
+/* -------------------------------> create_account.html */ 
 
 #bottom-image {
 	margin-top: 10%;
 	width: 100vw;
 	opacity: 0.9;
+}
+
+/* -------------------------------> customer_account.html */ 
+
+#customer-booking-section {
+	position: relative; 
+    height: auto;
+    width: 100vw;
+	padding-top: 10vw;
+	padding-bottom: 10vw;
+}
+
+#customer-booking-section::before {
+	content: "";
+	background-image: url("https://res.cloudinary.com/dllwurooy/image/upload/v1644340477/birdal-union/olly-allars-iUJTk0GbIKY-unsplash_tz1we5.jpg");
+	background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 20% 80%;
+	opacity: 0.5;
+    overflow: hidden;
+	position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+}
+
+#customer-booking-section p {
+	font-size: 22px;
+	margin-left: 1%;
+	color: black;
+}
+
+#booking-card {
+	margin-top: 10%;
+	margin-left: 1%;
+}
+
+#booking-card p {
+	color: white
+}
+
+#account-actions {
+	margin-top: 5%;
 }
 
 
@@ -252,8 +295,8 @@ p {
 		padding-top: 3%;
 	}
 
-
-
-
+	.title-container {
+		margin-bottom: 10%;
+	}
 
 }

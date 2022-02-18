@@ -2,37 +2,33 @@
 
 {% block content %}
 
-<!--Background image-->
-<div>
-</div>
-
 <!--Account welcome-->
-<div>
-    <h1>Welcome</h1>
-    <h1>User Account Name</h1>
+<div class="title-container container-fluid">
+  <h1>Welcome</h1>
 </div>
 
 <!--View bookings section -->
-<div>
-    <!--card  from bootswatch lux theme -->
-    <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
-        <div class="card-header">Header</div>
-        <div class="card-body">
-          <h4 class="card-title">Primary card title</h4>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        </div>
-      </div>
+<div id="customer-booking-section" class="container-fluid">
+  <div class="ontop-of-opacity">
+    <p>Your Bookings:</p>
+  </div>
+
+  <!--card  from bootswatch lux theme -->
+  <div id="booking-card" class="card text-white bg-primary mb-3 ontop-of-opacity" style="max-width: 20rem;">
+    <div class="card-body">
+      <p class="card-text">Namer of Designer</p>
+      <p class="card-text">12th October</p>
+      <p class="card-text">1pm</p>
+      <p class="card-text">Reschdule / Cancel</p>
+    </div>
+  </div>
+
+  <div id="account-actions" class="ontop-of-opacity">
+    <p>Log Out</p>
+    <p>Update Personal Details</p>
+    <p>Delete Account</p>
+  </div>
 </div>
-
-<!--Account Details -->
-<div>
-    <!--log out (redirect back to home page)-->
-
-    <!--Update Personal Details -->
-
-    <!--Delete Account-->
-</div>
-
 
 
 {% endblock %}
