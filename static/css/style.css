@@ -11,10 +11,16 @@ body {
 	font-weight: 100;
 }
 
+h1, h2, h3 {
+	font-weight: 500;
+}
+
+
 p {
     font-family: Raleway;
 	font-weight: 400;
 }
+
 
 /* -------------------------------> navbar */ 
 
@@ -150,14 +156,66 @@ p {
 /* -------------------------------> booking.html */ 
 
 #booking-section {
+	margin-left: 1%;
 	margin-top: 10%;
-	margin-bottom: 10%;
-	height: 130px;
+	height: 100px;
 }
 
 #booking-form {
 	margin-left: 1%;
 	margin-right: 1%;
+}
+
+#form-submit-btn {
+	margin-top: 5%;
+}
+
+.col-form-label {
+	padding-top: 0;
+}
+
+/* -------------------------------> Login.html */ 
+
+
+.login-header-container {
+	margin-top: 10%;
+	margin-bottom: 5%;
+	height: 130px;
+}
+
+#background-image {
+	position: relative; 
+    height: auto;
+    width: 100vw;
+	padding-top: 10vw;
+	padding-bottom: 100vw;
+}
+
+#background-image::before {
+	content: "";
+	background-image: url("https://res.cloudinary.com/dllwurooy/image/upload/v1644340480/birdal-union/filipp-romanovski-unsplash2_e2wbxh.jpg");
+	background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 20% 80%;
+	opacity: 0.5;
+    overflow: hidden;
+	position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+}
+
+.ontop-of-opacity {
+	position: relative
+}
+
+#login-out-btns {
+	margin-top: 10%;
+}
+
+#emailHelp {
+	color: black;
 }
 
 

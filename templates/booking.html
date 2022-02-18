@@ -3,21 +3,12 @@
 {% block content %}
 
 <div id="booking-section" class="container-fluid">
-    <h2>Make youer Booking with (name of Designer)</h2>
+    <h2>Make your Booking</h2>
 </div>
 
 <!--Booking form template edited from Bootswatch Lux theme-->
+ <!--customer information to be pre populated if they are signed in -->
 <div id="booking-form">
-    <!--customer information if they are signed in: -->
-
-    <!--First Name take from database-->
-    <!--Last Name taken from database-->
-    <!--Email taken from database-->
-    <!--Contact Number taken from database-->
-    <!--Drop down to view Calendar with aviable dates and times -->
-    <!--Date of Wedding -->
-    <!--Message-->
-
     <form>
         <fieldset>
           <div class="form-group row">
@@ -41,6 +32,11 @@
           </div>
 
           <div class="form-group">
+            <label class="form-label mt-4">Pick a Date and Time</label>
+            <input type="datetime-local" class="form-control" id="Test_DatetimeLocal" placeholder="Choose Availability">
+          </div>
+
+          <div class="form-group">
             <label for="exampleSelect1" class="form-label mt-4">Your Budget</label>
             <select class="form-select" id="exampleSelect1">
               <option>£2,500 - £3,500</option>
@@ -53,14 +49,12 @@
             </select>
           </div>
 
-
           <div class="form-group">
             <label for="exampleTextarea" class="form-label mt-4">Tell us more about your dress</label>
             <textarea class="form-control" id="exampleTextarea" rows="10"></textarea>
           </div>
+  
 
-
-          </fieldset>
           <fieldset class="form-group">
             <legend class="mt-4">Please Tick below</legend>
             <div class="form-check">
@@ -70,6 +64,10 @@
               </label>
             </div>
           </fieldset>
+
+          <button id="form-submit-btn" type="submit" class="btn btn-primary">Submit</button>
+
+        </fieldset>
       </form>
 </div>
 

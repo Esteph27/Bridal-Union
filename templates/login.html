@@ -2,28 +2,32 @@
 
 {% block content %}
 
-<!--Background image-->
-<div>
+<div class="login-header-container container-fluid">
+     <h1>Log In / Out</h1>
 </div>
 
-<!--User log in -->
-<div>
-    <!--Email-->
-    <!--Password-->
-    <div>
-        <!--Sign In Button (button from bootswatch lux theme)-->
-        <button type="button" class="btn btn-primary">Log In</button>
+<!--Log in from with background image-->
+<div id="background-image" class="container-fluid">
+    <!--User log in-->
+
+    <div class="form-group ontop-of-opacity">
+        <label for="exampleInputEmail1" class="form-label mt-4"></label>
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+        <small id="emailHelp" class="form-text">We'll never share your email with anyone else.</small>
     </div>
-</div>
 
-<!--Log Out Button (button from bootswatch lux theme)-->
-<div>
-    <button type="button" class="btn btn-primary">Log Out</button>
-</div>
+    <div class="form-group ontop-of-opacity">
+        <label for="exampleInputPassword1" class="form-label mt-4"></label>
+        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+    </div>
 
-<!--Create Account Button redirects to create account page (button from bootswatch lux theme)-->
-<div>
-    <button type="button" class="btn btn-primary">Create Account</button>
+    <!--buttons from bootswatch lux theme-->
+    <div id="login-out-btns" class="d-grid gap-4 col-4 mx-auto ontop-of-opacity">
+        <button type="button" class="btn btn-primary">Log In</button>
+        <button type="button" class="btn btn-primary">Log Out</button>
+        <!--Create Account Button redirects to create account page-->
+        <button type="button" class="btn btn-primary">Create Account</button>
+    </div>
 </div>
 
  <!--Modal to show up once user has loged in / out successfully -->
