@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views import generic
 from django.views.generic.base import TemplateView
-# -----------> models imported
+from django.views.generic.list import ListView
 from .models import Designer
 
 
@@ -11,14 +11,14 @@ class ViewHome(TemplateView):
     template_name = 'index.html'
 
 
-class ViewDiscoverDesigners(TemplateView):
+class ViewDiscoverDesigners(ListView):
     '''render home discover designers template'''
 
     template_name = 'discover_designers.html'
 
 
-class ViewDesigner(generic.ListView):
-    '''render designer page template and designer model'''
+class ViewDesigner(TemplateView):
+    '''render designer page template and populates with designer model info'''
 
     model = Designer
     template_name = 'designer.html'

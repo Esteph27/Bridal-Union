@@ -1,3 +1,5 @@
+# import random
+# import string
 from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
@@ -12,7 +14,9 @@ class Designer(models.Model):
     # attributes
     first_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=30)
-    email = models.EmailField(max_length=245, default='designer@bridal-union.com')
+    email = models.EmailField(
+        max_length=245,
+        default='designer@bridal-union.com')
     location = models.CharField(max_length=50)
     starting_price = models.FloatField()
     date_joined = models.DateTimeField(auto_now_add=True)
@@ -32,18 +36,19 @@ class ImagePosts(models.Model):
 
     # attributes
     image = CloudinaryField('image', default='placeholder')
+    name = models.CharField(max_length=30, default='name of image')
     image_description = models.TextField(null=True, blank=True)
-    hashtags = models.CharField(null=True, blank=True, max_length=300)
+    hashtags = models.CharField(max_length=300, null=True, blank=True)
     date_posted = models.DateTimeField(auto_now=True)
     status = models.IntegerField(choices=STATUS, default=0)
 
-    # Related Fiels
+    # Related Fields
     designer = models.ForeignKey(
         Designer, null=True, blank=True, on_delete=models.CASCADE)
     likes = models.ManyToManyField(
         User, related_name='imagepost_like', blank=True)
 
-    # helpers
+    # helper
     class Meta:
         '''
         class to order images posted by most recent
@@ -57,7 +62,7 @@ class ImagePosts(models.Model):
         return self.likes.count()
 
     def __str__(self):
-        return f"Posted by {self.designer}"
+        return self.name
 
 
 class ImageComments(models.Model):
@@ -75,7 +80,7 @@ class ImageComments(models.Model):
     post = models.ForeignKey(
         ImagePosts, on_delete=models.CASCADE, related_name="comments")
 
-    # helpers
+    # helper
     class Meta:
         '''
         order comments by most recent
@@ -101,7 +106,7 @@ class CustomerAccount(models.Model):
     wedding_date = models.DateField()
 
     def __str__(self):
-        return self.first_name
+        return f"{self.first_name }{self.last_name}"
 
 
 class Booking(models.Model):
@@ -109,18 +114,37 @@ class Booking(models.Model):
     model for customer bookings
     '''
 
+    # status of booking
     STATUS = (
-        ('Upcoming Bookings', 'Upcoming Bookings'),
-        ('Past Bookings', 'Past Booking'),
+        ('Confirm Bookings', 'Confirm Bookings'),
+        ('Decline Bookings', 'Decline Booking'),
     )
 
+    # variables
     customer = models.ForeignKey(
         CustomerAccount, null=True, on_delete=models.SET_NULL)
     designer = models.ForeignKey(
         Designer, null=True, on_delete=models.SET_NULL)
     date_created = models.DateTimeField(auto_now_add=True)
     status = models.CharField(max_length=200, choices=STATUS)
+    booking_ref = models.CharField(
+        max_length=8,
+        blank=True,
+        editable=False,
+        unique=True,
+    )
 
+    def __str__(self):
+        return self.booking_ref
+
+    # def create_booking_ref():
+    #     '''
+    #     generate booking reference number
+    #     '''
+
+    #     random_num = random.randint(1000000000, 9999999999)
+    #     random_letter = random.choice(string.ascii_letters) * 2
+    #     booking_ref = f"{random_num}" + f"{random_letter.upper()}"
 
 
 # ------> review model
