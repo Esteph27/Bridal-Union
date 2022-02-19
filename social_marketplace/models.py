@@ -3,20 +3,18 @@ from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 # from django_resized import ResizedImageField
 
-# status of images:
-STATUS = ((0, "Draft"), (1, "Posted"))
-
 
 class Designer(models.Model):
     '''
     model for designer information
     '''
 
-    # field variables
+    # attributes
     first_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=30)
+    email = models.EmailField(max_length=245, default='designer@bridal-union.com')
     location = models.CharField(max_length=50)
-    starting_price = models.DecimalField(max_digits=10, decimal_places=5)
+    starting_price = models.FloatField()
     date_joined = models.DateTimeField(auto_now_add=True)
     bio = models.TextField()
 
@@ -29,7 +27,10 @@ class ImagePosts(models.Model):
     model for images posted by Designer(s)
     '''
 
-    # field variables
+    # status of images:
+    STATUS = ((0, "Draft"), (1, "Posted"))
+
+    # attributes
     image = CloudinaryField('image', default='placeholder')
     image_description = models.TextField(null=True, blank=True)
     hashtags = models.CharField(null=True, blank=True, max_length=300)
@@ -37,7 +38,7 @@ class ImagePosts(models.Model):
     status = models.IntegerField(choices=STATUS, default=0)
 
     # Related Fiels
-    designer_name = models.ForeignKey(
+    designer = models.ForeignKey(
         Designer, null=True, blank=True, on_delete=models.CASCADE)
     likes = models.ManyToManyField(
         User, related_name='imagepost_like', blank=True)
@@ -56,7 +57,7 @@ class ImagePosts(models.Model):
         return self.likes.count()
 
     def __str__(self):
-        return f"{self.image_description} by {self.designer_name}"
+        return f"Posted by {self.designer}"
 
 
 class ImageComments(models.Model):
@@ -64,7 +65,7 @@ class ImageComments(models.Model):
     model for comments on images
     '''
 
-    # field variables
+    # attributes
     name = models.CharField(max_length=80)
     body = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
@@ -77,31 +78,48 @@ class ImageComments(models.Model):
     # helpers
     class Meta:
         '''
-        order comments by most recent 
+        order comments by most recent
         '''
         ordering = ["-created_on"]
 
     def __str__(self):
-        return f"Comment {self.body} by {self.name}"
+        return f"Comment from {self.name}"
 
 
-class CustomerAccountInfo(models.Model):
+class CustomerAccount(models.Model):
     '''
     model for customer account information
     '''
 
-    # field variables
+    # attributes
     first_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=30)
     email = models.EmailField(max_length=245)
-    contact_number = models.CharField(max_length=30)
+    contact_number = models.CharField(max_length=30, null=True)
     password = models.CharField(max_length=8)
-    budget = models.DecimalField(max_digits=10, decimal_places=5)
+    budget = models.FloatField()
     wedding_date = models.DateField()
 
-    # related fields
-    # bookingref = models.TextField()
+    def __str__(self):
+        return self.first_name
 
+
+class Booking(models.Model):
+    '''
+    model for customer bookings
+    '''
+
+    STATUS = (
+        ('Upcoming Bookings', 'Upcoming Bookings'),
+        ('Past Bookings', 'Past Booking'),
+    )
+
+    customer = models.ForeignKey(
+        CustomerAccount, null=True, on_delete=models.SET_NULL)
+    designer = models.ForeignKey(
+        Designer, null=True, on_delete=models.SET_NULL)
+    date_created = models.DateTimeField(auto_now_add=True)
+    status = models.CharField(max_length=200, choices=STATUS)
 
 
 
