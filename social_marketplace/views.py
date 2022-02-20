@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.views import generic, View
 from django.views.generic.base import TemplateView
 from django.views.generic.list import ListView
-from .models import Designer
+from .models import Designer, ImagePosts
 
 
 class ViewHome(TemplateView):
@@ -12,16 +12,19 @@ class ViewHome(TemplateView):
 
 
 class ViewDiscoverDesigners(ListView):
-    '''render home discover designers template'''
-    model = Designer
+    '''render discover designers template'''
+
+    model = ImagePosts
+    context_object_name = 'image_posts'
     template_name = 'discover_designers.html'
+    paginate_by = 10
 
 
 class ViewDesigner(View):
     '''render designer page template and populates with designer model info'''
     model = Designer
     template_name = 'designer.html'
-
+    
     def get(self, request, designer_id, *args, **kwargs):
         """ get """
         designer = Designer.objects.get(id=designer_id)

@@ -42,6 +42,7 @@ p {
 	height: 130px;
 	width: 100vw;
 	margin-top: 15%;
+	color: #808080;
 }
 
 #footer-container span {
@@ -49,6 +50,18 @@ p {
 	margin-top: 5%;
 }
 
+.social-links {
+	margin-right: 1%;
+}
+
+.social-links a {
+	text-decoration: none;
+	color: #808080;
+}
+
+.social-links a:hover {
+	color: black;
+}
 
 /* -------------------------------> index.html */ 
 

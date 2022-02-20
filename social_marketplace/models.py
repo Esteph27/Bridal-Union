@@ -29,6 +29,7 @@ class Designer(models.Model):
 class ImagePosts(models.Model):
     '''
     model for images posted by Designer(s)
+    this is used for the discover_designer, designer and designer_portfolio pages
     '''
 
     # status of images:
@@ -36,7 +37,7 @@ class ImagePosts(models.Model):
 
     # attributes
     image = CloudinaryField('image', default='placeholder')
-    name = models.CharField(max_length=30, default='name of image')
+    image_name = models.CharField(max_length=30, default='name of image')
     image_description = models.TextField(null=True, blank=True)
     hashtags = models.CharField(max_length=300, null=True, blank=True)
     date_posted = models.DateTimeField(auto_now=True)
@@ -62,7 +63,7 @@ class ImagePosts(models.Model):
         return self.likes.count()
 
     def __str__(self):
-        return self.name
+        return self.image_name
 
 
 class ImageComments(models.Model):
