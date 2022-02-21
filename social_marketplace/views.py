@@ -17,7 +17,7 @@ class ViewDiscoverDesigners(ListView):
     model = ImagePosts
     context_object_name = 'image_posts'
     template_name = 'discover_designers.html'
-    paginate_by = 10
+    # paginate_by = 3
 
 
 class ViewDesigner(View):

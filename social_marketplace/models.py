@@ -3,7 +3,9 @@
 from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
+
 # from django_resized import ResizedImageField
+# from PIL import Image
 
 
 class Designer(models.Model):
@@ -29,14 +31,19 @@ class Designer(models.Model):
 class ImagePosts(models.Model):
     '''
     model for images posted by Designer(s)
-    this is used for the discover_designer, designer and designer_portfolio pages
+    this is used for the discover_designer,
+    designer and designer_portfolio pages
     '''
 
     # status of images:
     STATUS = ((0, "Draft"), (1, "Posted"))
 
     # attributes
-    image = CloudinaryField('image', default='placeholder')
+    image = CloudinaryField(
+        'image',
+        default='placeholder',
+        transformation={'gravity': 'center', 'height': 1000, 'width': 1000, 'crop': 'fit'},
+        )
     image_name = models.CharField(max_length=30, default='name of image')
     image_description = models.TextField(null=True, blank=True)
     hashtags = models.CharField(max_length=300, null=True, blank=True)
@@ -49,12 +56,12 @@ class ImagePosts(models.Model):
     likes = models.ManyToManyField(
         User, related_name='imagepost_like', blank=True)
 
-    # helper
     class Meta:
         '''
         class to order images posted by most recent
         '''
         ordering = ['-date_posted']
+
 
     def number_of_likes(self):
         '''
@@ -81,7 +88,6 @@ class ImageComments(models.Model):
     post = models.ForeignKey(
         ImagePosts, on_delete=models.CASCADE, related_name="comments")
 
-    # helper
     class Meta:
         '''
         order comments by most recent
