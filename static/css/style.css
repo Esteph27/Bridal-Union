@@ -120,14 +120,9 @@ p {
 
 /* -------------------------------> discover_designers.html */ 
 
-.discover-designers-header-container {
-	margin-top: 10%;
-	margin-bottom: 10%;
-	height: 130px;
-}
 
-.discover-designers-header-container h1 {
-	text-align: center;
+.card {
+	border: none;
 }
 
 .button-container-left {

@@ -2,39 +2,42 @@
 
 {% block content %}
 
-<div class="discover-designers-header-container container-fluid">
+<div class="title-container container-fluid">
     <h1>Discover thier works...</h1>
 </div>
 
 
 <!--album template from Bootstrap --->
-<!--need to add loop for iteration and connect to image modle-->
 <main role="main">
     <div class="album py-5">
       <div class="container">
-        {% for image in image_posts %}
         <div class="row">
+
+          {% for image in image_posts %}
           <div class="col-md-4">
             <div class="card mb-4">
-              <!-- <img class="card-img-top" src="CloudinaryImage({{ image.image }}).image()"  alt="Card image cap"> -->
+              <h5>{{ image.designer }}</h5>
               <img class="card-img-top" src="{{ image.image.url }}">
               <div class="card-body">
-                <p class="card-text">{{ image.image_description }}</p>
                 <div class="d-flex justify-content-between align-items-center">
-                  <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-secondary">View Designer</button>
+                  <div class="justify-content-start">
+                    <small class="text-muted">{{ image.date_posted|date:"d M Y" }}</small>
                   </div>
-                  <small class="text-muted">{{ image.date_posted }}</small>
-                  <small class="text-muted">{{ image.likes }}</small>
+                  <div class="justify-content-end">
+                    <small class="text-muted">Comment</small>
+                    <small class="text-muted">likes</small>
+                  </div>
                 </div>
+                <p class="card-text">{{ image.image_description }}</p>
+                <p class="card-text">{{ image.hashtags }}</p>
               </div>
             </div>
           </div>
+          {% endfor %}
+
         </div>
-        {% endfor %}
       </div>
     </div>
   </main>
-
 
 {% endblock %}
