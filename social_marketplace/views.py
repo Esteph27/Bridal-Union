@@ -2,7 +2,9 @@ from django.shortcuts import render
 from django.views import generic, View
 from django.views.generic.base import TemplateView
 from django.views.generic.list import ListView
-from .models import Designer, ImagePosts
+from django.views.generic.edit import FormView
+from .forms import BookingForm
+from .models import Designer, ImagePosts, Booking
 
 
 class ViewHome(TemplateView):
@@ -23,7 +25,7 @@ class ViewDesigner(View):
     '''render designer page template and populates with designer model info'''
     model = Designer
     template_name = 'designer.html'
-    
+ 
     def get(self, request, designer_id, *args, **kwargs):
         """ get """
         designer = Designer.objects.get(id=designer_id)
@@ -36,10 +38,18 @@ class ViewDesignerPortfolio(TemplateView):
     template_name = 'designer_portfolio.html'
 
 
-class ViewBooking(TemplateView):
-    '''render booking page template'''
+class ViewBooking(FormView):
+    '''booking form'''
 
     template_name = 'booking.html'
+    form_class = BookingForm
+    success_url = '/thanks/'
+
+    def form_valid(self, form):
+        # This method is called when valid form data has been POSTed.
+        # It should return an HttpResponse.
+        form.send_email()
+        return super().form_valid(form)
 
 
 class ViewLogin(TemplateView):
@@ -58,4 +68,5 @@ class ViewCustomerAccount(TemplateView):
     '''render customer account template'''
 
     template_name = 'customer_account.html'
+
 

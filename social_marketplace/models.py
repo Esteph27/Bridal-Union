@@ -4,9 +4,6 @@ from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 
-# from django_resized import ResizedImageField
-# from PIL import Image
-
 
 class Designer(models.Model):
     '''
@@ -31,8 +28,6 @@ class Designer(models.Model):
 class ImagePosts(models.Model):
     '''
     model for images posted by Designer(s)
-    this is used for the discover_designer,
-    designer and designer_portfolio pages
     '''
 
     # status of images:
@@ -42,7 +37,8 @@ class ImagePosts(models.Model):
     image = CloudinaryField(
         'image',
         default='placeholder',
-        transformation={'gravity': 'center', 'height': 1000, 'width': 1000, 'crop': 'fit'},
+        transformation={
+            'gravity': 'center', 'height': 1000, 'width': 1000, 'crop': 'fit'},
         )
     image_name = models.CharField(max_length=30, default='name of image')
     image_description = models.TextField(null=True, blank=True)
@@ -61,7 +57,6 @@ class ImagePosts(models.Model):
         class to order images posted by most recent
         '''
         ordering = ['-date_posted']
-
 
     def number_of_likes(self):
         '''
@@ -118,21 +113,42 @@ class CustomerAccount(models.Model):
 
 class Booking(models.Model):
     '''
-    model for customer bookings
+    customer bookings
     '''
+
+    # Price range
+    PRICES = (
+        ('£2,500 - £3,500', '£2,500 - £3,500'),
+        ('£3,500 - £4,500', '£3,500 - £4,500'),
+        ('£4,500 - £5,500', '£4,500 - £5,500'),
+        ('£5,500 - £6,500', '£5,500 - £6,500'),
+        ('£6,500 - £7,500', '£6,500 - £7,500'),
+        ('£7,500 - £8,500', '£7,500 - £8,500'),
+        ('£8,500 - £9,500', '£8,500 - £9,500'),
+        ('£9,500 +', '£9,500 +'),
+    )
 
     # status of booking
     STATUS = (
-        ('Confirm Bookings', 'Confirm Bookings'),
-        ('Decline Bookings', 'Decline Booking'),
+        ('Confirm Booking', 'Confirm Booking'),
+        ('Decline Booking', 'Decline Booking'),
     )
 
     # variables
-    customer = models.ForeignKey(
-        CustomerAccount, null=True, on_delete=models.SET_NULL)
-    designer = models.ForeignKey(
-        Designer, null=True, on_delete=models.SET_NULL)
-    date_created = models.DateTimeField(auto_now_add=True)
+    customer_name = models.ForeignKey(
+        CustomerAccount, null=True, on_delete=models.SET_NULL, related_name='customername'
+        )
+    customer_email = models.ForeignKey(
+        CustomerAccount, null=True, on_delete=models.SET_NULL, related_name='customeremail'
+        )
+    designer_name = models.ForeignKey(
+        Designer, null=True, on_delete=models.SET_NULL, related_name='designername'
+        )
+    designer_availability = models.TextField(max_length=800, blank=True)# need to change this
+    price_range = models.CharField(max_length=200, choices=PRICES)
+    customer_message = models.TextField(max_length=800, blank=True)
+    booking_created_on_date = models.DateTimeField(auto_now_add=True)
+    date_of_booking = models.CharField(max_length=200, unique=True)
     status = models.CharField(max_length=200, choices=STATUS)
     booking_ref = models.CharField(
         max_length=8,

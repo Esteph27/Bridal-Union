@@ -1,22 +1,18 @@
 from django.forms import ModelForm
+from .models import Booking
 
 
-class Bookingform(ModelForm):
+class BookingForm(ModelForm):
     '''
-    model for customer booking information
+    booking form
     '''
-
-    # field variables
-    bookingref = models.CharField(max_length=10, unique=True)
-    date_of_booking = models.DateTimeField()
-    
-    #related fields
-    customer_name_booking = models.ForeignKey(
-       CustomerAccountInfo, on_delete=models.CASCADE, related_name="customer_booking"
-    )
-    designer_name_booking = models.ForeignKey(
-       Designer, on_delete=models.CASCADE, related_name="customer_booking"
-    )
-
-    def __str__(self):
-        return self.bookingref
+    class Meta:
+        model = Booking
+        fields = (
+            'customer_name',
+            'customer_email',
+            'designer_name',
+            'designer_availability',
+            'price_range',
+            'customer_message',
+            )
