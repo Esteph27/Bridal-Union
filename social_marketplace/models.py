@@ -1,5 +1,5 @@
-# import random
-# import string
+import random
+import string
 from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
@@ -17,7 +17,7 @@ class Designer(models.Model):
         max_length=245,
         default='designer@bridal-union.com')
     location = models.CharField(max_length=50)
-    starting_price = models.FloatField()
+    starting_price = models.FloatField(default=0)
     date_joined = models.DateTimeField(auto_now_add=True)
     bio = models.TextField()
 
@@ -65,7 +65,7 @@ class ImagePosts(models.Model):
         return self.likes.count()
 
     def __str__(self):
-        return self.image_name
+        return f"{self.image_name} posted by {self.designer}"
 
 
 class ImageComments(models.Model):
@@ -104,7 +104,6 @@ class CustomerAccount(models.Model):
     email = models.EmailField(max_length=245)
     contact_number = models.CharField(max_length=30, null=True)
     password = models.CharField(max_length=8)
-    budget = models.FloatField()
     wedding_date = models.DateField()
 
     def __str__(self):
@@ -115,6 +114,12 @@ class Booking(models.Model):
     '''
     customer bookings
     '''
+
+    # status of booking
+    STATUS = (
+        ('Confirm Booking', 'Confirm Booking'),
+        ('Decline Booking', 'Decline Booking'),
+    )
 
     # Price range
     PRICES = (
@@ -128,46 +133,50 @@ class Booking(models.Model):
         ('£9,500 +', '£9,500 +'),
     )
 
-    # status of booking
-    STATUS = (
-        ('Confirm Booking', 'Confirm Booking'),
-        ('Decline Booking', 'Decline Booking'),
-    )
 
     # variables
     customer_name = models.ForeignKey(
-        CustomerAccount, null=True, on_delete=models.SET_NULL, related_name='customername'
+        CustomerAccount,
+        null=True,
+        on_delete=models.SET_NULL, related_name='customername'
         )
     customer_email = models.ForeignKey(
-        CustomerAccount, null=True, on_delete=models.SET_NULL, related_name='customeremail'
+        CustomerAccount,
+        null=True,
+        on_delete=models.SET_NULL,
+        related_name='customeremail'
         )
     designer_name = models.ForeignKey(
-        Designer, null=True, on_delete=models.SET_NULL, related_name='designername'
+        Designer,
+        null=True,
+        on_delete=models.SET_NULL,
+        related_name='designername'
         )
-    designer_availability = models.TextField(max_length=800, blank=True)# need to change this
-    price_range = models.CharField(max_length=200, choices=PRICES)
+    price_range = models.CharField(max_length=200, choices=PRICES, default='£2,500 - £3,500')
     customer_message = models.TextField(max_length=800, blank=True)
     booking_created_on_date = models.DateTimeField(auto_now_add=True)
-    date_of_booking = models.CharField(max_length=200, unique=True)
     status = models.CharField(max_length=200, choices=STATUS)
     booking_ref = models.CharField(
         max_length=8,
-        blank=True,
         editable=False,
         unique=True,
     )
 
+    # select availability =
+
+    def create_booking_ref():
+        '''
+        generate booking reference number
+        '''
+
+        random_num = random.randint(1000000000, 9999999999)
+        random_letter = random.choice(string.ascii_letters) * 2
+        booking_ref = f"{random_num} + {random_letter.upper()}"
+
+        return  booking_ref
+
     def __str__(self):
         return self.booking_ref
-
-    # def create_booking_ref():
-    #     '''
-    #     generate booking reference number
-    #     '''
-
-    #     random_num = random.randint(1000000000, 9999999999)
-    #     random_letter = random.choice(string.ascii_letters) * 2
-    #     booking_ref = f"{random_num}" + f"{random_letter.upper()}"
 
 
 # ------> review model

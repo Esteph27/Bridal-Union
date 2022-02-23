@@ -2,9 +2,9 @@ from django.shortcuts import render
 from django.views import generic, View
 from django.views.generic.base import TemplateView
 from django.views.generic.list import ListView
-from django.views.generic.edit import FormView
-from .forms import BookingForm
-from .models import Designer, ImagePosts, Booking
+from django.views.generic.edit import CreateView
+# from django.views.generic.edit import FormView
+from .models import Designer, ImagePosts, CustomerAccount
 
 
 class ViewHome(TemplateView):
@@ -25,31 +25,27 @@ class ViewDesigner(View):
     '''render designer page template and populates with designer model info'''
     model = Designer
     template_name = 'designer.html'
- 
+
     def get(self, request, designer_id, *args, **kwargs):
         """ get """
         designer = Designer.objects.get(id=designer_id)
         return render(request, self.template_name, {'designer': designer})
 
 
+class ViewCreateAccount(CreateView):
+    '''render create account template'''
+
+    template_name = 'create_account.html'
+    model = CustomerAccount
+    fields = '__all__'
+
+
+# ------------ CLASS VIEWS LEFT TO DO
+
 class ViewDesignerPortfolio(TemplateView):
     '''render designer portfolio template'''
 
     template_name = 'designer_portfolio.html'
-
-
-class ViewBooking(FormView):
-    '''booking form'''
-
-    template_name = 'booking.html'
-    form_class = BookingForm
-    success_url = '/thanks/'
-
-    def form_valid(self, form):
-        # This method is called when valid form data has been POSTed.
-        # It should return an HttpResponse.
-        form.send_email()
-        return super().form_valid(form)
 
 
 class ViewLogin(TemplateView):
@@ -58,10 +54,11 @@ class ViewLogin(TemplateView):
     template_name = 'login.html'
 
 
-class ViewCreateAccount(TemplateView):
-    '''render create account template'''
+class ViewBooking(TemplateView):
+    '''booking form'''
 
-    template_name = 'create_account.html'
+    template_name = 'booking.html'
+
 
 
 class ViewCustomerAccount(TemplateView):
