@@ -2,13 +2,14 @@ from django.shortcuts import render
 from django.views import generic, View
 from django.views.generic.base import TemplateView
 from django.views.generic.list import ListView
+from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView
 # from django.views.generic.edit import FormView
 from .models import Designer, ImagePosts, CustomerAccount
 
 
 class ViewHome(TemplateView):
-    '''render home page template'''
+    '''render index template'''
 
     template_name = 'index.html'
 
@@ -22,12 +23,12 @@ class ViewDiscoverDesigners(ListView):
 
 
 class ViewDesigner(View):
-    '''render designer page template and populates with designer model info'''
+    '''render designer profile template and populate with designer model info'''
     model = Designer
-    template_name = 'designer.html'
+    template_name = 'designer_profile.html'
 
     def get(self, request, designer_id, *args, **kwargs):
-        """ get """
+        """ get designer info """
         designer = Designer.objects.get(id=designer_id)
         return render(request, self.template_name, {'designer': designer})
 
