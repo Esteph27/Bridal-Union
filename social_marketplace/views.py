@@ -31,6 +31,11 @@ class ViewDesigner(View):
         """ get designer info """
         designer = Designer.objects.get(id=designer_id)
         return render(request, self.template_name, {'designer': designer})
+    
+    # images=ImagePosts.objects.filter(designer_id)
+    # def get(request):
+    #     image_posts = ImagePosts.objects.get(image_post_id)
+    #     return(request, self.template, {'image_posts': image_posts})
 
 
 class ViewCreateAccount(CreateView):
