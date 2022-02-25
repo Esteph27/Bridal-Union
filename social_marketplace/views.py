@@ -1,12 +1,10 @@
 from django.shortcuts import render
 from django.contrib.auth.models import User
 
-from django.views import generic, View
-from django.views.generic.base import TemplateView
-from django.views.generic.list import ListView
-from django.views.generic.detail import DetailView
-from django.views.generic.edit import CreateView
-from django.views.generic.edit import FormView
+# from django.views import generic, View
+from django.views.generic import (
+    View, TemplateView, ListView, DetailView, CreateView, FormView
+    )
 
 from .models import Designer, ImagePosts
 

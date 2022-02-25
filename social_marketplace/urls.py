@@ -12,6 +12,5 @@ urlpatterns = [
     path('designer_profile/<int:designer_id>/', views.ViewDesigner.as_view(), name='view_designer_profile'),
     path('booking/', views.ViewBooking.as_view(), name='view_booking'),
     path('login/', views.ViewLogin.as_view(), name='login'),
-    # path('create_account/', views.ViewCreateAccount.as_view(), name='create_account'),
     path('customer_account/', views.ViewCustomerAccount.as_view(), name='view_account'),
 ]
