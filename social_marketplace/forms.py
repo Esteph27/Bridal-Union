@@ -1,14 +1,6 @@
-from django.forms import ModelForm
-from .models import CustomerAccount
+# from django.forms import ModelForm
 # from .models import Booking
 
-class CustomerAccountForm(ModelForm):
-    '''
-    create customer account form
-    '''
-    class meta:
-        model = CustomerAccount
-        fields = '__all__'
 
 
 # class BookingForm(ModelForm):

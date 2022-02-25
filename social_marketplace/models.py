@@ -90,17 +90,6 @@ class ImageComments(models.Model):
         return f"Comment from {self.name}"
 
 
-class CustomerAccount(models.Model):
-    '''
-    customer account information
-    '''
-
-    user = models.OneToOneField(User, on_delete=models.CASCADE, default=1)
-
-    def __str__(self):
-        return str(self.user)
-
-
 class Booking(models.Model):
     '''
     customer bookings
@@ -124,13 +113,13 @@ class Booking(models.Model):
         ('£9,500 +', '£9,500 +'),
     )
 
-    customer_name = models.ForeignKey(
-        CustomerAccount,
+    customer_name = models.OneToOneField(
+        User,
         null=True,
         on_delete=models.SET_NULL, related_name='customername'
         )
-    customer_email = models.ForeignKey(
-        CustomerAccount,
+    customer_email = models.OneToOneField(
+        User,
         null=True,
         on_delete=models.SET_NULL,
         related_name='customeremail'

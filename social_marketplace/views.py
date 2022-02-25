@@ -8,8 +8,7 @@ from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView
 from django.views.generic.edit import FormView
 
-from .models import Designer, ImagePosts, CustomerAccount
-from .forms import CustomerAccountForm
+from .models import Designer, ImagePosts
 
 
 class ViewHome(TemplateView):
@@ -46,25 +45,14 @@ class ViewDesigner(View):
     # images = ImagePosts.objects.filter(designer=designer)
 
 
-class ViewCreateAccount(FormView):
-    '''
-    create account template
-    '''
-    template_name = 'create_account.html'
-    form_class = CustomerAccountForm
-    success_url = '/login/'
+class ViewCustomerAccount(TemplateView):
+    '''render customer account template'''
 
-    # def form_valid(self, form):
-    #   pass
-
+    template_name = 'customer_account.html'
 
 
 # ------------ CLASS VIEWS LEFT TO DO
 
-class ViewDesignerPortfolio(TemplateView):
-    '''render designer portfolio template'''
-
-    template_name = 'designer_portfolio.html'
 
 
 class ViewLogin(TemplateView):
@@ -77,12 +65,3 @@ class ViewBooking(TemplateView):
     '''booking form'''
 
     template_name = 'booking.html'
-
-
-
-class ViewCustomerAccount(TemplateView):
-    '''render customer account template'''
-
-    template_name = 'customer_account.html'
-
-
