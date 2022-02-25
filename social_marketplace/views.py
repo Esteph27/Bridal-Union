@@ -9,8 +9,7 @@ from django.views.generic.edit import CreateView
 from django.views.generic.edit import FormView
 
 from .models import Designer, ImagePosts, CustomerAccount
-
-# from .forms import CustomerAccountForm
+from .forms import CustomerAccountForm
 
 
 class ViewHome(TemplateView):
@@ -44,29 +43,20 @@ class ViewDesigner(View):
         designer = Designer.objects.get(id=designer_id)
         return render(request, self.template_name, {'designer': designer})
     
-    # images=ImagePosts.objects.filter(designer_id)
-    # def get(request):
-    #     image_posts = ImagePosts.objects.get(image_post_id)
-    #     return(request, self.template, {'image_posts': image_posts})
+    # images = ImagePosts.objects.filter(designer=designer)
 
 
 class ViewCreateAccount(FormView):
     '''
     create account template
     '''
-    pass
-    # template_name = 'create_account.html'
-    # form_class = CustomerAccountForm
+    template_name = 'create_account.html'
+    form_class = CustomerAccountForm
+    success_url = '/login/'
 
     # def form_valid(self, form):
-    #     first_name = form.cleaned_data.get('first_name')
-    #     last_name = form.cleaned_data.get('last_name')
-    #     user = User.objects.create_user(first_name, email, password )
-    #     CustomerAccount.objects.create(
-    #         user = user,
+    #   pass
 
-
-    #     )
 
 
 # ------------ CLASS VIEWS LEFT TO DO

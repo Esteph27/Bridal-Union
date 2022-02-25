@@ -95,12 +95,10 @@ class CustomerAccount(models.Model):
     customer account information
     '''
 
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
-    contact_number = models.CharField(max_length=30, null=True)
-    wedding_date = models.DateField()
+    user = models.OneToOneField(User, on_delete=models.CASCADE, default=1)
 
     def __str__(self):
-        return f"{self.user.first_name} {self.user.last_name}"
+        return str(self.user)
 
 
 class Booking(models.Model):
@@ -144,6 +142,7 @@ class Booking(models.Model):
         related_name='designername'
         )
     price_range = models.CharField(max_length=200, choices=PRICES, default='£2,500 - £3,500')
+    wedding_date = models.DateField(auto_now=True)
     customer_message = models.TextField(max_length=800, blank=True)
     booking_created_on_date = models.DateTimeField(auto_now_add=True)
     status = models.CharField(max_length=200, choices=STATUS)
