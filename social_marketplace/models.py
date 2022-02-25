@@ -10,7 +10,6 @@ class Designer(models.Model):
     model for designer information
     '''
 
-    # attributes
     first_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=30)
     email = models.EmailField(
@@ -33,7 +32,6 @@ class ImagePosts(models.Model):
     # status of images:
     STATUS = ((0, "Draft"), (1, "Posted"))
 
-    # attributes
     image = CloudinaryField(
         'image',
         default='placeholder',
@@ -46,7 +44,7 @@ class ImagePosts(models.Model):
     date_posted = models.DateTimeField(auto_now=True)
     status = models.IntegerField(choices=STATUS, default=0)
 
-    # Related Fields
+    # related Fields
     designer = models.ForeignKey(
         Designer, null=True, blank=True, on_delete=models.CASCADE)
     likes = models.ManyToManyField(
@@ -73,7 +71,6 @@ class ImageComments(models.Model):
     model for comments on images
     '''
 
-    # attributes
     name = models.CharField(max_length=80)
     body = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
@@ -98,16 +95,12 @@ class CustomerAccount(models.Model):
     model for customer account information
     '''
 
-    # attributes
-    first_name = models.CharField(max_length=30)
-    last_name = models.CharField(max_length=30)
-    email = models.EmailField(max_length=245)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
     contact_number = models.CharField(max_length=30, null=True)
-    password = models.CharField(max_length=8)
     wedding_date = models.DateField()
 
     def __str__(self):
-        return f"{self.first_name }{self.last_name}"
+        return f"{self.user.first_name} {self.user.last_name}"
 
 
 class Booking(models.Model):
@@ -133,8 +126,6 @@ class Booking(models.Model):
         ('£9,500 +', '£9,500 +'),
     )
 
-
-    # variables
     customer_name = models.ForeignKey(
         CustomerAccount,
         null=True,
@@ -178,5 +169,3 @@ class Booking(models.Model):
     def __str__(self):
         return self.booking_ref
 
-
-# ------> review model

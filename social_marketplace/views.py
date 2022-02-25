@@ -1,21 +1,30 @@
 from django.shortcuts import render
+from django.contrib.auth.models import User
+
 from django.views import generic, View
 from django.views.generic.base import TemplateView
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView
-# from django.views.generic.edit import FormView
+from django.views.generic.edit import FormView
+
 from .models import Designer, ImagePosts, CustomerAccount
+
+from .forms import CustomerAccountForm
 
 
 class ViewHome(TemplateView):
-    '''render index template'''
+    '''
+    render index template
+    '''
 
     template_name = 'index.html'
 
 
 class ViewDiscoverDesigners(ListView):
-    '''render discover designers template'''
+    '''
+    render discover designers template
+    '''
 
     model = ImagePosts
     context_object_name = 'image_posts'
@@ -23,7 +32,10 @@ class ViewDiscoverDesigners(ListView):
 
 
 class ViewDesigner(View):
-    '''render designer profile template and populate with designer model info'''
+    '''
+    render designer profile template and populate with designer model info
+    '''
+
     model = Designer
     template_name = 'designer_profile.html'
 
@@ -38,12 +50,23 @@ class ViewDesigner(View):
     #     return(request, self.template, {'image_posts': image_posts})
 
 
-class ViewCreateAccount(CreateView):
-    '''render create account template'''
+class ViewCreateAccount(FormView):
+    '''
+    create account template
+    '''
 
     template_name = 'create_account.html'
-    model = CustomerAccount
-    fields = '__all__'
+    form_class = CustomerAccountForm
+
+    # def form_valid(self, form):
+    #     first_name = form.cleaned_data.get('first_name')
+    #     last_name = form.cleaned_data.get('last_name')
+    #     user = User.objects.create_user(first_name, email, password )
+    #     CustomerAccount.objects.create(
+    #         user = user,
+
+
+    #     )
 
 
 # ------------ CLASS VIEWS LEFT TO DO
