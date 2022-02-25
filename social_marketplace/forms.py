@@ -1,21 +1,21 @@
-from django.forms import ModelForm
-from .models import CustomerAccount
-# from .models import Booking
+# from django.forms import ModelForm
+# from .models import CustomerAccount
+# # from .models import Booking
 
-class CustomerAccountForm(ModelForm):
-    '''
-    create customer account form
-    '''
-    class meta:
-        model = CustomerAccount
-        fields = [
-            'user.first_name',
-            'user.last_name',
-            'user.email',
-            'user.password',
-            'contact_number',
-            'wedding_date',
-        ]
+# class CustomerAccountForm(ModelForm):
+#     '''
+#     create customer account form
+#     '''
+#     class meta:
+#         model = CustomerAccount
+#         fields = [
+#             'user.first_name',
+#             'user.last_name',
+#             'user.email',
+#             'user.password',
+#             'contact_number',
+#             'wedding_date',
+#         ]
 
 
 # class BookingForm(ModelForm):

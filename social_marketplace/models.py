@@ -7,7 +7,7 @@ from cloudinary.models import CloudinaryField
 
 class Designer(models.Model):
     '''
-    model for designer information
+    designer information
     '''
 
     first_name = models.CharField(max_length=30)
@@ -26,7 +26,7 @@ class Designer(models.Model):
 
 class ImagePosts(models.Model):
     '''
-    model for images posted by Designer(s)
+    Images posted by Designer(s)
     '''
 
     # status of images:
@@ -52,13 +52,13 @@ class ImagePosts(models.Model):
 
     class Meta:
         '''
-        class to order images posted by most recent
+        order images posted by most recent
         '''
         ordering = ['-date_posted']
 
     def number_of_likes(self):
         '''
-        function to get number of likes
+        get number of likes
         '''
         return self.likes.count()
 
@@ -68,7 +68,7 @@ class ImagePosts(models.Model):
 
 class ImageComments(models.Model):
     '''
-    model for comments on images
+    comments on images by user
     '''
 
     name = models.CharField(max_length=80)
@@ -92,7 +92,7 @@ class ImageComments(models.Model):
 
 class CustomerAccount(models.Model):
     '''
-    model for customer account information
+    customer account information
     '''
 
     user = models.OneToOneField(User, on_delete=models.CASCADE)

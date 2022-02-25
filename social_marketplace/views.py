@@ -10,7 +10,7 @@ from django.views.generic.edit import FormView
 
 from .models import Designer, ImagePosts, CustomerAccount
 
-from .forms import CustomerAccountForm
+# from .forms import CustomerAccountForm
 
 
 class ViewHome(TemplateView):
@@ -54,9 +54,9 @@ class ViewCreateAccount(FormView):
     '''
     create account template
     '''
-
-    template_name = 'create_account.html'
-    form_class = CustomerAccountForm
+    pass
+    # template_name = 'create_account.html'
+    # form_class = CustomerAccountForm
 
     # def form_valid(self, form):
     #     first_name = form.cleaned_data.get('first_name')
