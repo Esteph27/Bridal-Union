@@ -16,30 +16,20 @@
     </div>
 </div>
 
-
-<!--view designer porfolio-->
 <!--album template from Bootstrap --->
-<main role="main">
+<main class="image-container" role="main">
   <div class="album py-5">
     <div class="container">
       <div class="row">
-
-        <!--get one image from ImagePosts model which is posted by the relevant designer-->
-        <!-- {% for image in image_posts %} -->
-        <div class="col-md-4">
-          <div class="card mb-4">
-            <img class="card-img-top" src="{{ image.image.url }}">
-            <div class="card-body">
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="justify-content-start">
-                  <small class="text-muted">Link to Portfolio</small>
-                </div>
-              </div>
+        {% for img in images %}
+        {% if img.id == 1%}
+          <div class="col-md-4 image-center">
+            <div class="card mb-4">
+              <img class="card-img-top" src="{{ img.image.url }}">
             </div>
           </div>
-        </div>
-        <!-- {% endfor %} -->
-
+        {% endif %}
+        {% endfor %}
       </div>
     </div>
   </div>

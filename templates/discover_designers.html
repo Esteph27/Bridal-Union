@@ -16,7 +16,9 @@
           {% for image in image_posts %}
           <div class="col-md-4">
             <div class="card mb-4">
-              <h5>{{ image.designer }}</h5>
+              <a href="{{ url 'designer_profile'}}" target="_blank">
+                <h5>{{ image.designer }}</h5>
+              </a>
           
               <img class="card-img-top" src="{{ image.image.url }}">
         

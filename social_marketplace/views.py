@@ -1,7 +1,6 @@
 from django.shortcuts import render
 from django.contrib.auth.models import User
 
-from django.views import generic, View
 from django.views.generic import (
     TemplateView, ListView, DetailView, CreateView, FormView
     )
@@ -27,7 +26,7 @@ class ViewDiscoverDesigners(ListView):
     template_name = 'discover_designers.html'
 
 
-class ViewDesigner(View):
+class ViewDesigner(DetailView):
     '''
     render designer profile template and populate with designer model info
     '''
@@ -35,12 +34,12 @@ class ViewDesigner(View):
     model = Designer
     template_name = 'designer_profile.html'
 
-    def get(self, request, designer_id, *args, **kwargs):
-        """ get designer info """
-        designer = Designer.objects.get(id=designer_id)
-        return render(request, self.template_name, {'designer': designer})
-    
-    # images = ImagePosts.objects.filter(designer=designer)
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)      
+        images = ImagePosts.objects.filter(designer=self.kwargs['pk'])
+        context["images"] = images
+
+        return context
 
 
 class ViewCustomerAccount(TemplateView):

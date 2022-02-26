@@ -163,6 +163,14 @@ p {
 }
 
 
+.image-center {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
+}
+
+
 /* -------------------------------> booking.html */ 
 
 #booking-section {
@@ -356,6 +364,12 @@ p {
 		display: none;
 	}
 
+	/* -------------> designer_profile  */
+
+	.image-center {
+		display: contents;
+	}
+
 }
 
 
@@ -387,6 +401,12 @@ p {
 
 	.filler {
 		height: 150px;
+	}
+
+	/* -------------> designer_profile  */
+	
+	.image-center {
+		display: contents;
 	}
 	
 }
