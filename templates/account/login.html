@@ -7,7 +7,7 @@
 
 {% block content %}
 
-<div class="title-container container-fluid">
+<div id="login-title-containter" class="container-fluid">
   <h1>Log In</h1>
   <p>{% blocktrans %}If you have not created an account yet, then please
     <a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}
@@ -15,22 +15,24 @@
 </div>
 
 
-<div id="form" class="float-left">
-  <form class="login form-group row" method="POST" action="{% url 'account_login' %}">
-    {% csrf_token %}
-    {{ form.as_p }}
-    {% if redirect_field_value %}
-    <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-    {% endif %}
-    
-    <!--buttons from bootswatch lux theme-->
-    <div class="d-grid gap-4 col-4 button-container-left">
-      <button class="primaryAction btn btn-primary" type="submit">{% trans "Sign In" %}</button>
-    </div>
-  </form>
+<div class="row">
+  <div id="form" class="col-6">
+    <form class="login form-group row" method="POST" action="{% url 'account_login' %}">
+      {% csrf_token %}
+      {{ form.as_p }}
+      {% if redirect_field_value %}
+      <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+      {% endif %}
+      <!--buttons from bootswatch lux theme-->
+      <div class="d-grid gap-4 col-4 button-container-left">
+        <button class="primaryAction btn btn-primary" type="submit">{% trans "Sign In" %}</button>
+      </div>
+    </form>
+  </div>
+  <div id="image-float-right" class="col-6"></div>
 </div>
 
-<div id="image-float-right" class="float-right"></div>
+
 
 
 {% endblock %}

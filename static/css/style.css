@@ -184,18 +184,13 @@ p {
 
 /* -------------------------------> Login.html */ 
 
-.title-container {
+#login-title-containter {
 	margin-top: 10%;
 	height: 110px;
 }
 
-.title-container h1, p {
+#login-title-containter h1, p {
 	margin-left: 1%;
-}
-
-#form {
-	margin-top: 5%;
-	height: auto;
 }
 
 #form input {
@@ -209,8 +204,15 @@ p {
 }
 
 #image-float-right {
-	display: none;
+	height: 900px;
+	background-image: url("https://res.cloudinary.com/dllwurooy/image/upload/v1644340480/birdal-union/filipp-romanovski-unsplash2_e2wbxh.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: 10% 90%;
+	overflow: hidden;
+	opacity: 0.7;
 }
+
 
 
 /* -------------------------------> create_account.html */ 
@@ -275,7 +277,7 @@ p {
 		font-size: 35px;
 	}
 
-	/* designer.html */
+	/*  -------------> designer.html */
 	.button-container-left {
 		margin-top: 3%;
 	}
@@ -288,20 +290,57 @@ p {
 		margin-bottom: 10%;
 	}
 
+	/* -------------> login.html  */
+
 	#form {
 		margin-top: 0;
 	}
 
-	#image-float-right {
-		height: 900px;
-		width: 45%;
-	
-		background-image: url("https://res.cloudinary.com/dllwurooy/image/upload/v1644340480/birdal-union/filipp-romanovski-unsplash2_e2wbxh.jpg");
-		background-repeat: no-repeat;
-		background-size: cover;
-		background-position: 10% 90%;
-		overflow: hidden;
-		opacity: 0.7;
+	label {
+		margin-left: 5%;
+		text-transform: uppercase;
 	}
 
+	.button-container-left {
+		margin-left: 5%;
+	}
+
+	#login-title-containter {
+		margin-bottom: 10%;
+		width: 45%;
+		margin-left: 2%;
+	}
+
+}
+
+/* Medium devices (ipad screens, 580px - 1020px) */
+@media only screen and (min-device-width : 580px) and (max-device-width : 1020px) {
+
+	/* -------------> login.html  */
+	#image-float-right {
+		display: none;
+	}
+
+}
+
+
+/* Small devices (mobile screens, 320px - 580px) */
+@media screen and (min-width: 320px) and (max-device-width : 580px) {
+
+	/* -------------> login.html  */
+
+	#login-title-containter {
+		margin-top: 10%;
+		height: 150px;
+	}
+
+	#form {
+		width: 100vw;
+		height: 100vw;
+		margin-top: 5%;
+	}
+
+	#image-float-right {
+		display: none;
+	}
 }
