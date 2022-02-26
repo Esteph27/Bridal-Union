@@ -1,9 +1,9 @@
 from django.shortcuts import render
 from django.contrib.auth.models import User
 
-# from django.views import generic, View
+from django.views import generic, View
 from django.views.generic import (
-    View, TemplateView, ListView, DetailView, CreateView, FormView
+    TemplateView, ListView, DetailView, CreateView, FormView
     )
 
 from .models import Designer, ImagePosts
@@ -52,11 +52,6 @@ class ViewCustomerAccount(TemplateView):
 # ------------ CLASS VIEWS LEFT TO DO
 
 
-
-class ViewLogin(TemplateView):
-    '''render home page template'''
-
-    template_name = 'login.html'
 
 
 class ViewBooking(TemplateView):

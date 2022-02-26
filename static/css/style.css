@@ -131,7 +131,7 @@ p {
 }
 
 
-/* -------------------------------> designer.html */ 
+/* -------------------------------> designer_profile.html */ 
 
 #designer_info {
 	margin-left: 1%;
@@ -189,48 +189,29 @@ p {
 	height: 110px;
 }
 
-.title-container h1 {
+.title-container h1, p {
 	margin-left: 1%;
 }
 
-#background-image {
-	position: relative; 
-    height: auto;
-    width: 100vw;
-	padding-top: 10vw;
-	padding-bottom: 100vw;
-}
-
-#background-image::before {
-	content: "";
-	background-image: url("https://res.cloudinary.com/dllwurooy/image/upload/v1644340480/birdal-union/filipp-romanovski-unsplash2_e2wbxh.jpg");
-	background-repeat: no-repeat;
-    background-size: cover;
-    background-position: 20% 80%;
-	opacity: 0.5;
-    overflow: hidden;
-	position: absolute;
-    top: 0px;
-    right: 0px;
-    bottom: 0px;
-    left: 0px;
-}
-
-.ontop-of-opacity {
-	position: relative
-}
-
-.centre-btns {
-	margin-top: 10%;
-}
-
-#emailHelp {
-	color: black;
-}
-
-.form-check {
+#form {
 	margin-top: 5%;
+	height: auto;
 }
+
+#form input {
+	border: none;
+	border-bottom: 1px solid #212121;
+	margin-left: 2%;
+}
+
+.button-container-left {
+	margin-left: 1%;
+}
+
+#image-float-right {
+	display: none;
+}
+
 
 /* -------------------------------> create_account.html */ 
 
@@ -305,6 +286,22 @@ p {
 
 	.title-container {
 		margin-bottom: 10%;
+	}
+
+	#form {
+		margin-top: 0;
+	}
+
+	#image-float-right {
+		height: 900px;
+		width: 45%;
+	
+		background-image: url("https://res.cloudinary.com/dllwurooy/image/upload/v1644340480/birdal-union/filipp-romanovski-unsplash2_e2wbxh.jpg");
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: 10% 90%;
+		overflow: hidden;
+		opacity: 0.7;
 	}
 
 }

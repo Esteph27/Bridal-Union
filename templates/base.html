@@ -42,11 +42,20 @@
                 <a class="nav-link" href="{% url 'discover_designers' %}">Discover Designers</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="{% url 'login' %}">Log In</a>
-              </li>
-              <li class="nav-item">
                 <a class="nav-link" href="#">About</a>
               </li>
+              {% if user.is_authenticated %}
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'account_logout' %}">Log Out</a>
+              </li>
+              {% else %}
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'account_signup' %}">Create Account</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'account_login' %}">Log In</a>
+              </li>
+              {% endif %}
             </ul>
           </div>
         </div>
@@ -68,9 +77,6 @@
             <span>© 2022 Bridal-Union, Inc</span>
           </div>
           <div class="social-links">
-            <div class="nav col-md-4 justify-content-end list-unstyled d-flex">
-              <p>Connect with us</p>
-            </div>
             <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
               <li class="ms-3">
                 <a href="https://www.instagram.com" target="_blank" rel="noopener" aria-label="Visit our Instagram page (opens in a new tab)">Instagram</a>
