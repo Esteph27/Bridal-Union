@@ -41,8 +41,9 @@ p {
     /* background-color: #F7F7F9; */
 	height: 130px;
 	width: 100vw;
-	margin-top: 15%;
+	margin-top: 10%;
 	color: #808080;
+	position: static;
 }
 
 #footer-container span {
@@ -125,11 +126,6 @@ p {
 	border: none;
 }
 
-.button-container-left {
-	margin-top: 10%;
-	margin-bottom: 10%;
-}
-
 
 /* -------------------------------> designer_profile.html */ 
 
@@ -153,6 +149,12 @@ p {
 #designer-bio-container p {
 	text-align: left;
 	margin-right: 2%;
+}
+
+.button-container-left {
+	margin-top: 10%;
+	margin-bottom: 10%;
+	margin-left: 1%;
 }
 
 .button-container-left a {
@@ -184,12 +186,16 @@ p {
 
 /* -------------------------------> Login.html */ 
 
-#login-title-containter {
+.page-title-container {
 	margin-top: 10%;
 	height: 110px;
 }
 
-#login-title-containter h1, p {
+.page-title-container h1, p {
+	margin-left: 1%;
+}
+
+#form {
 	margin-left: 1%;
 }
 
@@ -199,13 +205,23 @@ p {
 	margin-left: 2%;
 }
 
-.button-container-left {
-	margin-left: 1%;
-}
-
 #image-float-right {
+	margin-top: 4%;
 	height: 900px;
 	background-image: url("https://res.cloudinary.com/dllwurooy/image/upload/v1644340480/birdal-union/filipp-romanovski-unsplash2_e2wbxh.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: 10% 90%;
+	overflow: hidden;
+	opacity: 0.7;
+}
+
+/* -------------------------------> Logout.html */ 
+
+#log-out-image-float-right {
+	margin-top: 4%;
+	height: 900px;
+	background-image: url("https://res.cloudinary.com/dllwurooy/image/upload/v1645460095/k2hts22yvos6v9dgyxim.jpg");
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: 10% 90%;
@@ -279,7 +295,7 @@ p {
 
 	/*  -------------> designer.html */
 	.button-container-left {
-		margin-top: 3%;
+		margin-top: 4%;
 	}
 
 	#designer_info h2, p {
@@ -294,21 +310,22 @@ p {
 
 	#form {
 		margin-top: 0;
+		margin-left: 0;
 	}
 
 	label {
-		margin-left: 5%;
+		margin-left: 1%;
 		text-transform: uppercase;
 	}
 
-	.button-container-left {
-		margin-left: 5%;
+	.page-title-container {
+		margin-bottom: 10%;
 	}
 
-	#login-title-containter {
-		margin-bottom: 10%;
-		width: 45%;
-		margin-left: 2%;
+	/* -------------> logout.html  */
+
+	.filler {
+		display: none;
 	}
 
 }
@@ -317,7 +334,25 @@ p {
 @media only screen and (min-device-width : 580px) and (max-device-width : 1020px) {
 
 	/* -------------> login.html  */
+
+	#form {
+		width: 100vw;
+		height: 100vw;
+		margin-top: 5%;
+	}
+
 	#image-float-right {
+		display: none;
+	}
+
+	/* -------------> logout.html  */
+	#log-out-image-float-right {
+		display: none;
+	}
+
+	/* -------------> logout.html  */
+
+	.filler {
 		display: none;
 	}
 
@@ -329,7 +364,7 @@ p {
 
 	/* -------------> login.html  */
 
-	#login-title-containter {
+	.page-title-container {
 		margin-top: 10%;
 		height: 150px;
 	}
@@ -343,4 +378,15 @@ p {
 	#image-float-right {
 		display: none;
 	}
+
+	#log-out-image-float-right {
+		display: none;
+	}
+
+	/* -------------> logout.html  */
+
+	.filler {
+		height: 150px;
+	}
+	
 }

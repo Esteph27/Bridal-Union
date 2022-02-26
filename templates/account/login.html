@@ -7,16 +7,16 @@
 
 {% block content %}
 
-<div id="login-title-containter" class="container-fluid">
-  <h1>Log In</h1>
-  <p>{% blocktrans %}If you have not created an account yet, then please
-    <a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}
-  </p>
-</div>
-
 
 <div class="row">
   <div id="form" class="col-6">
+    <div class="container-fluid page-title-container">
+      <h1>Log In</h1>
+      <p>{% blocktrans %}If you have not created an account yet, then please
+        <a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}
+      </p>
+    </div>
+    
     <form class="login form-group row" method="POST" action="{% url 'account_login' %}">
       {% csrf_token %}
       {{ form.as_p }}
@@ -24,14 +24,13 @@
       <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
       {% endif %}
       <!--buttons from bootswatch lux theme-->
-      <div class="d-grid gap-4 col-4 button-container-left">
+      <div class="d-grid gap-4 col-4 button-container-left ">
         <button class="primaryAction btn btn-primary" type="submit">{% trans "Sign In" %}</button>
       </div>
     </form>
   </div>
   <div id="image-float-right" class="col-6"></div>
 </div>
-
 
 
 

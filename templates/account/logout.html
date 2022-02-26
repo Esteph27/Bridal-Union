@@ -1,21 +1,36 @@
-{% extends "account/base.html" %}
+{% extends "base.html" %}
 
 {% load i18n %}
 
 {% block head_title %}{% trans "Sign Out" %}{% endblock %}
 
 {% block content %}
-<h1>{% trans "Sign Out" %}</h1>
 
-<p>{% trans 'Are you sure you want to sign out?' %}</p>
 
-<form method="post" action="{% url 'account_logout' %}">
-  {% csrf_token %}
-  {% if redirect_field_value %}
-  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
-  {% endif %}
-  <button type="submit">{% trans 'Sign Out' %}</button>
-</form>
+<div  class="row">
+  <div id="form" class="col-6">
+    <div class="container-fluid page-title-container">
+      <h1>{% trans "Sign Out" %}</h1>
+      <p>{% trans 'Are you sure you want to sign out?' %}</p>
+    </div>  
+
+    <form method="post" action="{% url 'account_logout' %}">
+      {% csrf_token %}
+      {% if redirect_field_value %}
+      <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
+      {% endif %}
+
+      <!--buttons from bootswatch lux theme-->
+      <div class="d-grid gap-4 col-4 button-container-left"> 
+        <button type="submit" class="btn btn-primary">{% trans 'Sign Out' %}</button>
+      </div>
+    </form>
+  </div>
+  <div id="log-out-image-float-right" class="col-6"></div>
+  <div class="filler  col-6"></div>
+</div>
+
+
 
 
 {% endblock %}
