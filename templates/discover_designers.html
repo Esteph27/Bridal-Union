@@ -6,7 +6,6 @@
     <h1>Discover thier works...</h1>
 </div>
 
-
 <!--album template from Bootstrap --->
 <main role="main">
     <div class="album py-5">
@@ -16,8 +15,9 @@
           {% for image in image_posts %}
           <div class="col-md-4">
             <div class="card mb-4">
-              <!--make into link-->
+              <a href="{% url 'view_designer_profile' 1 %}">
                 <h5>{{ image.designer }}</h5>
+              </a>
               <img class="card-img-top" src="{{ image.image.url }}">
               <div class="card-body">
                 <div class="d-flex justify-content-between align-items-center">

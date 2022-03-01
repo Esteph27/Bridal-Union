@@ -126,6 +126,10 @@ p {
 	border: none;
 }
 
+.card a {
+	text-decoration: none;
+}
+
 
 /* -------------------------------> designer_profile.html */ 
 
