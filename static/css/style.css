@@ -39,7 +39,7 @@ p {
 
 #footer-container {
     /* background-color: #F7F7F9; */
-	height: 130px;
+	height: 120px;
 	width: 100vw;
 	margin-top: 10%;
 	color: #808080;
@@ -196,6 +196,7 @@ p {
 
 .page-title-container {
 	margin-top: 10%;
+	margin-bottom: 5%;
 	height: 110px;
 }
 
@@ -203,11 +204,11 @@ p {
 	margin-left: 1%;
 }
 
-#form {
+#form-container {
 	margin-left: 1%;
 }
 
-#form input {
+#form-container input {
 	border: none;
 	border-bottom: 1px solid #212121;
 	margin-left: 2%;
@@ -239,13 +240,32 @@ p {
 
 
 
-/* -------------------------------> create_account.html */ 
+/* -------------------------------> signup.html */ 
 
-#bottom-image {
-	margin-top: 10%;
-	width: 100vw;
-	opacity: 0.9;
+#signup-container {
+	margin-bottom: 10rem;
 }
+
+#sign-image-float-right {
+	margin-top: 4%;
+	height: 900px;
+	background-image: url("https://res.cloudinary.com/dllwurooy/image/upload/v1644340475/birdal-union/burcu-dogan-gp2kSf1fNLA-unsplash_ox61tq.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: 38%;
+	overflow: hidden;
+	opacity: 0.7;
+}
+
+/* #bottom-image-container {
+	margin-top: 10%;
+	margin-bottom: 10%;
+	width: 100vw;
+}
+
+#bottom-image-container img {
+	opacity: 0.9;
+} */
 
 /* -------------------------------> customer_account.html */ 
 
@@ -316,7 +336,7 @@ p {
 
 	/* -------------> login.html  */
 
-	#form {
+	#form-container {
 		margin-top: 0;
 		margin-left: 0;
 	}
@@ -343,7 +363,7 @@ p {
 
 	/* -------------> login.html  */
 
-	#form {
+	#form-container {
 		width: 100vw;
 		height: 100vw;
 		margin-top: 5%;
@@ -358,9 +378,12 @@ p {
 		display: none;
 	}
 
-	/* -------------> logout.html  */
-
 	.filler {
+		display: none;
+	}
+
+	/* -------------------------------> signup.html */ 
+	#sign-image-float-right {
 		display: none;
 	}
 
@@ -383,7 +406,7 @@ p {
 		height: 150px;
 	}
 
-	#form {
+	#form-container {
 		width: 100vw;
 		height: 100vw;
 		margin-top: 5%;
@@ -393,15 +416,21 @@ p {
 		display: none;
 	}
 
+	/* -------------> logout.html  */
+
 	#log-out-image-float-right {
 		display: none;
 	}
 
-	/* -------------> logout.html  */
-
 	.filler {
 		height: 150px;
 	}
+
+	/* -------------------------------> signup.html */ 
+	#sign-image-float-right {
+		display: none;
+	}
+
 
 	/* -------------> designer_profile  */
 	
