@@ -51,8 +51,6 @@ class ViewCustomerAccount(TemplateView):
 # ------------ CLASS VIEWS LEFT TO DO
 
 
-
-
 class ViewBooking(TemplateView):
     '''booking form'''
 

@@ -1,5 +1,6 @@
 import random
 import string
+from datetime import datetime 
 from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
@@ -132,7 +133,10 @@ class Booking(models.Model):
         )
     price_range = models.CharField(max_length=200, choices=PRICES, default='£2,500 - £3,500')
     wedding_date = models.DateField(auto_now=True)
+    select_date = models.DateField(auto_now=True)
+    select_time = models.DateTimeField(auto_now=True)
     customer_message = models.TextField(max_length=800, blank=True)
+
     booking_created_on_date = models.DateTimeField(auto_now_add=True)
     status = models.CharField(max_length=200, choices=STATUS)
     booking_ref = models.CharField(
@@ -140,8 +144,6 @@ class Booking(models.Model):
         editable=False,
         unique=True,
     )
-
-    # select availability =
 
     def create_booking_ref():
         '''
