@@ -6,7 +6,7 @@
 <!--Make into loop once modle are up and running-->
 <div id="designer_info" class="container-fluid">
     <h2>{{ designer.first_name }}</h2>
-    <h2>{{ designer.location }}</h2>
+    <p>{{ designer.location }}</p>
     <p>Starting Price - £{{ designer.starting_price }}</p>
     <!-- button from bootswatch lux theme -->
     <div class="button-container-left d-flex justify-content-start">
@@ -22,7 +22,7 @@
     <div class="container">
       <div class="row">
         {% for img in images %}
-        {% if img.id == 1%}
+        {% if img.id == img.id %}
           <div class="col-md-4 image-center">
             <div class="card mb-4">
               <img class="card-img-top" src="{{ img.image.url }}">
