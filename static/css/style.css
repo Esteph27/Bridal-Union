@@ -117,13 +117,34 @@ p {
 .button-container a {
 	color: white;
 	text-decoration: none;
+	letter-spacing: 2px;
 }
 
+
+
 /* -------------------------------> discover_designers.html */ 
+
+.title-container{
+	margin-top: 10%;
+	margin-bottom: 5%;
+	height: 110px;
+	line-height: 110px;
+	margin-left: 1%;
+}
+
+.title-container h1 {
+	display: inline-block;
+	line-height: normal;
+	vertical-align: middle;
+}
 
 
 .card {
 	border: none;
+}
+
+.card .card-text {
+	font-size: 14px;
 }
 
 .card a {
@@ -137,18 +158,18 @@ p {
 	margin-left: 1%;
 }
 
+
 #designer_info h2, p {
-	padding-top: 5%;
+	margin-top: 5%;
 }
 
 #designer_info p {
-	font-size: 22px;
+	font-size: 18px;
 }
 
 #designer-bio-container, #designer-review-container {
 	margin: 5% 2% 10% 2%;
 }
-
 
 #designer-bio-container p {
 	text-align: left;
@@ -164,8 +185,8 @@ p {
 .button-container-left a {
 	color: white;
 	text-decoration: none;
+	letter-spacing: 2px;
 }
-
 
 .image-center {
 	display: block;
@@ -325,13 +346,24 @@ p {
 		font-size: 35px;
 	}
 
-	/*  -------------> designer.html */
-	.button-container-left {
-		margin-top: 4%;
+	/*  -------------> designer_profile.html */
+
+	#designer_info h2 {
+		font-size: 32px;
+	}
+
+	#designer_info p {
+		font-size: 25px;
+		margin-left: 0;
 	}
 
 	#designer_info h2, p {
-		padding-top: 3%;
+		margin-top: 3%;
+	}
+
+	.button-container-left {
+		margin-top: 4%;
+		margin-left: 0;
 	}
 
 	.title-container {
