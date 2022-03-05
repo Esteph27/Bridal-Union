@@ -365,6 +365,220 @@ Back end languages - Python3
 
 <a href="https://id.heroku.com/login" target="_blank">Heroku</a> - selected platform to deploy this project 
 
+---
+
+## TESTING
+
+Due to time constraints, no tests have been carried out for this version of Bridal Union.
+
+---
+
+## FIXED BUGS
+
+**Failed to load favicon in initial deployment:**
+
+During the initial deployment stages on Heroku, the favicon failed to load. The below steps fixed the problem:
+
+- I removed DISBALE_STATIC FILES from my config vars in Heroku. At the time of initial deployment, this was only a temporary variable as I did not have any static files at the time.
+
+**Failed to load static files in deployment:**
+
+The below changes fixed the above:
+
+- File path was incorrect, I removed the forward slash '/' in file path:
+
+![screenshot of css file path](media/css-file-path.png)
+
+**Error with migrations and database:**
+
+Whilst updating my Designer model I kept getting the below ProgrammingError;
+
+***‘column social_marketplace_designer.starting_price does not exist’***
+
+The above meant that either my migrations need to be ran again or, the fixtures aren’t loaded yet. Despite running several migrations the bug continued to persist. As a result the easiest option was to reset both my local and deployment databases. At that point I only had mock data so I could afford for the databases to be reset without lossing any valid or important data. I took the below steps to fix this issue:
+
+1. Reset local sqlite database by running this command: ***python3 manage.py flush***
+
+(I had to make sure that I was connected to the sqlite db before running this, so in my setting.py file I had to comment out the Heroku Postgres DATABASE URL link.) 
+
+2. Reset the Herok postgres database. To this I had to comment out the sqlite database in my settings.py file before running the steps below:
+
+![screenshot of commented out sqlite database](media/databse-comment-out.png)
+
+- I went to the Heroku app dashboard and clicked on 'Resources', then clicked on 'Heroku Postgres'
+
+- After clicking on 'Heroku Postgres' it opens in a new tab, then I went to 'Settings'
+
+- In 'Settings' I clciked on 'Reset Database', typed in app name when prompted and clciked 'Reset Database'
+
+![screenshot of heroku reset database](media/heroku-reset.png)
+
+After resetting, I had to return to my workspace and run migrations in my termial to recreate the database:
+
+1. First I signed into Heroku to make sure I was connected: ***heroku login -i ***
+
+2. After logging in I ran the following command in my termial: ***heroku run python3 manage.py migrate***
+
+3. Then I hade to create a new superuser: ***heroku run python3 manage.py createsuperuser***
+
+4. Complete - both local and deploymennt db have been reset 
+
+**Error with migrations:**
+
+When working with my previous customer model I kept receiving the below error in the terminal when running my migrations:
+
+***ValueError with migration: ValueError: Field 'id' expected a number but got 'username'***
+
+Reserving my migrations fixed the above issue, I took the below steps to do this;
+
+1. Reverse my migrations back to to 00001 by running this command in the terminal: ***python3 manage.py migrate social-marketplace 00001***
+
+2. Then I manually delete migrations files in my migrations.py folder, I deleted until file 00001
+
+3. Applied new migrations:
+- ***python3 manage.py makemigrations***
+- ***python3 manage.py migrate***
+
+## EXISTING BUGS
+
+- In Deployment, when viewing the 'Sign In' page on media screens below 500px, the 'sign in' button doesn't work 
+
+- In Deployment, when viewing the 'Sign Up' page on media screens below 580px, the 'sign up' button doesn't work
+
+---
+
+## DEPLOYMENT:
+
+The master branch of this repository has been used for the deployed version of this application.
+
+**Github and Gitpod:**
+
+To deploy my Django application, I had to use the <a href="https://github.com/Code-Institute-Org/gitpod-full-template" target="_blank">Code Institute Python Essentials Template</a> 
+
+Steps I followed to use this template:
+
+1. Click the Use This Template button.
+
+2. Add a repository name and brief description.
+
+3. Click the Create Repository from Template to create your repository.
+
+4. To create a Gitpod workspace you then need to click Gitpod, this can take a few minutes.
+
+5. When you want to work on the project it is best to open the workspace from Gitpod (rather than Github) as this will open your previous workspace rather than creating a new one. You should pin the workspace so that it isn't deleted.
+
+6. Committing your work should be done often and should have clear/explanatory messages, use the following commands to make your commits:
+
+- ***git add .***  - adds all modified files to a staging area
+- ***git commit -m "*** - lets you add a message explaining your commit": commits all changes to a local repository.
+- ***git push*** -  pushes all your committed changes to your Github repository.
+
+**Forking the GitHub Repository:**
+
+If you want to make changes to your repository without affecting it, you can make a copy of it by 'Forking' it. This ensures your original repository remains unchanged:
+
+1. Find the relevant GitHub repository
+
+2. In the top right corner of the page, click the Fork button (under your account)
+
+Your repository has now been 'Forked' and you have a copy to work on
+
+
+**Cloning the GitHub Repository:**
+
+Cloning your repository will allow you to download a local version of the repository to be worked on. Cloning can also be a great way to backup your work.
+
+1. Find the relevant GitHub repository
+
+2. Press the arrow on the Code button
+
+3. Copy the link that is shown in the drop-down
+
+4. Now open Gitpod & select the directory location where you would like the clone created
+
+5. In the terminal type 'git clone' & then paste the link you copied in GitHub
+
+6. Press enter and your local clone will be created.
+
+**Creating an Application with Heroku:**
+
+I followed the below steps using the Code Institute tutorial:
+
+The following command in the Gitpod CLI will create the relevant files needed for Heroku to install your project dependencies pip3 freeze --local > requirements.txt. Please note this file should be added to a .gitignore file to prevent the file from being committed. A Procfile is also required that specifies the commands that are executed by the app on startup.
+
+1. Go to Heroku.com and log in; if you do not already have an account then you will need to create one.
+
+2. Click the New dropdown and select Create New App
+
+3. Enter a name for your new project, all Heroku apps need to have a unique name, you will be prompted if you need to change it.
+
+4. Select the region you are working in.
+
+Heroku Settings You will need to set your Environment Variables - this is a key step to ensuring your application is deployed properly:
+
+- In the Settings tab, click on Reveal Config Vars and set the following variables:
+
+ SECRET_KEY - to be set to your chosen key
+
+ CLOUDINARY_URL - to be set to your Cloudinary API environment variable
+
+In the resources tab you must install 'Heroku Postgres’
+
+**Heroku Deployment In the Deploy tab:**
+
+1. Connect your Heroku account to your Github Repository following these steps:
+
+ - Click on the Deploy tab and choose Github-Connect to Github.
+ - Enter the GitHub repository name and click on Search.
+ - Choose the correct repository for your application and click on Connect.
+
+2. You can then choose to deploy the project manually or automatically, automatic deployment will generate a new application every time you push a change to Github, whereas manual deployment requires you to push the Deploy Branch button whenever you want a change made.
+
+3. Once you have chosen your deployment method and have clicked Deploy Branch your application will be built and you should see the below View button, click this to open your application.
+
+---
+
+## CREDITS:
+
+Throughout the process of building this application, I used various online resources to help me with a range of different things from fixing bugs, understand Django functionality and design features. They are as follows:
+
+Code Institute - for zoom animation on hero image 
+
+<a href="https://bootswatch.com/lux/" target="_blank">Bootswatch Lux</a> - for main design theme and UX
+
+<a href="https://getbootstrap.com/docs/4.0/examples/album/" target="_blank">Bootstrap Album template </a> - for discover designers gallery
+
+<a href="https://django-allauth.readthedocs.io/en/latest/installation.html" target="_blank">Django allauth </a> - for account managment and registration.
+
+<a href="https://ccbv.co.uk/" target="_blank">ccvv.co.uk</a> - for information on clased based view
+
+<a href="https://simpleisbetterthancomplex.com/2015/12/04/package-of-the-week-django-widget-tweaks.html" target="_blank">Simple is better than Complex, Django Widget Tweaks</a> - for information on django tweaks to edit forms.
+
+<a href="https://simpleisbetterthancomplex.com/tutorial/2016/07/22/how-to-extend-django-user-model.html" target="_blank">Simple is better than Complex, How to Extend Django User Model</a> - for further information on the Django User model and how to extend it.
+
+Dennis Ivy, <a href="https://www.youtube.com/watch?v=llbtoQTt4qw" target="_blank">Django To Do List App With User Registration & Login</a> - youtube video to show CRUD functionailty.
+
+Dennis Ivy, <a href="https://www.youtube.com/watch?v=VOddmV4Xl1g" target="_blank"> Model Form | Django</a> - youtube video to further show model form fucntionality
+
+Chuck Severance,<a href="https://www.youtube.com/watch?v=AQFC13D2mRM&t=4s" target="_blank">URL Routing in Django </a> - youtube video for understand URL routing in Django
+
+Lara code, <a href="https://www.youtube.com/watch?v=Ij1MCRk-d6c&list=PL9tgJISrBWc5619CclyqYrnnMkVOPzVYM" target="_blank">Django Instagram Code</a> - youtube video to show how to create an Instagram clone app in Django
+
+---
+
+## ACKNOWLEDGEMENTS:
+
+I’d like to give a massive thanks to my previous course mentor Felipe Souza Alacron for the guidance, support and feedback throughout the beginning of this project up until the middle of this project when he resigned from mentoring at the Code Institute. 
+
+I’d like to thank my new and current course mentor Jack for the support, guidance and feedback throughout the last part of this project, as well as sharing useful online resources. 
+
+I’d like to thank the Code Institute tutors who helped me fixed the bugs mentioned above.
+
+I’d like to thank my fellow peers Harry Dhillon, Daisy Gunn and Francesa for their support and feedback. 
+
+---
+
+## REFLECTIONS:
 
 
 ---
