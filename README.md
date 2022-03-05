@@ -1,8 +1,8 @@
-# Bridal Union
+# BRIDAL-UNION
 
-![BU multiple devices](media/multiple-devices.png)
+![BU multiple devices](media/screens.png)
 
-The live site can be found here (link)
+The live site can be found <a href="https://bridal-union.herokuapp.com/" target="_blank">here</a>
 
 This is a full-stack framework project built using Django, Python, HTML, CSS, BootStrap and JavaScript. This is a social media inspired application designed to connect freelance wedding dress designers with future brides-to-be. The user can explore a range of designers, like and comment on images posted by a designer, as well as create, edit and delete bookings with their designer of choice. 
 
@@ -35,57 +35,57 @@ Below are user story scenarios and how Bridal-Union intends to meet those needs.
 
 **As a wedding dress designer (admin user):**
 
-I can easily post any images of my work via the admin panel so that I can share and promote my work  to a wider audience.
+- I can easily post any images of my work via the admin panel so that I can share and promote my work  to a wider audience.
 
-I can log in to the admin panel so that I can access the site’s backend.
+- I can log in to the admin panel so that I can access the site’s backend.
 
-I can easily log out of the admin panel as needed.
+- I can easily log out of the admin panel as needed.
 
-Using the admin panel I can add important information to my profile such as location, starting price and biography so the user can easily view this information. 
+- Using the admin panel I can add important information to my profile such as location, starting price and biography so the user can easily view this information. 
 
-I can update my profile information via the admin panel to ensure my profile is always up-to-date.
+- I can update my profile information via the admin panel to ensure my profile is always up-to-date.
 
-I can use the admin panel to delete images I no longer wish to have displayed on site. 
+- I can use the admin panel to delete images I no longer wish to have displayed on site. 
 
-When uploading my images, I can add a description to provide context for the user via the admin panel. 
+- When uploading my images, I can add a description to provide context for the user via the admin panel. 
 
-I don’t have to worry about resizing any images prior to upload as the admin panel takes care of that for me.
+- I don’t have to worry about resizing any images prior to upload as the admin panel takes care of that for me.
 
-I can add hashtags to my images to help target my intended audience and help follow trends.
+- I can add hashtags to my images to help target my intended audience and help follow trends.
 
-In the admin panel, I can reply back to comments left on my posts so I can interact and engage with the end user. 
+- In the admin panel, I can reply back to comments left on my posts so I can interact and engage with the end user. 
 
-I can delete customer reviews if they are deemed bad via the admin panel. 
+- I can delete customer reviews if they are deemed bad via the admin panel. 
 
-I can confirm / decline customer booking if needed via the admin panel and the user will be notified of any changes.
+- I can confirm / decline customer booking if needed via the admin panel and the user will be notified of any changes.
 
 **As a bride-to-be (end user):**
 
-I easily can browse through the app to get inspiration for my wedding dress by viewing posts/images from different designers. 
+- I easily can browse through the app to get inspiration for my wedding dress by viewing posts/images from different designers. 
 
-I can view all images posted by a single designer by visiting their portfolio page. 
+- I can view all images posted by a single designer by visiting their portfolio page. 
 
-Using the navigation bar and links throughout the site, I can navigate easily throughout the different pages to view the desired content.
+- Using the navigation bar and links throughout the site, I can navigate easily throughout the different pages to view the desired content.
 
-I can view a designer’s profile to find out more information about their services and work by visiting their profile page.  
+- I can view a designer’s profile to find out more information about their services and work by visiting their profile page.  
 
-I can easily interact with the designer by liking and commenting on their posts.
+- I can easily interact with the designer by liking and commenting on their posts.
 
-I can connect with the designer by following them via the follow feature so I can keep up to date with them.
+- I can connect with the designer by following them via the follow feature so I can keep up to date with them.
 
-I can easily book an appointment with my designer of choice using the booking form. 
+- I can easily book an appointment with my designer of choice using the booking form. 
 
-I can easily create a customer account where I can manage and view my existing bookings. 
+- I can easily create a customer account where I can manage and view my existing bookings. 
 
-I can log into my account to cancel and/or reschedule a booking if needed.
+- I can log into my account to cancel and/or reschedule a booking if needed.
 
-If the designer has cancelled or rescheduled my booking, I will be notified.
+- If the designer has cancelled or rescheduled my booking, I will be notified.
 
-I can log into my account to update and edit my account information so that it is always up to date.
+- I can log into my account to update and edit my account information so that it is always up to date.
 
-I can easily log in and log out of my account as needed.
+- I can easily log in and log out of my account as needed.
 
-I have the options to delete my account if I no longer need it.
+- I have the options to delete my account if I no longer need it.
 
 ------
 
@@ -169,9 +169,127 @@ I wanted to keep the design clean, minimal and modern to allow emphasis and focu
 
 Header tags: Nunito Sans provided by Bootswatch Lux theme 
 
-Paragraph tags:  Raleway from Font Awesome 
+Paragraph tags:  Raleway from Font Awesome
+
+**Color:**
+
+Again, minimalistic is the theme throughout in oder to give emphasis to the images. Therefore the colour scheme is kept neutral  Black, White and Grey.
+
+![color palette](media/colour%20pallete.png)
+
+**Responsiveness:**
+
+To allow for seam free navigation between the pages and for the images to adjust proportionately on various mobile screens, I’ve used a mix of Bootstrap classes and image elements, Bootswatch buttons, cards and navigation bar to enable this.
+
+I’ve also used custom CSS and media queries to change certain page layouts when viewed on smaller and larger devices - login/logout and create account all have the same css structure. 
+
+**Visual effects:**
+
+The previous plan when designing the front end was to include gentle animation and visual effects to compliment certain features as well as provide more visual pleasure for the user. However, due to time constraints, there is only one animation feature (hero image on the landing page) in this current version. 
+
+**Wireframes:**
+
+The wireframes were used as a guide for the UX and front-end design, as a result the website differs from the wireframes, however the flow and logic are representative in the live site. The design features in the wireframes were also done before finding Bootswatch Lux theme, therefore some features on the wireframes are not included in this version. 
+
+You can view the wireframes <a href="https://www.figma.com/file/kvbIiuHdZFGnj4ih7hIqC6/Bridal-Union-Wireframes" target="_blank">here</a>
 
 ---
+
+## CURRENT FEATURES:
+
+**Home page:**
+
+When the user opens the app, this is the first page they will see therefore I used a strong hero image to capture the attention of the viewer. A zoom effect has also been applied to the hero image to visually excite the user.
+This page has been kept simple in terms of design as it’s more of an introductory page to the app, to help with this a short tag line has been used to tell the user what this app is intended for. 
+
+The first main page where BU intends to take the user is the ‘discover designers’ page (more information below), to allow for this I have included a large call-to-action button (underneath the tag line) which links to the ‘discover designer’ page so the user can intuitively and quickly navigate to the next page. The button design is from Bootswatch Lux Theme.
+
+![discover deisgners button](media/discover-designer-btn.png)
+
+**Discover Designers page:**
+
+As mentioned above, this is one of the main pages of the app. This page is where the social media inspired elements comes to play where the user can scroll through to view posts by different designers (like they would if they were on Instagram). The image posts includes the name of the designer so they user can see who it was posted by. The user can also click on the designer’s name at the tope of image which will take the user to the ‘designer profile’ page where the user can see more images and information on the designer. Other features on the image posts also include date posted, hashtags, ‘comment’ and ‘like’. 
+
+For the ‘comment’ and ‘like’ features, only logged in users are able to ‘like’ and leave a ‘comment’ on the posts. However please note that due to time constraints the ‘like’ and ‘comment’ features are not currently working in this version. 
+
+![discover deisgners page](media/discover_designers_(iPhone%2012%20Pro).png)
+
+**Designer Profile page:**
+
+Together with the ‘discover designer’ page, this is another main page where the user can find out more information about the designer. This page displays the designer’s; biography so the user can find out about the designer’s background and way of working, the designer’s location and starting price so the user can see where the designer is based and if their prices are suitable for them, all of the designer’s posts are also displayed in this page so the user can view all their work in one place. 
+
+All of the information mentioned is to help the user feel like they can make an informed decision as to booking this designer in. To encourage this action, the booking button has been placed at the top of the page making it convenient and easy for the user to click on. 
+
+Another feature of the this page is the ‘Reviews’ section which is at the bottom of the page. This section is to also provide more helpful information to the user to help them decide whether they want to boom this designer in or not. Also, logged in users are able to leave a review. However due to time constraints, this feature has not been completed for this version so a placeholder section has been used in the meantime.  
+
+![designer profile page](media/designer_profile_1_.png)
+
+
+**Booking page:**
+
+This page is where the designer can make a booking with their designer of choice using a simple booking form. To make a booking a user will have to be logged in. The booking form will take in important information such as the users name, designer’s name, date of wedding, date and time picker as well as a message box. This form is kept simple so that the user can have a nice and easy experience
+
+Please kindly note that due to time constraints the booking form is currently not connected to the backend so the user is not currently able to make any bookings. 
+
+![booking form](media/booking_.png)
+
+**Create Account page:**
+
+A user can create an account easily and quickly if they haven’t already done so. A user will need to create an account if they wish to make bookings and access other features of the site. 
+
+The functionality and validations of this template are from Django alltuh with applied custom CSS, Bootstrap and Bootswatch elements for styling.
+
+**Log in and Log out page:**
+
+To access all features such as making a booking, ‘like’ and ‘commenting’ in images and ‘following’ a designer, the user will have to be logged in. A logged in user can also sign out easily.
+
+The functionality and validations of these pages are from Django alltuh with applied custom CSS, Bootstrap and Bootswatch elements for styling.
+
+**Customer Account page:**
+
+This page is where the user can manage all of their booking and account information. Here the user can view any existing bookings they have made. The bookings are currently displayed on card which are provided by Bootswatch Lux theme. The booking cards show the name of the designer, the time and date of their booking. The booking cards also show ‘cancel’ and ‘edit’ links to allow the user to manage their booking as needed. The user also has the option to update their account details, delete their account or log out from their account. 
+
+Please note that due to time constraints, this page is currently static and is not yet connected to the back end to access functionality. 
+
+**Navigation bar:**
+
+The Navbar is provided Bootswatch Lux theme. Its design is minimal and modern and it provides smooth and easy navigation for the user from page to page and across various screen sizes. 
+
+On desktop screen the nav bar displays across the width of the top of the screen and all of the links in the nav bar are displayed evenly across the screen allowing the user to see each link clearly. The name of the app ‘Bridal Union’ is also displayed clearly in the left side of the nav bar, which when clicked on can take the user back to the home page from whatever page they are on.
+
+![nav bar](media/nav-bar.png)
+
+On small screen devices, the nav bar then collapses to hamburger icon. When clicked on, the nav links drop down on a white background and push’s the page’s content down allowing the user to clearly view the links that are listed. This allows for better UX experience and improves accessibility.
+
+![hamburger nav bar](media/hamburger-nav-bar.png)
+
+When the user is signed in, the ‘log out’ and ‘customer account’ links will be displayed in the nav bar. 
+When the user is signed out, the ‘sign in’ and  ‘create account’ links will be displayed in the nav bar. This allows for more intuitive and easy navigation for the user. 
+
+**Footer:**
+
+The footer is kept simple and is located at the usual place (at the bottom of the pages) to allow easy navigation and accessibility for the user. At the moment, the footer only has one social media link that when clicked on, the link opens up in a new tab in the browser so that the user can easily jump between the social media tab and the web site app easily to improve their user experience. 
+
+![footer](media/footer.png)
+
+**Zoom out effect:**
+
+The hero image on the landing page as custom CSS animation to enhance user experience.
+
+**Buttons:**
+
+All buttons are provided by Bootswatch lux theme. 
+
+‘Discover Designers’ buttons - takes the user to the discover designer’s page
+
+‘Book Appointment’ button - allows the user to book an appointment with the designer and redirects them to the booking page
+
+**Image posts:**
+
+These are images posted by the designer. I used <a href="https://getbootstrap.com/docs/4.0/examples/album/" target="_blank">Bootstrap's Album</a>  example as a template to hold the images, I then customised it to the better suite the aesthetic of the app.
+
+![discover designers image posts](media/discover_designers_album.png)
+
 
 ---
 
