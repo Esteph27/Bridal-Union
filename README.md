@@ -212,7 +212,7 @@ As mentioned above, this is one of the main pages of the app. This page is where
 
 For the ‘comment’ and ‘like’ features, only logged in users are able to ‘like’ and leave a ‘comment’ on the posts. However please note that due to time constraints the ‘like’ and ‘comment’ features are not currently working in this version. 
 
-![discover deisgners page](media/discover_designers_(iPhone%2012%20Pro).png)
+![discover deisgners page](media/discover_designers_small.png)
 
 **Designer Profile page:**
 
