@@ -580,10 +580,33 @@ I’d like to thank my fellow peers Harry Dhillon, Daisy Gunn and Francesa for t
 
 ## REFLECTIONS:
 
+The current release of Bridal Union is not as it’s tended to be, there are many features which have been left out due to time limitations (which have already been mentioned above). I started out this project not fully understanding Django and as a result, I’ve wasted previous development time trying to learn Django and so my approach to designing the back end in particular, I feel has been quite naive in some respects and I certainly over complicated things along the way. However this project has been a big learning curve and there are many things that now understanding Django better, I would approach differently, below are a few of those changes:
+
+**App Design:**
+
+At the moment, the current app structure is quite weighty as all of the core functionality is held in one app. If I were to do this again, I would have separated Bridal Union into four main apps for better maintainability and efficiency:
+
+1. Social - social media functionality 
+
+2. Bookings - booking functionality 
+
+3. Portfolio - designer portfolio display 
+
+4. Django alltuh - registration and account management
+
+
+**Model Planning:**
+
+I had pre planned my models by building Entity Relationship Diagrams, however I underestimated how much time pre planning is involved when designing database structures. As a result, I took a lot of development time trying to understand the relationship and functionality of the Models. In future, I would dedicate much more time in pre planning my models and database to avoid eating into development time. 
+
+**Views:**
+
+One of the biggest challenges I faced was trying to understand the logic behind Django class based views, as a result pages like my Customer Account and Booking page are not connected to the backend or my models yet. I took a lot of time out of developing watching YouTube videos and reading various online resources in attempt to learn the logic, however I found the classed based views still abstract. Therefore I wish I started with function based views from the very beginning so that I could have a better understanding of the logic behind class based views.
+
+
 
 ---
 
----
 
 
 
