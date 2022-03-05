@@ -231,7 +231,7 @@ This page is where the designer can make a booking with their designer of choice
 
 Please kindly note that due to time constraints the booking form is currently not connected to the backend so the user is not currently able to make any bookings. 
 
-![booking form](media/booking_.png)
+![booking form](media/booking_small.png)
 
 **Create Account page:**
 
@@ -290,8 +290,82 @@ These are images posted by the designer. I used <a href="https://getbootstrap.co
 
 ![discover designers image posts](media/discover_designers_album.png)
 
+## FEATURES LEFT TO IMPLEMENT:
+
+Due to time constraints, the following features have not yet been implemented to this version of the app. 
+
+**About page:**
+
+The about page will provide more detail and information to the user about Bridal Union and how it can be used 
+
+**Profile Handle:**
+
+This would be added to the designer profile. All profile pages on Instagram have a handle which is used a short introductory tag and allows the user to have a quick understanding of what they are about. 
+
+**Portfolio page:**
+At the moment, the designer profile page displays all the post which have been posted by that one designer. The more images a designer posts, the less likely the user will take notice of the designer’s biography and other important information. With this in mind, I had an idea to have a new page called the ‘portfolio’ page where the users can view all of the work by one designer in a single place where the images are displayed in a professional way and in much larger scales, like they would in a physical portfolio. This would enhance the user’s experience and promote of the work of the designer better.
+
+**Follow feature:**
+
+This would be featured on the designer profile page. 
+
+**Like and Comment:**
+
+As explained previously, these features are displayed on the image posts but are not yet fully working. 
+
+**Reviews:**
+
+As explained previously, this feature is displayed at the bottom of the ‘designer profile’ page. 
+
+**Booking Form:**
+
+The form is currently static and not yet connected to the back end.
+
+**Booking management on Customer Account page:**
+
+The user is supposed to be able to create, edit and delete bookings as needed however the logic and functionality has not been implemented. 
+
+**Notifications:**
+
+I planned for modals to appear throughout the site to tell the user when an action has been completed or when an error has been made, however the functionality has not yet been impelemented. 
 
 ---
+
+## TECHNOLOGIES USED:
+
+Front end languages  - HTML, CSS, JavaScript
+
+Back end languages - Python3
+
+<a href="https://www.djangoproject.com/" target="_blank">Django</a> - the selected framework that has been used to build this project. 
+
+<a href="https://django-allauth.readthedocs.io/en/latest/installation.html" target="_blank">Django allauth </a> - used for the user account managment and registration.
+
+<a href="https://www.heroku.com/postgres" target="_blank">Heroku PostgreSQL</a> - used in deployment to store the data for the models.
+
+<a href="https://cloudinary.com/" target="_blank">Cloudianry</a> - use to store all of the static files and images.
+
+<a href="https://getbootstrap.com/" target="_blank">BootStrap</a> - used for creating responsive design.
+
+<a href="https://bootswatch.com/lux/" target="_blank">Bootswatch Lux theme</a> - used for the main deign theme and UX.
+
+<a href="https://fonts.google.com/" target="_blank">Google Fonts</a> - used to for Raleway font which is used for the paragraph tags throughout the site.
+
+<a href="https://favicon.io/" target="_blank">Favicon.io</a> - used to create favicon's for Birdal-Union.
+
+<a href="https://www.figma.com/?fuid=" target="_blank">Figma</a> - for wireframe building.
+
+<a href="https://developer.chrome.com/docs/devtools/" target="_blank">Google Dev Tools</a> - used for fixing any CSS issues, finding bugs and testing responsiveness across the project.
+
+<a href="https://github.com/" target="_blank">Git</a> - used for version control by utilising the Gitpod terminal to commit to Git and Push to GitHub.
+
+<a href="https://git-scm.com/" target="_blank">Github</a> - used to store code for the project after being pushed.
+
+<a href="https://www.gitpod.io/" target="_blank">Gitpod</a> - used as the development environment.
+
+<a href="https://id.heroku.com/login" target="_blank">Heroku</a> - selected platform to deploy this project 
+
+
 
 ---
 
