@@ -222,7 +222,7 @@ All of the information mentioned is to help the user feel like they can make an 
 
 Another feature of the this page is the ‘Reviews’ section which is at the bottom of the page. This section is to also provide more helpful information to the user to help them decide whether they want to boom this designer in or not. Also, logged in users are able to leave a review. However due to time constraints, this feature has not been completed for this version so a placeholder section has been used in the meantime.  
 
-![designer profile page](media/designer_profile_1_.png)
+![designer profile page](media/designer_profile_1_small.png)
 
 
 **Booking page:**
