@@ -2,12 +2,11 @@
 
 ![BU multiple devices](media/screens.png)
 
-The live site can be found <a href="https://bridal-union.herokuapp.com/" target="_blank">here</a>
-
 This is a full-stack framework project built using Django, Python, HTML, CSS, BootStrap and JavaScript. This is a social media inspired application designed to connect freelance wedding dress designers with future brides-to-be. The user can explore a range of designers, like and comment on images posted by a designer, as well as create, edit and delete bookings with their designer of choice. 
 
 This project has been built on GitHub workspaces and deployed on Heroku. This project was built for educational purposes. 
 
+The live site can be found <a href="https://bridal-union.herokuapp.com/" target="_blank">here</a>
 
 ## UX
 
@@ -289,6 +288,10 @@ All buttons are provided by Bootswatch lux theme.
 These are images posted by the designer. I used <a href="https://getbootstrap.com/docs/4.0/examples/album/" target="_blank">Bootstrap's Album</a>  example as a template to hold the images, I then customised it to the better suite the aesthetic of the app.
 
 ![discover designers image posts](media/discover_designers_album.png)
+
+**Favicon:**
+
+A custom favicon displays on the top left corner of the website tab so the user can clearly identify Bridal-Union amongst the other tabs the user might have open. This is also improves the overall UX.
 
 ## FEATURES LEFT TO IMPLEMENT:
 
