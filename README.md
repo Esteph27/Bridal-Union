@@ -16,13 +16,13 @@ The first steps for structuring the UX were to outline the user’s needs collec
 
 When thinking of the user needs separately: for a future bride, wedding dress hunting can often be time-consuming and overwhelming, therefore the UX intends to take that away by offering something that is clean, focused as well as intuitive. We can also assume that this user will most likely be using their mobile phones more frequently than desktops screens (especially as a busy bride planning her wedding, most of the time looking for dresses are done on the commute to work). Therefore, responsivity and navigation are integral to the design and flow of the site. I have used the Bootstrap grid system, a selection of <a href="https://getbootstrap.com/" target="_blank">Bootstrap elements</a>, <a href="https://bootswatch.com/lux/" target="_blank">Bootswatch Lux</a> theme elements and custom CSS to allow for this. 
 
-For the designer, promoting their work can also be challenging and time-consuming, to target this, the UX intends to promote their work in an elegant, interactive and efficient way. With this in mind, the focal point throughout the site are the images posted by the designers, therefore the UX was designed to act as a canvas to host these images in a responsive and eye catching way. To allow for this, I have used a Bootswatch Lux theme as the main theme for the site, <a href="https://getbootstrap.com/docs/4.0/examples/album/" target="_blank">Bootstrap album </a> elements as well as custom CSS.
+For the designer, promoting their work can also be challenging and time-consuming, to target this, the UX intends to promote their work in an elegant, interactive and efficient way. With this in mind, the focal point throughout the site are the images posted by the designers, therefore the responsiveness of the images is very important. To allow for this I have used Bootstrap elements, Bootstrap Album example together with custom CSS so that the images can be viewed seamlessly across different screen sizes without visualising impairing them and allowing for better UX. In addition, the UX has to enables the user to intuitively navigate through out the site to view the relevant designer information with less clicks, to target this I have used call to action buttons in convenient places for the user to click on. 
 
 ------
 
 ## USERS
 
-As outlined previously, there are two main users for Bridal-Union are:
+As outlined previously, there are two main users for Bridal-Union:
 
 **User 1** - A freelance wedding dress designer who is looking to promote their work, get client bookings and sell their services whilst expanding their clientele. 
 
@@ -30,7 +30,7 @@ As outlined previously, there are two main users for Bridal-Union are:
 
 **User stories:**
 
-Below are user story scenarios and how Bridal-Union intends to meet those needs.
+Below are user story scenarios and how Bridal-Union intends to meet those needs:
 
 **As a wedding dress designer (admin user):**
 
@@ -90,7 +90,7 @@ Below are user story scenarios and how Bridal-Union intends to meet those needs.
 
 ## SCOPE
 
-In order to achieve the desired user’s needs and business goals, the following features have been considered. However, kindly note that the full scope has not been met due to time constraints, please visit ‘Features left to implement’ below to see the features which have not been included in this current version of Bridal Studios. 
+In order to achieve the desired user’s needs and business goals, the following features have been considered. However, kindly note that the full scope has not been met due to time constraints, please visit ‘Features left to implement’ below to see the features which have not been included in this current version of Bridal-Union. 
 
 - Responsive navigation that will link to various pages throughout the site, collapse when viewed on specific screen sizes to allow for seam free navigation across all screen sizes.
 
@@ -122,17 +122,17 @@ In order to achieve the desired user’s needs and business goals, the following
 
 For this current release, Birdal-Union is made up of two main apps:
 
-social_marketplace - main functionality 
+- social_marketplace - main functionality including bookings and social media actions
 
-Djngo alltuh - registration and account management
+- Django Allauth - user registration and account management
 
 **Database:**
 
 It was advised to use cloud based databases given Heroku’s ephemeral file system, so the below have been used for this project:
 
-For data storage - <a href="https://www.heroku.com/postgres" target="_blank">Heroku’s add-on PostgreSQL</a>
+- For data storage - <a href="https://www.heroku.com/postgres" target="_blank">Heroku’s add-on PostgreSQL</a>
 
-For image storage - <a href="https://cloudinary.com/" target="_blank">Cloudinary</a>
+- For image storage - <a href="https://cloudinary.com/" target="_blank">Cloudinary</a>
 
 **Django Models:**
 
@@ -140,47 +140,53 @@ To achieve the current functionality, the social_marketplace app requires 4 main
 
 **Django User model:**
 
-I used <a href="https://docs.djangoproject.com/en/4.0/ref/contrib/auth/" target="_blank">Django’s built in User model</a> as is to handle all the user information. 
+I used <a href="https://docs.djangoproject.com/en/4.0/ref/contrib/auth/" target="_blank">Django’s built in User model</a> to handle all the user account information. 
 
 **Designer model:**
 
 Contains information about the designer such as name, location, starting price and biography. This information is needed to build out the designer profile page. Each designer uses Django’s pre assigned id’s and this is used to target the designer to render the relative designer information on the designer profile page. There is also a date joined field provided which is not currently displayed on site, its intention is more for potential future administrative use. 
 
-**Imageposts model:**
+**ImagePosts model:**
 
-This model contains image information, number of likes and handles image upload and resizing. For the front end, each image that is posted displays the name of designer, date posted, number of likes, image description and hashtags for the end user’s information. For backend admin users, this models enables the admin to handle the status of the post by selecting either ‘draft’ or ‘posted’. The admin can also add or delete as many images as they desire. 
+This model contains image information, number of likes and handles image upload and resizing. For the front end, each image that is posted displays the name of designer, date posted, number of likes, image description and hashtags for the end user’s information. For backend admin users, this models enables the admin to handle the status of the post by selecting either ‘draft’ or ‘posted’. It also handels image resizing through Cloudinary's URL transformation so the admin can upload instantly without having to rescale or crop their images in any particular way. The admin can also add or delete as many images as they desire. 
 
-This model has a Foreign Key relationship to the Designer model so that an image can be access by the designer it was posted by (as well as its image id (again, default by Django)).
+This model has a Foreign Key relationship to the Designer model so that an image can be access by the designer it was posted by (as well as its image id (again, default id by Django)).
+
+Please note that due to time limitations the 'likes' function has not been connected to the front end therefore the user is currently unable to 'like' an image post.
 
 **ImageComments model:**
 
-This models is to display and handle comments left by the end user on posts. Comments are subject to approval by the admin user and can be rejected if deemed bad. This model has a Foreign key relationship with ImagePosts in the ‘post’ field to ensure all respective comments are deleted in the event of an image post being deleted.
+This models is to displays and handles comments left by the end user on posts. Comments are subject to approval by the admin user and can be rejected if deemed bad. This model has a Foreign key relationship with ImagePosts in the ‘post’ field to ensure all respective comments are deleted in the event of an image post being deleted.
+
+Pease note that due to time limitaions, this model has not been connected to the front end therefore the user is currently unable to leave any comments.
 
 **Booking model:**
 
 This model displays and handles the booking information needed for the booking form. A booking can only between one end user and one designer at a time, as a result this model has a One to One relationship with the Django built in User model and a Foreign Key relationship with the Designer Model, as well as a unique booking ref. Bookings are also subject to approval by the admin user which they can manage on the back end.
 
+Pease note that due to time limitaions, this model has not been connected to the front end therefore the user is currently unable to make a booking.
+
 ## STRUCTURE / FRONT END 
 
-I wanted to keep the design clean, minimal and modern to allow emphasis and focus on the imagery posted by the designers.  As mentioned previously, the main theme for this site is provided by <a href="https://bootswatch.com/lux/" target="_blank">Bootswatch Lux</a> theme which allows to do just that. 
+I wanted to keep the design clean, minimal and modern to allow emphasis and focus on the imagery posted by the designers. The main design theme for this site is provided by <a href="https://bootswatch.com/lux/" target="_blank">Bootswatch Lux</a> theme which allows to do just that. 
 
 **Fonts:**
 
-Header tags: Nunito Sans provided by Bootswatch Lux theme 
+Header tags: Nunito Sans provided theme <a href="https://bootswatch.com/lux/" target="_blank">Bootswatch Lux theme</a> 
 
-Paragraph tags:  Raleway from Font Awesome
+Paragraph tags:  Raleway from <a href="https://fonts.google.com/" target="_blank">Google Fonts</a>
 
 **Color:**
 
-Again, minimalistic is the theme throughout in oder to give emphasis to the images. Therefore the colour scheme is kept neutral  Black, White and Grey.
+Again, minimalistic a main design component throughout Bridal-Union, in oder to give emphasis to the images. Therefore the colour scheme is kept neutral and simple with Black, White and Grey as the core color palette.
 
 ![color palette](media/colour%20pallete.png)
 
 **Responsiveness:**
 
-To allow for seam free navigation between the pages and for the images to adjust proportionately on various mobile screens, I’ve used a mix of Bootstrap classes and image elements, Bootswatch buttons, cards and navigation bar to enable this.
+To allow for seam free navigation between the pages and for the images to adjust proportionately on various screen devices, I’ve used a mix of Bootstrap classes and image elements, Bootswatch buttons, cards and navigation bar to enable this.
 
-I’ve also used custom CSS and media queries to change certain page layouts when viewed on smaller and larger devices - login/logout and create account all have the same css structure. 
+I’ve also used custom CSS and media queries to allow for this. 
 
 **Visual effects:**
 
@@ -188,7 +194,7 @@ The previous plan when designing the front end was to include gentle animation a
 
 **Wireframes:**
 
-The wireframes were used as a guide for the UX and front-end design, as a result the website differs from the wireframes, however the flow and logic are representative in the live site. The design features in the wireframes were also done before finding Bootswatch Lux theme, therefore some features on the wireframes are not included in this version. 
+The wireframes were used as a guide for the UX and front-end design, as a result the website differs from the wireframes, however the flow and logic are representative in the live site. The design features in the wireframes were also created before finding Bootswatch Lux theme, therefore some features in the wireframes are not included in this version. 
 
 You can view the wireframes <a href="https://www.figma.com/file/kvbIiuHdZFGnj4ih7hIqC6/Bridal-Union-Wireframes" target="_blank">here</a>
 
@@ -198,7 +204,7 @@ You can view the wireframes <a href="https://www.figma.com/file/kvbIiuHdZFGnj4ih
 
 **Home page:**
 
-When the user opens the app, this is the first page they will see therefore I used a strong hero image to capture the attention of the viewer. A zoom effect has also been applied to the hero image to visually excite the user.
+When the user opens the app, this is the first page they will see therefore I used a strong hero image to capture the attention of the user. A zoom effect has also been applied to the hero image to visually excite the user.
 This page has been kept simple in terms of design as it’s more of an introductory page to the app, to help with this a short tag line has been used to tell the user what this app is intended for. 
 
 The first main page where BU intends to take the user is the ‘discover designers’ page (more information below), to allow for this I have included a large call-to-action button (underneath the tag line) which links to the ‘discover designer’ page so the user can intuitively and quickly navigate to the next page. The button design is from Bootswatch Lux Theme.
@@ -228,7 +234,7 @@ Another feature of the this page is the ‘Reviews’ section which is at the bo
 
 This page is where the designer can make a booking with their designer of choice using a simple booking form. To make a booking a user will have to be logged in. The booking form will take in important information such as the users name, designer’s name, date of wedding, date and time picker as well as a message box. This form is kept simple so that the user can have a nice and easy experience
 
-Please kindly note that due to time constraints the booking form is currently not connected to the backend so the user is not currently able to make any bookings. 
+Please kindly note that due to time constraints the booking form is currently not connected to the backend so the user is currently unable to make any bookings. 
 
 ![booking form](media/booking_small.png)
 
@@ -308,13 +314,13 @@ This would be added to the designer profile. All profile pages on Instagram have
 **Portfolio page:**
 At the moment, the designer profile page displays all the post which have been posted by that one designer. The more images a designer posts, the less likely the user will take notice of the designer’s biography and other important information. With this in mind, I had an idea to have a new page called the ‘portfolio’ page where the users can view all of the work by one designer in a single place where the images are displayed in a professional way and in much larger scales, like they would in a physical portfolio. This would enhance the user’s experience and promote of the work of the designer better.
 
-**Follow feature:**
+**'Follow' feature:**
 
 This would be featured on the designer profile page. 
 
-**Like and Comment:**
+**'Like' and 'Comment':**
 
-As explained previously, these features are displayed on the image posts but are not yet fully working. 
+As explained previously, these features are currently displayed on the image posts but are not yet working. 
 
 **Reviews:**
 
@@ -382,13 +388,16 @@ Due to time constraints, no tests have been carried out for this version of Brid
 
 During the initial deployment stages on Heroku, the favicon failed to load. The below steps fixed the problem:
 
-- I removed DISBALE_STATIC FILES from my config vars in Heroku. At the time of initial deployment, this was only a temporary variable as I did not have any static files at the time.
+1. I removed DISBALE_STATIC FILES from my config vars in Heroku.
+
+(This was only a temporary variable to set up the initial deployment on Heroku as I did not have any static files at the time. I shortly added my static files so there was no need to readd this back to my config vars).
+
 
 **Failed to load static files in deployment:**
 
-The below changes fixed the above:
+The file path was incorrect, the below changes fixed the above:
 
-- File path was incorrect, I removed the forward slash '/' in file path:
+1. I removed the forward slash '/' in file path:
 
 ![screenshot of css file path](media/css-file-path.png)
 
@@ -408,23 +417,23 @@ The above meant that either my migrations need to be ran again or, the fixtures 
 
 ![screenshot of commented out sqlite database](media/databse-comment-out.png)
 
-- I went to the Heroku app dashboard and clicked on 'Resources', then clicked on 'Heroku Postgres'
+3. I went to the Heroku app dashboard and clicked on 'Resources', then clicked on 'Heroku Postgres'
 
-- After clicking on 'Heroku Postgres' it opens in a new tab, then I went to 'Settings'
+4. After clicking on 'Heroku Postgres' it opens in a new tab, then I went to 'Settings'
 
-- In 'Settings' I clciked on 'Reset Database', typed in app name when prompted and clciked 'Reset Database'
+5. In 'Settings' I clciked on 'Reset Database', typed in app name when prompted and clciked 'Reset Database'
 
 ![screenshot of heroku reset database](media/heroku-reset.png)
 
-After resetting, I had to return to my workspace and run migrations in my termial to recreate the database:
+6. After resetting, I had to return to my workspace and run migrations in my termial to recreate the database:
 
-1. First I signed into Heroku to make sure I was connected: ***heroku login -i ***
+7. First I signed into Heroku to make sure I was connected: ***heroku login -i ***
 
-2. After logging in I ran the following command in my termial: ***heroku run python3 manage.py migrate***
+8. After logging in I ran the following command in my termial: ***heroku run python3 manage.py migrate***
 
-3. Then I hade to create a new superuser: ***heroku run python3 manage.py createsuperuser***
+9. Then I hade to create a new superuser: ***heroku run python3 manage.py createsuperuser***
 
-4. Complete - both local and deploymennt db have been reset 
+10. Complete - both local and deploymennt db have been reset 
 
 **Error with migrations:**
 
@@ -456,7 +465,7 @@ The master branch of this repository has been used for the deployed version of t
 
 **Github and Gitpod:**
 
-To deploy my Django application, I had to use the <a href="https://github.com/Code-Institute-Org/gitpod-full-template" target="_blank">Code Institute Python Essentials Template</a> 
+To deploy my Django application I to use the <a href="https://github.com/Code-Institute-Org/gitpod-full-template" target="_blank">Code Institute Python Essentials Template</a> 
 
 Steps I followed to use this template:
 
@@ -507,7 +516,7 @@ Cloning your repository will allow you to download a local version of the reposi
 
 I followed the below steps using the Code Institute tutorial:
 
-The following command in the Gitpod CLI will create the relevant files needed for Heroku to install your project dependencies pip3 freeze --local > requirements.txt. Please note this file should be added to a .gitignore file to prevent the file from being committed. A Procfile is also required that specifies the commands that are executed by the app on startup.
+- The following command in the Gitpod CLI will create the relevant files needed for Heroku to install your project dependencies: ***pip3 freeze --local > requirements.txt***. Please note this file should be added to a .gitignore file to prevent the file from being committed. A Procfile is also required that specifies the commands that are executed by the app on startup.
 
 1. Go to Heroku.com and log in; if you do not already have an account then you will need to create one.
 
@@ -583,7 +592,7 @@ I’d like to thank my fellow peers Harry Dhillon, Daisy Gunn and Francesa for t
 
 ## REFLECTIONS:
 
-The current release of Bridal Union is not as it’s tended to be, there are many features which have been left out due to time limitations (which have already been mentioned above). I started out this project not fully understanding Django and as a result, I’ve wasted previous development time trying to learn Django and so my approach to designing the back end in particular, I feel has been quite naive in some respects and I certainly over complicated things along the way. However this project has been a big learning curve and there are many things that now understanding Django better, I would approach differently, below are a few of those changes:
+The current release of Bridal Union is not as it’s tended to be, there are many features which have been left out due to time limitations (which have already been mentioned above). I started out this project not fully understanding Django and as a result, I’ve spent vital development time trying to learn Django along the way. As a result my approach to designing the back end in particular, I feel has been quite naive in some respects and I certainly over complicated things along the way due to lack of organisation and understanding of logic. However this project has been a **big** learning curve and there are many things that now understanding Django better, I would approach differently, below are a few of those changes:
 
 **App Design:**
 
@@ -600,13 +609,11 @@ At the moment, the current app structure is quite weighty as all of the core fun
 
 **Model Planning:**
 
-I had pre planned my models by building Entity Relationship Diagrams, however I underestimated how much time pre planning is involved when designing database structures. As a result, I took a lot of development time trying to understand the relationship and functionality of the Models. In future, I would dedicate much more time in pre planning my models and database to avoid eating into development time. 
+I had pre planned my models by building Entity Relationship Diagrams, however I underestimated how much time pre planning is involved when designing database structures. Also, with my limited understanding of Django at the start of this project, when it came to building my models there was a lot of stop, start, deleting and updating fields which caused various delays in development and most likely contributed to the migration errors mentioned above. In future, I would dedicate much more time in pre planning my database’s structures and relationships so that their functionalities are clearly defined from the start for better organisation and development. 
 
 **Views:**
 
-One of the biggest challenges I faced was trying to understand the logic behind Django class based views, as a result pages like my Customer Account and Booking page are not connected to the backend or my models yet. I took a lot of time out of developing watching YouTube videos and reading various online resources in attempt to learn the logic, however I found the classed based views still abstract. Therefore I wish I started with function based views from the very beginning so that I could have a better understanding of the logic behind class based views.
-
-
+One of the biggest challenges I faced was trying to understand the logic behind Django class based views, as a result pages like my Customer Account and Booking page are not connected to the backend. I took a lot of time out of developing watching YouTube videos and reading various online resources to learn and better understand the logic and and inheritance of class based views, however I found classed based views quite abstract and hard to fully comprehend. In future I would start off with function based views so that I could have a better understanding of the logic needed which would then allow me to fully grasp the functionalities of class based views. 
 
 ---
 
