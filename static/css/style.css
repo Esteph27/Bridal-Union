@@ -37,31 +37,42 @@ p {
 
 /* -------------------------------> footer */ 
 
-#footer-container {
-    /* background-color: #F7F7F9; */
-	height: 120px;
+footer {
+    background-color: black;
+	height: auto;
 	width: 100vw;
-	margin-top: 10%;
-	color: #808080;
+	margin-top: 8rem;
+	color: white;
 	position: static;
+	text-align: right;
 }
 
-#footer-container span {
-	margin-left: 5%;
-	margin-top: 5%;
+footer h1 {
+	font-size: 50px;
+	font-weight: lighter;
+	color: white;
+	padding-top: 2rem;
+	padding-bottom: 1rem;
+	padding-right: 1rem;
 }
 
-.social-links {
-	margin-right: 1%;
+footer p {
+	margin-top: 8px;
+	margin-bottom: 2px;
+	padding-right: 1rem;
 }
 
-.social-links a {
+footer a {
+	color: white;
+	margin-top: 8px;
+	margin-bottom: 2px;
+	padding-right: 1rem;
 	text-decoration: none;
-	color: #808080;
 }
 
-.social-links a:hover {
-	color: black;
+footer a:hover {
+	text-decoration: underline;
+	color: white;
 }
 
 /* -------------------------------> index.html */ 
