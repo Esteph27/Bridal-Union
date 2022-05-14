@@ -22,7 +22,6 @@ p {
 }
 
 
-
 /* -------------------------------> navbar */ 
 
 .navbar  {
@@ -37,12 +36,14 @@ p {
 
 
 /* -------------------------------> footer */ 
+#footer-container {
+	margin-top: 10rem;
+}
 
 footer {
     background-color: black;
 	height: auto;
 	width: 100vw;
-	margin-top: 8rem;
 	color: white;
 	position: static;
 	text-align: right;
@@ -112,29 +113,29 @@ footer a:hover {
 	padding: 0;
 }
 
-#tag-line {
+.text-container {
 	margin-top: 10%;
 	margin-bottom: 10%;
 	text-align: center;
 }
 
-#tag-line p {
+.text-container p {
 	padding-left: 10%;
 	padding-right: 10%;
 	font-size: 18px;
 }
 
 .button-container {
-	margin-top: 10%;
-	margin-bottom: 10%;
+	margin-top: 2rem;
+	margin-bottom: 5rem;
 }
 
 .button-container a {
 	color: white;
 	text-decoration: none;
 	letter-spacing: 2px;
+	padding: 2rem;
 }
-
 
 .button-container a:hover {
 	text-decoration: underline;
@@ -367,6 +368,7 @@ footer a:hover {
 
 	#hero-outer-container {
 		height: 80vw;
+		margin-bottom: 4rem;
 	}
 	
 	#hero-image {
@@ -379,8 +381,27 @@ footer a:hover {
 		width: 50vw
 	}
 
-	#tag-line p {
+	.text-container {
+		margin-top: 4rem;
+		margin-bottom: 2rem;
+	}
+
+	.text-container p {
 		font-size: 22px;
+	}
+
+	.button-container {
+		margin-top: 4rem;
+		margin-bottom: 9rem;
+	}
+
+	.button-container a {
+		padding: 5rem;
+	}
+
+	/*  -------------> footer*/
+	#footer-container {
+		margin-top: 15rem;
 	}
 
 	/*  -------------> designer_profile.html */
