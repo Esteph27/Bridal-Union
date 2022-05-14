@@ -22,6 +22,7 @@ p {
 }
 
 
+
 /* -------------------------------> navbar */ 
 
 .navbar  {
@@ -78,13 +79,16 @@ footer a:hover {
 /* -------------------------------> index.html */ 
 
 #hero-outer-container {
-	height: 150vw;
 	width: 100vw;
 	overflow: hidden;
 }
 
 #hero-image {
-	background-color: #C6C6C7;
+	/* background-color: #C6C6C7; */
+	background-image: url('https://res.cloudinary.com/dllwurooy/image/fetch/https://res.cloudinary.com/dllwurooy/image/upload/v1644340472/birdal-union/duo-chen-s-unsplash_mvembb.jpg');
+	background-position: 10% 90%;
+	background-repeat: no-repeat;
+	background-size: cover;
 	height: 150vw;
 	width: 100vw;
 
@@ -111,13 +115,13 @@ footer a:hover {
 #tag-line {
 	margin-top: 10%;
 	margin-bottom: 10%;
+	text-align: center;
 }
 
 #tag-line p {
-	text-align: center;
 	padding-left: 10%;
 	padding-right: 10%;
-	font-size: 22px;
+	font-size: 18px;
 }
 
 .button-container {
@@ -129,6 +133,21 @@ footer a:hover {
 	color: white;
 	text-decoration: none;
 	letter-spacing: 2px;
+}
+
+
+.button-container a:hover {
+	text-decoration: underline;
+	color: white;
+}
+
+#img-intro-section {
+	background-image: url('https://res.cloudinary.com/dllwurooy/image/upload/v1644340477/birdal-union/charisse-kenion-69epvVgm0Ws-unsplash_d3bgvn.jpg');
+	background-position: 10% 90%;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 80vw;
+	width: 100vw;
 }
 
 
@@ -293,15 +312,6 @@ footer a:hover {
 	opacity: 0.7;
 }
 
-/* #bottom-image-container {
-	margin-top: 10%;
-	margin-bottom: 10%;
-	width: 100vw;
-}
-
-#bottom-image-container img {
-	opacity: 0.9;
-} */
 
 /* -------------------------------> customer_account.html */ 
 
@@ -353,8 +363,24 @@ footer a:hover {
 /* Large devices (laptops/desktops, 992px and up) */
 @media screen and (min-width: 992px) {
 
+	/*  -------------> index.html */
+
+	#hero-outer-container {
+		height: 80vw;
+	}
+	
+	#hero-image {
+		height: 80vw;
+		background-position: 50% 50%;
+	}
+
+	#img-intro-section {
+		height: 50vw;
+		width: 50vw
+	}
+
 	#tag-line p {
-		font-size: 35px;
+		font-size: 22px;
 	}
 
 	/*  -------------> designer_profile.html */

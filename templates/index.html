@@ -4,14 +4,20 @@
 
 <!--hero image-->
 <section id="hero-outer-container" class="container-fluid">
-    <div id="hero-image">
-        <img src="https://res.cloudinary.com/dllwurooy/image/fetch/https://res.cloudinary.com/dllwurooy/image/upload/v1644340472/birdal-union/duo-chen-s-unsplash_mvembb.jpg" class="img-fluid">
-    </div>
+    <div id="hero-image"></div>
 </section>
 
  <!--tag line -->
 <div id="tag-line" class="container-fluid">
-    <p>Connecting you and the Designer for your Big day.</p>
+    <div class="row">
+        <div class="col-md-12">
+            <P>Looking for a Bespoke wedding dress but unsure where to start? Look no further.
+                <br>
+                <br>
+                Discover our range of talented designers, explore their work and book them in. 
+            </P>
+        </div>
+    </div>
 </div>
 
 <!-- button from bootswatch lux theme -->
@@ -20,6 +26,28 @@
         <a href="{% url 'discover_designers' %}">Discover Our Designers</a>
     </button>
 </div>
+
+ <!--short intro sectio -->
+ <div class="container">
+     <div class="row">
+         <div class="col mt-5" id="img-intro-section"></div>
+     </div>
+     <div class="row">
+         <div class="col-12" id="tag-line">
+             <p>
+                 Wondering what we do?
+                 <br>
+                 Find out more about us and and how we can help you.
+             </p>
+         </div>
+         <div class="col-12 button-container d-flex justify-content-center">
+            <button type="button" class="btn btn-primary btn-lg">
+                <a href="#">About Us</a>
+            </button>
+        </div>
+     </div>
+ </div>
+
 
 
 {% endblock %}
