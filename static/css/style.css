@@ -125,6 +125,15 @@ footer a:hover {
 	font-size: 18px;
 }
 
+.text-container a {
+	text-decoration: none;
+}
+
+.text-container a:hover {
+	text-decoration: underline;
+}
+
+
 .button-container {
 	margin-top: 2rem;
 	margin-bottom: 5rem;
@@ -151,7 +160,45 @@ footer a:hover {
 	width: 100vw;
 }
 
+/* -------------------------------> about.html */
 
+.container-overflow {
+	overflow: hidden;
+}
+
+#about-img-1 {
+	background-image: url('https://res.cloudinary.com/dllwurooy/image/upload/v1644340473/birdal-union/joanna-unsplash_bykogt.jpg');
+	background-position: 10% 90%;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 100vw;
+	width: 100vw;
+
+	/* animates zoom effect on loading page */
+    animation-name: hero-zoom;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+}
+
+.text-over-img {
+	padding: 16rem 2rem 1rem;
+}
+
+.text-over-img p {
+	color: white;
+	text-align: left;
+	font: 16px;
+}
+
+/* level of zoom */
+@keyframes hero-zoom {
+    from{
+        transform: scale(1);
+    }
+    to{
+        transform: scale(1.1);
+    }
+}
 
 /* -------------------------------> discover_designers.html */ 
 

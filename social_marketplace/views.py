@@ -10,15 +10,23 @@ from .models import Designer, ImagePosts
 
 class ViewHome(TemplateView):
     '''
-    render index template
+    render index page
     '''
 
     template_name = 'index.html'
 
 
+class ViewAbout(TemplateView):
+    '''
+    render About page
+    '''
+
+    template_name = 'about.html'
+
+
 class ViewDiscoverDesigners(ListView):
     '''
-    render discover designers template
+    render discover designers page
     '''
 
     model = ImagePosts
@@ -28,7 +36,7 @@ class ViewDiscoverDesigners(ListView):
 
 class ViewDesigner(DetailView):
     '''
-    render designer profile template and populate with designer model info
+    render designer profile page and populate with designer model info
     '''
 
     model = Designer
@@ -43,7 +51,7 @@ class ViewDesigner(DetailView):
 
 
 class ViewCustomerAccount(TemplateView):
-    '''render customer account template'''
+    '''render customer account page'''
 
     template_name = 'customer_account.html'
 
