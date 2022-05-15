@@ -85,7 +85,7 @@ footer a:hover {
 }
 
 #hero-image {
-	/* background-color: #C6C6C7; */
+	background-color: #C6C6C7;
 	background-image: url('https://res.cloudinary.com/dllwurooy/image/fetch/https://res.cloudinary.com/dllwurooy/image/upload/v1644340472/birdal-union/duo-chen-s-unsplash_mvembb.jpg');
 	background-position: 10% 90%;
 	background-repeat: no-repeat;
@@ -107,6 +107,17 @@ footer a:hover {
     to{
         transform: scale(1.1);
     }
+}
+
+
+#img-login-section {
+	background-color: #C6C6C7;
+	background-image: url('https://res.cloudinary.com/dllwurooy/image/upload/v1644340471/birdal-union/pexels-oliver-jpg_fkhhbi.jpg');
+	background-position: 10% 90%;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 150vw;
+	width: 100vw;
 }
 
 .container-fluid {
@@ -180,14 +191,30 @@ footer a:hover {
     animation-fill-mode: forwards;
 }
 
-.text-over-img {
-	padding: 16rem 2rem 1rem;
+#about-img-2 {
+	background-image: url('https://res.cloudinary.com/dllwurooy/image/upload/v1644340478/birdal-union/taylor-heery--_tUHvw09jY-unsplash_y2h4by.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 150vw;
+	width: 100vw;
+}
+
+#about-img-3 {
+	background-image: url('https://res.cloudinary.com/dllwurooy/image/upload/v1644340470/birdal-union/feli-ramsanjami-agung-wUe_Q-t4-cI-unsplash_ntwt96.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 150vw;
+	width: 100vw;
 }
 
 .text-over-img p {
 	color: white;
 	text-align: left;
 	font: 16px;
+	position: absolute;
+	bottom: 0;
+	padding-bottom: 1rem;
+	padding-left: 2rem;
 }
 
 /* level of zoom */
@@ -425,7 +452,11 @@ footer a:hover {
 
 	#img-intro-section {
 		height: 50vw;
-		width: 50vw
+		width: 50vw;
+	}
+
+	#img-login-section {
+		height: 50vw;
 	}
 
 	.text-container {
@@ -445,6 +476,32 @@ footer a:hover {
 	.button-container a {
 		padding: 5rem;
 	}
+
+	/*  -------------> about */
+	#about-img-1 {
+		height: 45vw;
+		background-position: 50%;
+	}
+
+	#about-img-2 {
+		height: 80vw;
+		background-position: 80% 20%;
+	}
+
+	#about-img-3 {
+		height: 80vw;
+		background-position: 20% 80%;
+	}
+
+	.text-over-img {
+		font-size: 28px;
+	}
+
+	.text-over-img p {
+		padding-bottom: 3rem;
+		padding-left: 5rem;
+	}
+	
 
 	/*  -------------> footer*/
 	#footer-container {

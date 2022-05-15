@@ -2,64 +2,67 @@
 
 {% block content %}
 
+ <!-- header -->
 <div class="container-fluid container-overflow">
     <div class="row">
         <div id="about-img-1" class="col text-over-img">
-            <p>We're here to connect you to a range of talented designers, all in one place. Here's how we started….</p>
+            <p>How it began...</p>
         </div>
     </div>
 </div>
 
+<!-- about section -->
 <div class="container">
     <div class="row">
         <div class="col text-container">
             <h1>About Us</h1>
         </div>
-    </div>
-    <div class="row">
         <div class="col-12 text-container">
             <p>intro section</p>
         </div>
     </div>
 </div>
 
-
+<!-- how it works section -->
 <div class="container">
     <div class="row">
-        <div class="col text-container">
-            <h1>How it works</h1>
-        </div>
+        <div id="about-img-2" class="col"></div>
     </div>
     <div class="row">
+        <div class="col-12 text-container">
+            <h1>How it works</h1>
+        </div>
         <div class="col-12 text-container">
             <p>how it works section</p>
         </div>
     </div>
 </div>
 
+<!-- Our Designer section -->
 <div class="container">
     <div class="row">
-        <div class="col text-container">
+        <div class="col-12 text-container">
             <h1>Our Designers</h1>
         </div>
-    </div>
-    <div class="row">
         <div class="col-12 text-container">
             <p>Out Designers section</p>
         </div>
     </div>
 </div>
 
+<!-- Join the Union -->
 <div class="container">
     <div class="row">
-        <div class="col text-container">
-            <h1>Join the Union</h1>
-        </div>
+        <div id="about-img-3" class="col"></div>
     </div>
     <div class="row">
         <div class="col-12 text-container">
+            <h1>Join the Union</h1>
+        </div>
+        <div class="col-12 text-container">
             <p>
-                Whether your a future bride-to-be, maid of honour or simply looking for wedding inspiration, create your Birdal account and never miss out
+                Whether you're a future bride-to-be, or simply looking for inspiration, 
+                sign up with us and be part of the Union.
             </p>
         </div>
         <div class="col-12 button-container d-flex justify-content-center">
@@ -70,7 +73,8 @@
     </div>
 </div>
 
-<div class="container">
+<!-- back home link -->
+<div class="container mt-2">
     <div class="row">
         <div class="col text-container">
             <a href="{% url 'home' %}">Back Home</a>
