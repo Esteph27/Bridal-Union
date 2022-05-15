@@ -5,20 +5,31 @@
  <!-- header -->
 <div class="container-fluid container-overflow">
     <div class="row">
-        <div id="about-img-1" class="col text-over-img">
-            <p>How it began...</p>
-        </div>
+        <div id="about-img-1" class="col"></div>
     </div>
 </div>
 
 <!-- about section -->
 <div class="container">
     <div class="row">
-        <div class="col text-container">
+        <div class="col-12 text-container-about">
             <h1>About Us</h1>
-        </div>
-        <div class="col-12 text-container">
-            <p>intro section</p>
+            <p>
+                Bridal Union was created by the lack of guidance there is around searching for bespoke wedding dresses.
+                There are an amazing array of boutiques where one could buy off-the-rail or something semi-bespoke (which of
+                course is a great option), however, what if you're looking something completely unique? Something that no one else has?
+                Something that is tailored to your every inch and need. Apart from spending ours online on google search, where else do
+                you find a designer to do this for you? Where do you even being? <i>Here's where we come in.</i>  
+                <br>
+                <br>
+                Here at Bridal Union, we bring the designers to you. We have teamed up with only the most talented proffesionals within
+                the industry to be part of our exclusive union. You can browse through a range of designers, flick through their work and
+                even book your first consultation with them, all in one place at the palm of your hand.
+                <br>
+                <br>
+                Our mission is to connect you with the right designer. We believe there is no journey quite like getting a custom made dress,
+                especially the dress for your big day. This decision is incredibly important and we're here to guide you every step of the way. 
+            </p>
         </div>
     </div>
 </div>
@@ -29,11 +40,23 @@
         <div id="about-img-2" class="col"></div>
     </div>
     <div class="row">
-        <div class="col-12 text-container">
+        <div class="col-12 text-container-about">
             <h1>How it works</h1>
-        </div>
-        <div class="col-12 text-container">
-            <p>how it works section</p>
+            <p>
+                We believe connection is important so we have designed our platform with a connection-first approach. Everything starts at our
+                <a href="{% url 'discover_designers'%}"><i>Discover Designers</i></a> page where you can scroll through images posted by our designers. These are images of their work which they
+                have done for previous brides. It's a place where they can share their works and show off their aesthetics - think instagram meet
+                designer portfolio where you can also like and comment on their posts. 
+                <br>
+                <br>
+                If you really really like what you seen, then you can head over to their profile (by clicking on their name on the top left corner of the image).
+                On their profile page you can read about the designer, find out who they are, how they work, what their starting price is, view more of
+                their work, and most importantly, book your first consultation with them.
+                <br>
+                <br>
+                To book a consultation you will have to be logged in, or <a href="{% url 'account_signup' %}"><i>create an account</i></a> if you don't already have one. Once your account is created
+                (or  you're logged in) you can manage your bookings by going to your user account. 
+            </p>
         </div>
     </div>
 </div>
@@ -41,11 +64,24 @@
 <!-- Our Designer section -->
 <div class="container">
     <div class="row">
-        <div class="col-12 text-container">
+        <div class="col-12 text-container-about">
             <h1>Our Designers</h1>
-        </div>
-        <div class="col-12 text-container">
-            <p>Out Designers section</p>
+            <p>
+                As part of our mission, we are dedicated to finding the best talent and professionals within the industry to provide you with the premium
+                service you would expected from getting something bespoke, especially your wedding dress. 
+                <br>
+                <br>
+                All of our Designers are dedicated to perfection with a commitment to their craft. They all implement some of the best techniques within
+                the industry to bestow the most perfect creation for you. The majority of them have their own in-house studio and work with only the best
+                fabrics sourced from England and Europe. 
+                <br>
+                <br>
+                They're all experienced and well-established individuals all of which bring something completely unique to the table. Each with their own
+                aesthetic, they are here to make your dream dress come to life, and they're only one click away. Find the designer for you. 
+                <br>
+                <br>
+                <a href="{% url 'discover_designers'%}"><p>Discover Designers</p></a> 
+            </p>
         </div>
     </div>
 </div>
@@ -56,19 +92,17 @@
         <div id="about-img-3" class="col"></div>
     </div>
     <div class="row">
-        <div class="col-12 text-container">
+        <div class="col-12 text-container-about mt-5">
             <h1>Join the Union</h1>
-        </div>
-        <div class="col-12 text-container">
             <p>
                 Whether you're a future bride-to-be, or simply looking for inspiration, 
                 sign up with us and be part of the Union.
             </p>
-        </div>
-        <div class="col-12 button-container d-flex justify-content-center">
-            <button type="button" class="btn btn-primary">
-                <a href="{% url 'account_signup' %}">Sign up</a>
-            </button>
+            <div class="col-12 button-container d-flex justify-content-center">
+                <button type="button" class="btn btn-primary">
+                    <a href="{% url 'account_signup' %}">Sign up</a>
+                </button>
+            </div>
         </div>
     </div>
 </div>

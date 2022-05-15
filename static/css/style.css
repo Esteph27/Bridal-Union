@@ -110,7 +110,7 @@ footer a:hover {
 }
 
 
-#img-login-section {
+#index-img-1 {
 	background-color: #C6C6C7;
 	background-image: url('https://res.cloudinary.com/dllwurooy/image/upload/v1644340471/birdal-union/pexels-oliver-jpg_fkhhbi.jpg');
 	background-position: 10% 90%;
@@ -118,7 +118,18 @@ footer a:hover {
 	background-size: cover;
 	height: 150vw;
 	width: 100vw;
+	margin-bottom: 2rem;
 }
+
+#index-img-2 {
+	background-image: url('https://res.cloudinary.com/dllwurooy/image/upload/v1644340477/birdal-union/charisse-kenion-69epvVgm0Ws-unsplash_d3bgvn.jpg');
+	background-position: 10% 90%;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 80vw;
+	width: 100vw;
+}
+
 
 .container-fluid {
 	padding: 0;
@@ -162,15 +173,6 @@ footer a:hover {
 	color: white;
 }
 
-#img-intro-section {
-	background-image: url('https://res.cloudinary.com/dllwurooy/image/upload/v1644340477/birdal-union/charisse-kenion-69epvVgm0Ws-unsplash_d3bgvn.jpg');
-	background-position: 10% 90%;
-	background-repeat: no-repeat;
-	background-size: cover;
-	height: 80vw;
-	width: 100vw;
-}
-
 /* -------------------------------> about.html */
 
 .container-overflow {
@@ -179,10 +181,10 @@ footer a:hover {
 
 #about-img-1 {
 	background-image: url('https://res.cloudinary.com/dllwurooy/image/upload/v1644340473/birdal-union/joanna-unsplash_bykogt.jpg');
-	background-position: 10% 90%;
+	background-position: 50%;
 	background-repeat: no-repeat;
 	background-size: cover;
-	height: 100vw;
+	height: 150vw;
 	width: 100vw;
 
 	/* animates zoom effect on loading page */
@@ -207,16 +209,6 @@ footer a:hover {
 	width: 100vw;
 }
 
-.text-over-img p {
-	color: white;
-	text-align: left;
-	font: 16px;
-	position: absolute;
-	bottom: 0;
-	padding-bottom: 1rem;
-	padding-left: 2rem;
-}
-
 /* level of zoom */
 @keyframes hero-zoom {
     from{
@@ -225,6 +217,30 @@ footer a:hover {
     to{
         transform: scale(1.1);
     }
+}
+
+.text-container-about {
+	margin-top: 10%;
+	margin-bottom: 10%;
+	text-align: center;
+}
+
+.text-container-about h1 {
+	padding-bottom: 1rem;
+}
+
+.text-container-about p {
+	padding-left: 1rem;
+	padding-right: 1rem;
+	font-size: 16px;
+}
+
+.text-container-about a {
+	text-decoration: none;
+}
+
+.text-container-about a:hover {
+	text-decoration: underline;
 }
 
 /* -------------------------------> discover_designers.html */ 
@@ -450,13 +466,14 @@ footer a:hover {
 		background-position: 50% 50%;
 	}
 
-	#img-intro-section {
+	#index-img-1 {
 		height: 50vw;
-		width: 50vw;
 	}
 
-	#img-login-section {
+	#index-img-2 {
 		height: 50vw;
+		width: 50vw;
+		margin-bottom: 4rem;
 	}
 
 	.text-container {
@@ -490,16 +507,14 @@ footer a:hover {
 
 	#about-img-3 {
 		height: 80vw;
+		margin-bottom: 5rem;
 		background-position: 20% 80%;
 	}
 
-	.text-over-img {
-		font-size: 28px;
-	}
-
-	.text-over-img p {
-		padding-bottom: 3rem;
+	.text-container-about p {
 		padding-left: 5rem;
+		padding-right: 5rem;
+		font-size: 18px;
 	}
 	
 
