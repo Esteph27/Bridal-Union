@@ -86,4 +86,4 @@ class ImageComments(models.Model):
         ordering = ["-created_on"]
 
     def __str__(self):
-        return f"Comment from {self.name}"
+        return f"Comment from {self.user}"
