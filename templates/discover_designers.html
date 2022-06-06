@@ -13,27 +13,30 @@
         <div class="row">
 
           {% for image in image_posts %}
-          <div class="col-md-4">
-            <div class="card mb-4">
-              <a href="{% url 'view_designer_profile' image.designer.pk %}">
-                <h5>{{ image.designer }}</h5>
-                <img class="card-img-top" src="{{ image.image.url }}">
-              </a>
-              <div class="card-body">
-                <div class="d-flex justify-content-between align-items-center">
-                  <div class="justify-content-start">
-                    <small class="text-muted">{{ image.date_posted|date:"d M Y" }}</small>
+            <div class="col-md-4">
+              <div class="card mb-4">
+                <a href="{% url 'view_designer_profile' image.designer.pk %}">
+                  <h5>{{ image.designer }}</h5>
+                  <img class="card-img-top" src="{{ image.image.url }}">
+                </a>
+                <div class="card-body">
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="justify-content-start">
+                      <small class="text-muted">{{ image.date_posted|date:"d M Y" }}</small>
+                    </div>
+                    <div class="justify-content-end">
+                      <small class="text-muted">
+                        Link to leave comment
+                        <a href="{% url 'imagepost_detail' post.slug %}"></a>
+                      </small>
+                      <small class="text-muted"><i class="fa-solid fa-heart"></i>{{ image.number_of_likes }}</small>
+                    </div>
                   </div>
-                  <div class="justify-content-end">
-                    <small class="text-muted">Comment</small>
-                    <small class="text-muted">likes</small>
-                  </div>
+                  <p class="card-text">{{ image.image_description }}</p>
+                  <p class="card-text">{{ image.hashtags }}</p>
                 </div>
-                <p class="card-text">{{ image.image_description }}</p>
-                <p class="card-text">{{ image.hashtags }}</p>
               </div>
             </div>
-          </div>
           {% endfor %}
 
         </div>

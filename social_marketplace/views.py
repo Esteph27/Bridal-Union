@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
+from django.views import generic, View
 from django.contrib.auth.models import User
 
 from django.views.generic import (
@@ -24,19 +25,48 @@ class ViewAbout(TemplateView):
     template_name = 'about.html'
 
 
-class ViewDiscoverDesigners(ListView):
+class ViewDiscoverDesigners(generic.ListView):
     '''
-    render discover designers page
+    render discover designers page.
+    shows all posts posted by designers via the admin
     '''
 
     model = ImagePosts
     context_object_name = 'image_posts'
+    queryset = ImagePosts.objects.filter(status=1).order_by('-date_posted')
     template_name = 'discover_designers.html'
+
+
+class ImagePostDetail(View):
+    '''
+    shows a specific post's details
+    '''
+
+    def get(self, request, slug, *args, **kwargs):
+        ''' get posts' details '''
+
+        queryset = ImagePosts.objects.filter(status=1)
+        post = get_object_or_404(queryset, slug=slug)
+        comments = post.comments.filter(approved=True).order_by("-created_on")
+        liked = False
+        if post.likes.filter(id=self.request.user.id).exists():
+            liked = True
+
+        return render(
+            request,
+            "imagepost_detail.html",
+            {
+                "post": post,
+                "comments": comments,
+                "liked": liked
+            },
+        )
 
 
 class ViewDesigner(DetailView):
     '''
-    render designer profile page and populate with designer model info
+    render a specific designer profile page
+    and populate with designer model info
     '''
 
     model = Designer
@@ -48,6 +78,8 @@ class ViewDesigner(DetailView):
         context["images"] = images
 
         return context
+
+
 
 
 class ViewCustomerAccount(TemplateView):

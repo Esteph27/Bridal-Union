@@ -38,6 +38,7 @@ class ImagePosts(models.Model):
             'gravity': 'center', 'height': 1000, 'width': 1000, 'crop': 'fit'},
         )
     image_name = models.CharField(max_length=30, default='name of image')
+    slug = models.SlugField(max_length=200, unique=True, null=True, blank=True,)
     image_description = models.TextField(null=True, blank=True)
     hashtags = models.CharField(max_length=300, null=True, blank=True)
     date_posted = models.DateTimeField(auto_now=True)
