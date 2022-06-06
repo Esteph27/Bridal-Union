@@ -3,7 +3,7 @@
 {% block content %}
 
 <div class="container-fluid title-container">
-    <h1>Discover thier works...</h1>
+    <h1>{{ image_post.image_name }}</h1>
 </div>
 
 
@@ -11,7 +11,15 @@
     <div class="row">
         <div class="col">
 
-     
+            {{ image_post.image_description }}
+
+            {{ Image_post.date_posted }}
+
+            {% with comments.count as total_comments %}
+            <strong class="text-secondary"><i class="far fa-comments"></i>
+                <!-- Our total_comments variable goes before the closing strong tag -->
+                {{ total_comments }}</strong>
+            {% endwith %}
 
         </div>
     </div>

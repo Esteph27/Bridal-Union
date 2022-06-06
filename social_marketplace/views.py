@@ -46,17 +46,17 @@ class ImagePostDetail(View):
         ''' get posts' details '''
 
         queryset = ImagePosts.objects.filter(status=1)
-        post = get_object_or_404(queryset, slug=slug)
-        comments = post.comments.filter(approved=True).order_by("-created_on")
+        image_post = get_object_or_404(queryset, slug=slug)
+        comments = image_post.comments.filter(approved=True).order_by("-created_on")
         liked = False
-        if post.likes.filter(id=self.request.user.id).exists():
+        if image_post.likes.filter(id=self.request.user.id).exists():
             liked = True
 
         return render(
             request,
             "imagepost_detail.html",
             {
-                "post": post,
+                "image_post": image_post,
                 "comments": comments,
                 "liked": liked
             },

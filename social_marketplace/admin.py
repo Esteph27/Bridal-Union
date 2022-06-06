@@ -9,6 +9,7 @@ class ImagePostsAdmin(admin.ModelAdmin):
 
     list_display = ('image_name', 'date_posted', 'designer')
     list_filter = ('status', 'date_posted')
+    prepopulated_fields = {'slug': ('image_name',)}
     search_fields = ('image_name', 'date_posted')
 
 

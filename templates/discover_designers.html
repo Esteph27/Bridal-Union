@@ -26,8 +26,7 @@
                     </div>
                     <div class="justify-content-end">
                       <small class="text-muted">
-                        Link to leave comment
-                        <a href="{% url 'imagepost_detail' post.slug %}"></a>
+                        <a href="{% url 'imagepost_detail' image.slug %}">Link to leave comment</a>
                       </small>
                       <small class="text-muted"><i class="fa-solid fa-heart"></i>{{ image.number_of_likes }}</small>
                     </div>
