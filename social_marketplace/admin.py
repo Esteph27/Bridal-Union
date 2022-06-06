@@ -5,6 +5,3 @@ from .models import *
 admin.site.register(Designer)
 admin.site.register(ImagePosts)
 admin.site.register(ImageComments)
-admin.site.register(Booking)
-
-# admin.site.register(CustomerAccount)

@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.contrib.auth.models import User
 
 from django.views.generic import (
-    TemplateView, ListView, DetailView, CreateView, FormView
+    TemplateView, ListView, DetailView, CreateView
     )
 
 from .models import Designer, ImagePosts
@@ -55,11 +55,3 @@ class ViewCustomerAccount(TemplateView):
 
     template_name = 'customer_account.html'
 
-
-# ------------ CLASS VIEWS LEFT TO DO
-
-
-class ViewBooking(TemplateView):
-    '''booking form'''
-
-    template_name = 'booking.html'

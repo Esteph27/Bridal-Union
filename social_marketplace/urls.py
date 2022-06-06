@@ -12,5 +12,4 @@ urlpatterns = [
     path('discover_designers/', views.ViewDiscoverDesigners.as_view(), name='discover_designers'),
     path('designer_profile/<pk>/', views.ViewDesigner.as_view(), name='view_designer_profile'),
     path('customer_account/', views.ViewCustomerAccount.as_view(), name='view_account'),
-    path('booking/', views.ViewBooking.as_view(), name='view_booking'),
 ]
