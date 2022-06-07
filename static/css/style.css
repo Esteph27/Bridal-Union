@@ -259,7 +259,6 @@ footer a:hover {
 	vertical-align: middle;
 }
 
-
 .card {
 	border: none;
 }
@@ -268,10 +267,36 @@ footer a:hover {
 	font-size: 14px;
 }
 
+.card .card-footer {
+	background-color: transparent;
+}
+
+.card .card-footer p {
+	font-size: 12px;
+}
+
+
 .card a {
 	text-decoration: none;
 }
 
+
+/* -------------------------------> imagepost_detail.html */
+
+.container-cetner {
+	text-align: center;
+}
+
+.push-to-center {
+	margin: 0 auto;
+}
+.comments {
+	text-align: left;
+}
+
+#back-btn {
+	padding-left: 0.5rem;
+}
 
 /* -------------------------------> designer_profile.html */ 
 
