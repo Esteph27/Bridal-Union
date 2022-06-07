@@ -37,8 +37,8 @@ class ImagePosts(models.Model):
         transformation={
             'gravity': 'center', 'height': 1000, 'width': 1000, 'crop': 'fit'},
         )
-    image_name = models.CharField(max_length=30, default='name of image')
-    slug = models.SlugField(max_length=200, unique=True, null=True, blank=True,)
+    image_name = models.CharField(max_length=200, unique=True, default='name of image')
+    slug = models.SlugField(max_length=200, unique=True, default='name of image')
     image_description = models.TextField(null=True, blank=True)
     hashtags = models.CharField(max_length=300, null=True, blank=True)
     date_posted = models.DateTimeField(auto_now=True)
@@ -76,9 +76,10 @@ class ImageComments(models.Model):
     approved = models.BooleanField(default=False)
 
     # related field
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(
+        User, on_delete=models.CASCADE, null=True, blank=True)
     post = models.ForeignKey(
-        ImagePosts, on_delete=models.CASCADE, related_name="comments")
+        ImagePosts, on_delete=models.CASCADE, related_name="comments", null=True, blank=True)
 
     class Meta:
         '''

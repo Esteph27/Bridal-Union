@@ -1,6 +1,9 @@
 {% extends 'base.html' %}
 
 {% block content %}
+
+{% load crispy_forms_tags %}
+
 <div class="container-fluid">
     <button onclick="history.back()" class="btn" id="back-btn">
         <small>
@@ -36,7 +39,7 @@
             </div>
         </div>
     </div>
-     <!-- comments -->
+    <!-- comments -->
     <div class="row container-cetner">
         <div class="col-md-5 push-to-center">
             {% for comment in comments %}
@@ -52,6 +55,44 @@
                     </div>
                 </div>
             {% endfor %}
+        </div>
+    </div>
+    <!-- ccomment form -->
+    <div class="row container-cetner">
+        <div class="col-md-5 push-to-center">
+            <div class="card-body comments">
+                {% if commented %}
+                <div>
+                    <p>Thank you for your comment.
+                        <br>
+                        <br>
+                        Your comment is awaiting approval.
+                    </p>
+                </div>
+                {% else %}
+                    {% if user.is_authenticated %}
+                        <h3>Leave a comment</h3>
+                        <p>Posting as: {{ user.username }}</p>
+                        <form method="POST">
+                            {{ comment_form | crispy }}
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </form>
+                        {% else %}
+                        <div class="text-center mt-5">
+                            <hr>
+                            <h4 class="mt-4 mb-4">Join the conversation?</h4>
+                            <p class="mb-4">Create an account with us to leave a comment.</p>
+
+                            <button type="button" class="btn btn-primary">
+                                <a href="{% url 'account_signup' %}"><i>Sign Up</i></a>
+                            </button>
+
+                            <p class="mt-4"></i><a href="{% url 'account_login' %}"><i>Or, Log Back In</i></a></p>
+                        </div>
+                    {% endif %}
+                {% endif %}
+            </div>
         </div>
     </div>
 </div>

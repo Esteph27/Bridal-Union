@@ -15,6 +15,10 @@ h1, h2, h3 {
 	font-weight: 500;
 }
 
+h4 {
+	font-weight: 400;
+}
+
 
 p {
     font-family: Raleway;
@@ -290,8 +294,24 @@ footer a:hover {
 .push-to-center {
 	margin: 0 auto;
 }
+
 .comments {
 	text-align: left;
+	font-family: Raleway;
+	font-weight: 400;
+}
+
+.comments button a {
+	color: white;
+	text-decoration: none;
+}
+
+.comments a {
+	text-decoration: none;
+}
+
+.comments a:hover {
+	text-decoration: underline;
 }
 
 #back-btn {
