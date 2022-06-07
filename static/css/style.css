@@ -314,7 +314,11 @@ footer a:hover {
 	text-decoration: underline;
 }
 
-#back-btn {
+.btn-like i {
+	padding-right: 0.5rem;
+}
+
+#back-link {
 	padding-left: 0.5rem;
 }
 

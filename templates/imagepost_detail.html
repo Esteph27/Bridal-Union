@@ -5,12 +5,10 @@
 {% load crispy_forms_tags %}
 
 <div class="container-fluid">
-    <button onclick="history.back()" class="btn" id="back-btn">
-        <small>
-            <i class="fa-solid fa-chevron-left"></i>
-            Back
-        </small>
-    </button>
+    <small id="back-link">
+        <i class="fa-solid fa-chevron-left"></i>
+        <a href="{% url 'discover_designers' %}">Back</a>
+    </small>
     <div class="row container-cetner">
         <div class="col-md-5 push-to-center">
             <!-- image post detail -->
@@ -19,10 +17,30 @@
                 <div class="card-body">
                     <div class="d-flex justify-content-between align-items-center">
                         <div class="justify-content-start">
-                          <small class="text-muted">{{ image_post.date_posted|date:"d M Y" }}</small>
+                          <small class="text-muted">
+                              {{ image_post.date_posted|date:"d M Y" }}
+                            </small>
                         </div>
                         <div class="justify-content-end">
-                          <small class="text-muted"><i class="fa-solid fa-heart"></i>{{ image_post.number_of_likes }}</small>
+                          <small class="text-muted">
+                              {% if user.is_authenticated %}
+                                <form class="d-inline" action="{% url 'imagepost_like' image_post.slug %}" method="POST">
+                                    {% csrf_token %}
+                                    {% if liked %}
+                                        <button type="submit" name="image_post_id" value="{{image_post.slug}}" class="btn btn-like">
+                                            <i class="fa-solid fa-heart"></i>{{ image_post.number_of_likes }}
+                                        </button>
+                                    {% else %}
+                                        <button type="submit" name="image_post_id" value="{{image_post.slug}}" class="btn btn-like">
+                                            <i class="fa-regular fa-heart"></i>{{ image_post.number_of_likes }}
+                                        </button>
+                                    {% endif %}
+                                </form>
+                                {% else %}
+                                    <i class="fa-solid fa-heart"></i>
+                                    {{ image_post.number_of_likes }}
+                                {% endif %}
+                            </small>
                         </div>
                     </div>
                     <div class="text-left">

@@ -1,7 +1,7 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.views import generic, View
+from django.http import HttpResponseRedirect
 from django.contrib.auth.models import User
-
 from django.views.generic import (
     TemplateView, ListView, DetailView, CreateView
     )
@@ -96,6 +96,25 @@ class ImagePostDetail(View):
                 "liked": liked,
             },
         )
+
+
+class ImagePostLike(View):
+    '''
+    a view to handle likes
+    '''
+
+    def post(self, request, slug):
+        '''like functionality'''
+
+        image_post = get_object_or_404(ImagePosts, slug=slug)
+
+        if image_post.likes.filter(id=request.user.id).exists():
+            image_post.likes.remove(request.user)
+        else:
+            image_post.likes.add(request.user)
+
+        return redirect(request.META.get('HTTP_REFERER'))
+
 
 
 class ViewDesigner(DetailView):

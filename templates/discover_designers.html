@@ -26,7 +26,25 @@
                       <small class="text-muted">{{ image.date_posted|date:"d M Y" }}</small>
                     </div>
                     <div class="justify-content-end">
-                      <small class="text-muted"><i class="fa-solid fa-heart"></i>{{ image.number_of_likes }}</small>
+                      <small class="text-muted">
+                        {% if user.is_authenticated %}
+                          <form class="d-inline" action="{% url 'imagepost_like' image.slug %}" method="POST">
+                              {% csrf_token %}
+                              {% if liked %}
+                                  <button type="submit" name="image_id" value="{{image.slug}}" class="btn btn-like">
+                                    <i class="fa-solid fa-heart"></i>{{ image.number_of_likes }}
+                                  </button>
+                              {% else %}
+                                  <button type="submit" name="image_id" value="{{image.slug}}" class="btn btn-like">
+                                    <i class="fa-regular fa-heart"></i>{{ image.number_of_likes }}
+                                  </button>
+                              {% endif %}
+                          </form>
+                         {% else %}
+                            <i class="fa-solid fa-heart"></i>
+                            {{ image.number_of_likes }}
+                         {% endif %}
+                      </small>
                     </div>
                   </div>
                   <p class="card-text">{{ image.image_description }}</p>
