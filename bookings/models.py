@@ -5,27 +5,44 @@ from django.db import models
 
 from social_marketplace.models import Designer
 
-# Create your models here.
+
+BOOKING_STATUS = (
+    ('Confirm Booking', 'Confirm Booking'),
+    ('Decline Booking', 'Decline Booking'),
+)
+
+PRICES = (
+    ('£2,500 - £3,500', '£2,500 - £3,500'),
+    ('£3,500 - £4,500', '£3,500 - £4,500'),
+    ('£4,500 - £5,500', '£4,500 - £5,500'),
+    ('£5,500 - £6,500', '£5,500 - £6,500'),
+    ('£6,500 - £7,500', '£6,500 - £7,500'),
+    ('£7,500 - £8,500', '£7,500 - £8,500'),
+    ('£8,500 - £9,500', '£8,500 - £9,500'),
+    ('£9,500 +', '£9,500 +'),
+)
+
+TIME_CHOICES = (
+    ("08:00", "08:00"),
+    ("09:00", "09:00"),
+    ("10:00", "10:00"),
+    ("11:00", "11:00"),
+    ("12:00", "12:00"),
+    ("13:00", "13:00"),
+    ("14:00", "14:00"),
+    ("15:00", "15:00"),
+    ("16:00", "16:00"),
+    ("17:00", "17:00"),
+    ("18:00", "18:00"),
+    ("19:00", "19:00"),
+    ("20:00", "20:00"),
+    )
+
+
 class Booking(models.Model):
     '''
     A model to store customer bookings
     '''
-
-    STATUS = (
-        ('Confirm Booking', 'Confirm Booking'),
-        ('Decline Booking', 'Decline Booking'),
-    )
-
-    PRICES = (
-        ('£2,500 - £3,500', '£2,500 - £3,500'),
-        ('£3,500 - £4,500', '£3,500 - £4,500'),
-        ('£4,500 - £5,500', '£4,500 - £5,500'),
-        ('£5,500 - £6,500', '£5,500 - £6,500'),
-        ('£6,500 - £7,500', '£6,500 - £7,500'),
-        ('£7,500 - £8,500', '£7,500 - £8,500'),
-        ('£8,500 - £9,500', '£8,500 - £9,500'),
-        ('£9,500 +', '£9,500 +'),
-    )
 
     customer_name = models.OneToOneField(
         User,
@@ -46,13 +63,14 @@ class Booking(models.Model):
         )
     price_range = models.CharField(max_length=200, choices=PRICES, default='£2,500 - £3,500')
     wedding_date = models.DateField(auto_now=True)
-    select_date = models.DateField(auto_now=True)
-    select_time = models.DateTimeField(auto_now=True)
+    select_date = models.DateField()
+    requested_time = models.CharField(
+        max_length=10, choices=TIME_CHOICES, default='12:00')
     customer_message = models.TextField(max_length=800, blank=True)
 
     booking_date = models.DateTimeField(auto_now_add=True)
     booking_id = models.CharField(max_length=32, null=False, editable=False, unique=True)
-    status = models.CharField(max_length=200, choices=STATUS)
+    status = models.CharField(max_length=200, choices=BOOKING_STATUS )
     
     def _booking_id(self):
         """

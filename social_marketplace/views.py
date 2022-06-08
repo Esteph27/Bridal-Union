@@ -136,8 +136,6 @@ class ViewDesigner(DetailView):
         return context
 
 
-
-
 class ViewCustomerAccount(TemplateView):
     '''render customer account page'''
 
