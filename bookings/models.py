@@ -62,9 +62,9 @@ class Booking(models.Model):
         related_name='designername'
         )
     price_range = models.CharField(max_length=200, choices=PRICES, default='£2,500 - £3,500')
-    wedding_date = models.DateField(auto_now=True)
+    date_of_wedding = models.DateField()
     select_date = models.DateField()
-    requested_time = models.CharField(
+    select_time = models.CharField(
         max_length=10, choices=TIME_CHOICES, default='12:00')
     customer_message = models.TextField(max_length=800, blank=True)
 
