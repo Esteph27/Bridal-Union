@@ -1,5 +1,5 @@
 import uuid
-
+from datetime import date
 from django.contrib.auth.models import User
 from django.db import models
 
@@ -62,8 +62,8 @@ class Booking(models.Model):
         related_name='designername'
         )
     price_range = models.CharField(max_length=200, choices=PRICES, default='£2,500 - £3,500')
-    date_of_wedding = models.DateField()
-    select_date = models.DateField()
+    date_of_wedding = models.DateField(default=date.today)
+    select_date = models.DateField(default=date.today)
     select_time = models.CharField(
         max_length=10, choices=TIME_CHOICES, default='12:00')
     customer_message = models.TextField(max_length=800, blank=True)
