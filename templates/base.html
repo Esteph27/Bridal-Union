@@ -66,6 +66,21 @@
           </div>
         </div>
       </nav>
+
+      <!-- messages -->
+      <!-- the below source code can be found here https://github.com/Code-Institute-Solutions/Django3blog/blob/master/11_messages/templates/base.html -->
+      <div class="container">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                {% for message in messages %}
+                <div class="alert {{ message.tags }} alert-dismissible fade show" id="msg" role="alert">
+                    {{ message | safe }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
     <main>
 
         {% block content %}
@@ -75,7 +90,6 @@
         {% endblock content %}
 
     </main>
-
      <!-- footer -->
       <div id="footer-container" class="container-fluid">
         <footer class="row g-0">
@@ -93,7 +107,16 @@
           </div>
         </footer>
       </div>
-    
+
+      <!-- script to close messages after 3 seconds -->
+      <!-- the below source code can be found here https://github.com/Code-Institute-Solutions/Django3blog/blob/master/11_messages/templates/base.html -->
+      <script>
+        setTimeout(function () {
+            let messages = document.getElementById('msg');
+            let alert = new bootstrap.Alert(messages);
+            alert.close();
+        }, 2500);
+      </script>
 
     <!-- Bootstrap core script CDN -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>

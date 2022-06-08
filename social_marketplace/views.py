@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.views import generic, View
 from django.http import HttpResponseRedirect
+from django.contrib import messages
 from django.contrib.auth.models import User
 from django.views.generic import (
     TemplateView, ListView, DetailView, CreateView
@@ -82,6 +83,7 @@ class ImagePostDetail(View):
             comment = comment_form.save(commit=False)
             comment.image_post = image_post
             comment.save()
+            messages.success(request, 'Your comment was sent successfully.')
         else:
             comment_form = CommentForm()
 
