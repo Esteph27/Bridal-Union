@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div id="booking-section" class="container-fluid">
+    <h2>Make your Booking</h2>
+</div>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col">
+      <form action="" method="post">
+        {% csrf_token %}
+      
+        {{ booking_form | crispy }}
+      
+      </form>
+    </div>
+  </div>
+</div>
+
+
+
+{% endblock %}
