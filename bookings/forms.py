@@ -9,3 +9,4 @@ class BookingForm(forms.ModelForm):
         fields = ('customer_name', 'customer_email', 'designer_name', 
                 'price_range', 'date_of_wedding', 'select_date', 
                 'select_time','customer_message',)
+
