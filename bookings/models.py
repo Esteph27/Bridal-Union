@@ -77,6 +77,15 @@ class Booking(models.Model):
         create a random and unique order id with uuid
         """
         return uuid.uuid4().hex[:5].upper()
+    
+    def save(self, *args, **kwargs):
+        """
+        Override the original save method to set the order number
+        if it hasn't been set already.
+        """
+        if not self.booking_id:
+            self.booking_id = self._booking_id()
+        super().save(*args, **kwargs)
 
     def __str__(self):
         return str(self.booking_id)

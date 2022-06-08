@@ -10,7 +10,7 @@
 <div class="container-fluid">
   <div class="row  container-center">
     <div class="col-md-6 push-to-center">
-      <form action="" method="POST" id="booking-form">
+      <form action="{% url 'booking' designer.id %}" method="POST" id="booking-form">
         {% csrf_token %}
         {{ booking_form | crispy}}
         <button type="submit" class="btn btn-primary">Submit</button>
