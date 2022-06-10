@@ -2,25 +2,10 @@
 
 {% block content %}
 
-<!--Designer info-->
-<!--Make into loop once modle are up and running-->
-<div id="designer_info" class="container-fluid">
-    <h2>{{ designer.first_name }}</h2>
-    <p>{{ designer.location }}</p>
-    <p>
-      Starting Price - £{{ designer.starting_price }}
-    </p>
-    <!-- button from bootswatch lux theme -->
-    <div class="button-container-left d-flex justify-content-start">
-        <button type="button" class="btn btn-primary">
-            <a href="{% url 'booking' designer.id %}">Make a Booking</a>
-        </button>
-    </div>
-</div>
 
 <!--album template from Bootstrap --->
 <main class="image-container" role="main">
-  <div class="album py-5">
+  <div class="album py-4">
     <div class="container">
       <div class="row">
         {% for img in images %}
@@ -37,17 +22,31 @@
   </div>
 </main>
 
-<!--Designer Bio section-->
-<div id="designer-bio-container" class="container-fluid">
-    <h2>Bio</h2>
-    <p>{{ designer.bio }}</p>
+<!--Designer info-->
+<div class="container-fluid">
+  <div id="designer_info">
+    <h2>{{ designer.first_name }}</h2>
+    <p class="pt-4">Location: {{ designer.location }}</p>
+    <p>
+      Starting Price: £{{ designer.starting_price }}
+    </p>
+    <!-- button from bootswatch lux theme -->
+    <div class="button-container-left d-flex justify-content-start">
+        <button type="button" class="btn btn-primary">
+            <a href="{% url 'booking' designer.id %}">Make a Booking</a>
+        </button>
+    </div>
+  </div>
 </div>
 
-<!--Reviews section-->
-<div id="designer-review-container" class="container-fluid">
-    <h2>Reviews</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<!--Designer Bio section-->
+<div class="container-fluid">
+  <div class="col-12" id="designer-bio-container">
+      <h2>Bio</h2>
+      <p>{{ designer.bio }}</p>
+  </div>
 </div>
+
 
 
 
