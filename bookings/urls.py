@@ -7,4 +7,5 @@ from . import views
 
 urlpatterns = [
     path('booking/<designer_id>', views.booking, name="booking"),
+    path('customer_profile/', views.customer_profile, name="customer_profile"),
 ]

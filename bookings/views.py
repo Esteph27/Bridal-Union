@@ -1,7 +1,9 @@
 from django.shortcuts import render
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 
 from .forms import BookingForm
+from .models import Booking
 from social_marketplace.models import Designer
 
 
@@ -42,6 +44,26 @@ def booking(request, designer_id):
         'booking_form': booking_form,
         'user': user,
         'designer': designer,
+    }
+
+    return render(request, template, context)
+
+
+@login_required
+def customer_profile(request):
+    '''
+    display customer's profile
+    '''
+
+    user = request.user
+    customer_name = Booking.objects.filter()
+    get_bookings = Booking.objects.filter(customer_name)
+
+    template = 'customer_profile.html'
+
+    context = {
+        'user': user,
+        'get_bookings': get_bookings,
     }
 
     return render(request, template, context)
