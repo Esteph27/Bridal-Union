@@ -39,21 +39,31 @@ TIME_CHOICES = (
     )
 
 
+class CustomerProfile(models.Model):
+    '''
+    Model to store a user's information for their customer account
+    '''
+
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    customer_name = models.CharField(max_length=40, null=True, blank=True)
+    customer_email = models.CharField(max_length=20, null=True, blank=True)
+
+
+
 class Booking(models.Model):
     '''
     A model to store customer bookings
     '''
 
     customer_name = models.ForeignKey(
-        User,
+        CustomerProfile,
         null=True,
-        on_delete=models.SET_NULL, related_name='customer_name'
+        on_delete=models.SET_NULL, related_name='customer'
         )
     customer_email = models.ForeignKey(
-        User,
-        null=True,
-        on_delete=models.SET_NULL,
-        related_name='customer_email'
+        CustomerProfile,
+        null=True, blank=True,
+        on_delete=models.SET_NULL
         )
     designer_name = models.ForeignKey(
         Designer,
@@ -90,12 +100,3 @@ class Booking(models.Model):
     def __str__(self):
         return str(self.booking_id)
 
-
-class CustomerProfile(models.Model):
-    '''
-    Model to store a user's information for their customer account
-    '''
-
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
-    customer_name = models.CharField(max_length=40, null=True, blank=True)
-    default_email = models.CharField(max_length=20, null=True, blank=True)
