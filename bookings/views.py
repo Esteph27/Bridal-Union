@@ -29,13 +29,6 @@ def booking(request, designer_id):
             customer_message = form.cleaned_data.get('customer_message')
             BookingForm.save(form)
             messages.success(request, 'Thank you for booking.')
-
-    #get user info to populate filds in form
-    if request.user.is_authenticated:
-        if request.POST:
-            customer = request.user
-            customer_name = request.user.username
-            booking_form = BookingForm(initial={'customer_name': customer_name})
     else:
         booking_form = BookingForm()
 
