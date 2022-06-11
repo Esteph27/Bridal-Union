@@ -4,17 +4,16 @@
 {% load crispy_forms_tags %}
 
 <div id="booking-section" class="container-fluid text-center">
-  <h2>Edit Booking</h2>
+  <h2>Edit Booking {{ get_booking.booking_id }}</h2>
 </div>
 
 
 <div class="container-fluid">
   <div class="row  container-center">
     <div class="col-md-6 push-to-center">
-      <form action="{% url 'edit_booking' get_booking.id %}" method="POST" id="booking-form">
+      <form action="" method="POST" id="booking-form">
         {% csrf_token %}
         {{ form | crispy }}
-     
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>
     </div>

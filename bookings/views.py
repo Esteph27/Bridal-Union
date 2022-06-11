@@ -68,7 +68,11 @@ def edit_booking(request, booking_id):
     '''
 
     get_booking = Booking.objects.get(pk=booking_id)
-    form = BookingForm()
+    form = BookingForm(request.POST or None, instance=get_booking)
+    if form.is_valid():
+        form.save()
+        messages.success(request, 'Your booking has been updated.')
+        return redirect('customer_profile')
 
     template = 'edit_booking.html'
 
