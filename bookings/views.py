@@ -9,15 +9,15 @@ from social_marketplace.models import Designer
 
 def booking(request, designer_id):
     '''
-    a view to handle bookings
+    a view to handle customer bookings
     '''
+
     user = request.user
     designer = Designer.objects.get(pk=designer_id)
-    booking_form = BookingForm
 
     # get form info
+    form = BookingForm(request.POST)
     if request.method == 'POST':
-        form = BookingForm(request.POST)
         if form.is_valid():
             customer_name = form.cleaned_data.get('customer_name')
             customer_email = form.cleaned_data.get('customer_email')
@@ -30,11 +30,11 @@ def booking(request, designer_id):
             BookingForm.save(form)
             messages.success(request, 'Thank you for booking. You can view the status of your booking in your account.')
     else:
-        booking_form = BookingForm()
+        form = BookingForm()
 
     template = 'booking.html'
     context = {
-        'booking_form': booking_form,
+        'form': form,
         'user': user,
         'designer': designer,
     }

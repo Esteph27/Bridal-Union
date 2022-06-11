@@ -14,7 +14,7 @@
           {% for image in image_posts %}
             <div class="col-md-4">
               <!-- image --->
-              <div class="card mb-4">
+              <div class="card mb-4" id="designer-post">
                 <a href="{% url 'view_designer_profile' image.designer.pk %}">
                   <h5>{{ image.designer }}</h5>
                   <img class="card-img-top" src="{{ image.image.url }}">
@@ -53,11 +53,11 @@
                 <!-- number of comments --->
                 <div class="card-footer">
                   <small class="text-muted">
-                    <a href="{% url 'imagepost_detail' image.slug %}">
-                      {% with image.comments.count as total_comments %}
-                        <p>View all {{ total_comments }} comments</p>
-                      {% endwith %}
-                    </a>
+                    {% with image.comments.count as total_comments %}
+                      <a href="{% url 'imagepost_detail' image.slug %}">
+                          <p>View all {{ total_comments }} comments</p>
+                      </a>
+                    {% endwith %}
                   </small>
                 </div>
               </div>

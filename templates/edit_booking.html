@@ -4,7 +4,7 @@
 {% load crispy_forms_tags %}
 
 <div id="booking-section" class="container-fluid text-center">
-  <h2>Edit Booking {{ get_booking.booking_id }}</h2>
+  <h3>Edit Booking {{ get_booking.booking_id }}</h3>
 </div>
 
 
@@ -14,7 +14,7 @@
       <form action="" method="POST" id="booking-form">
         {% csrf_token %}
         {{ form | crispy }}
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary mt-2">Submit</button>
       </form>
     </div>
   </div>

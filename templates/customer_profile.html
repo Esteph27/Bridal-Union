@@ -4,27 +4,25 @@
 
 <!--Account welcome-->
 <div class="container-fluid">
-  <div class="row">
-    <div class="col text-center mt-5 mb-5">
-      <h1>Welcome {{profile.customer_name }}</h1>
+  <div class="row g-0">
+    <div class="col py-0 text-center pt-5 mb-5">
+      <h3>Welcome, {{profile.customer_name }}</h3>
     </div>
   </div>
 </div>
 
 <!--View bookings section -->
-<div id="customer-booking-section" class="container-fluid">
+<div  class="container-fluid" id="profile-info">
   <div class="row">
-    <div class="col-12">
-      <div class="ontop-of-opacity">
-        <p>Your Bookings {{ bookings | length }}</p>
-      </div>
+    <div class="col-12 text-center">
+      <p>Your Bookings: {{ bookings | length }}</p>
     </div>
   </div>
-  <div class="row">
+  <div class="row container-cetner">
     {% for booking in bookings %}
-      <div class="col-sm-12 col-md-3">
+      <div class="col-sm-12 col-md-4 push-to-center">
         <!--cards from bootswatch lux theme -->
-          <div id="booking-card" class="card text-white bg-primary ontop-of-opacity" style="max-width: 20rem;">
+          <div id="booking-card" class="card text-white bg-primary" style="max-width: 20rem;">
             <div class="card-body">
               <p class="card-text">Booking ref: {{ booking.booking_id}}</p>
               <p class="card-text">Designer: {{ booking.designer_name}}</p>
@@ -37,19 +35,34 @@
               {% endif %}
             </div>
             <div class="card-footer">
-              <p class="card-text"><a href="{% url 'edit_booking' booking.id %}">Reschdule</a> / <a href="{% url 'delete_booking' booking.id %}">Cancel</a></p>
+              <p class="card-text">
+                <a href="{% url 'edit_booking' booking.id %}">Reschdule</a> / 
+                <a href="{% url 'delete_booking' booking.id %}">Cancel <i class="fa-solid fa-arrow-right"></i></a>
+              </p>
             </div>
+          </div>  
+      </div>
+      {% empty %}
+      <!-- if there are no bookings -->
+      <div class="col-12 pt-5">
+          <p class="mb-5">You currently have no Bookings.
+            <br>
+            <br>
+            Need to book someone one in?
+          </p>
+          <div class="col-12 button-container d-flex justify-content-center">
+            <button type="button" class="btn btn-primary">
+                <a href="{% url 'discover_designers'%}">Discover Designers</a> 
+            </button>
           </div>
       </div>
     {% endfor %}
+    <div class="col-12">
+      <div id="account-actions">
+        <p class="pb-2"><a href="{% url 'account_logout' %}">Log Out <i class="fa-solid fa-xmark"></i></a></p>
+      </div>
+    </div>
   </div>
-</div>
-
-
-<div id="account-actions" class="ontop-of-opacity">
-  <p>Log Out</p>
-  <p>Update Personal Details</p>
-  <p>Delete Account</p>
 </div>
 
 {% endblock %}

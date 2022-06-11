@@ -274,10 +274,10 @@ footer a:hover {
 	background-color: transparent;
 }
 
-.card .card-footer p {
+#designer-post .card-footer p {
 	font-size: 12px;
+	color: #55595C;
 }
-
 
 .card a {
 	text-decoration: none;
@@ -321,10 +321,15 @@ footer a:hover {
 	padding-left: 0.5rem;
 }
 
+#back-link a {
+	color: #55595C;
+	text-decoration: none;
+}
+
 /* -------------------------------> designer_profile.html */ 
 
 #designer_info {
-	padding-left: 1%;
+	padding-left: 1rem;
 	margin-bottom: 2rem;
 }
 
@@ -333,21 +338,21 @@ footer a:hover {
 }
 
 #designer_info p {
-	font-size: 18px;
+	font-size: 16px;
 	margin-left: 0;
 }
 
 #designer-bio-container {
 	text-align: left;
-	padding-left: 1%;
+	margin-left: 1rem;
 	padding-right: 0;
 	margin-top: 4rem;
 }
 
 #designer-bio-container p {
-	font-size: 18px;
-	margin-left: 0;
+	font-size: 16px;
 	padding-right: 1rem;
+	margin-left: 0;
 }
 
 
@@ -379,8 +384,13 @@ footer a:hover {
 	height: 100px;
 }
 
+#booking-form {
+	margin-left: 1rem;
+}
+
 #booking-form label {
 	text-align: left;
+	margin-top: 1rem;
 }
 
 /* -------------------------------> Login.html */ 
@@ -451,32 +461,7 @@ footer a:hover {
 
 /* -------------------------------> customer_profile.html */ 
 
-#customer-booking-section {
-	position: relative; 
-    height: auto;
-    width: 100vw;
-	padding-top: 10vw;
-	padding-bottom: 10vw;
-}
-
-#customer-booking-section::before {
-	content: "";
-	background-image: url("https://res.cloudinary.com/dllwurooy/image/upload/v1644340477/birdal-union/olly-allars-iUJTk0GbIKY-unsplash_tz1we5.jpg");
-	background-repeat: no-repeat;
-    background-size: cover;
-    background-position: 20% 80%;
-	opacity: 0.5;
-    overflow: hidden;
-	position: absolute;
-    top: 0px;
-    right: 0px;
-    bottom: 0px;
-    left: 0px;
-}
-
-#customer-booking-section p {
-	font-size: 18px;
-	margin-left: 2%;
+#profile-info {
 	color: black;
 }
 
@@ -489,14 +474,41 @@ footer a:hover {
 	margin-top: 2rem;
 }
 
+#booking-card .card-text {
+	text-align: left;
+	font-size: 16px;
+}
+
 #booking-card p, a {
 	color: white
 }
 
-#account-actions {
-	margin-top: 5%;
+#booking-card .card-footer a:hover {
+	color: white;
+	text-decoration: underline;
 }
 
+#booking-card .card-footer i {
+	padding-left: 1rem;
+}
+
+#account-actions {
+	margin-top: 7rem;
+	margin-bottom: 5rem;
+}
+
+#account-actions a {
+	color: black;
+	text-decoration: none;
+}
+
+#account-actions a:hover {
+	text-decoration: underline;
+}
+
+#account-actions i {
+	padding-left: 2px;
+}
 
 /* -------------------------------> media queries */ 
 
@@ -603,6 +615,12 @@ footer a:hover {
 
 	.filler {
 		display: none;
+	}
+
+	/* -------------> booking form  */
+
+	label {
+		text-transform: unset;
 	}
 
 }
