@@ -3,25 +3,22 @@
 {% block content %}
 {% load crispy_forms_tags %}
 
-<div class="container-fluid">
-  <div class="row">
-    <div class="col">
-      <h2>Edit Booking</h2>
-    </div>
-  </div>
+<div id="booking-section" class="container-fluid text-center">
+  <h2>Edit Booking</h2>
 </div>
+
 
 <div class="container-fluid">
   <div class="row  container-center">
     <div class="col-md-6 push-to-center">
-      <form action="{% url 'edit_booking' booking.id %}" method="POST" id="booking-form">
+      <form action="{% url 'edit_booking' get_booking.id %}" method="POST" id="booking-form">
         {% csrf_token %}
-        {{ form | crispy}}
+        {{ form | crispy }}
+     
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>
     </div>
   </div>
 </div>
-
 
 {% endblock %}

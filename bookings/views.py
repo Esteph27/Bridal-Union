@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 
@@ -67,15 +67,15 @@ def edit_booking(request, booking_id):
     get customer booking and save changes
     '''
 
-    get_booking = get_object_or_404(Booking, pk=booking_id)
+    get_booking = Booking.objects.get(pk=booking_id)
     form = BookingForm()
 
     template = 'edit_booking.html'
 
     context = {
         'get_booking': get_booking,
-        'from_profile': True,
         'form': form,
+        'from_profile': True,
     }
 
     return render(request, template, context)
