@@ -28,7 +28,7 @@ def booking(request, designer_id):
             select_time = form.cleaned_data.get('select_time')
             customer_message = form.cleaned_data.get('customer_message')
             BookingForm.save(form)
-            messages.success(request, 'Thank you for booking.')
+            messages.success(request, 'Thank you for booking. You can view the status of your booking in your account.')
     else:
         booking_form = BookingForm()
 
@@ -56,6 +56,23 @@ def customer_profile(request):
     context = {
         'profile': profile,
         'bookings': bookings,
+    }
+
+    return render(request, template, context)
+
+
+@login_required
+def edit_booking(request, booking_id):
+    '''
+    get customer booking and save changes
+    '''
+
+    get_booking = get_object_or_404(Booking, booking_id=booking_id)
+
+    template = 'edit_booking.html'
+    context = {
+        'get_booking': get_booking,
+        'from_profile': True,
     }
 
     return render(request, template, context)
