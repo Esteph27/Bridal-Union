@@ -25,27 +25,52 @@
 <!--Designer info-->
 <div class="container-fluid">
   <div id="designer_info">
-    <h2>{{ designer.first_name }}</h2>
+    <h2 class="pb-2">{{ designer.first_name }}</h2>
+    <hr>
     <p class="pt-4">Location: {{ designer.location }}</p>
     <p>
       Starting Price: £{{ designer.starting_price }}
     </p>
     <!-- button from bootswatch lux theme -->
-    <div class="button-container-left d-flex justify-content-start">
-        <button type="button" class="btn btn-primary">
-            <a href="{% url 'booking' designer.id %}">Make a Booking</a>
-        </button>
+    {% if request.user.is_authenticated %}
+      <div class="button-container">
+          <button type="button" class="btn btn-primary">
+              <a href="{% url 'booking' designer.id %}">Make a Booking</a>
+          </button>
+      </div>
+    {% endif %}
+  </div>
+</div>
+<!--Designer Bio section-->
+<div class="container-fluid">
+  <div class="row g-0 container-center">
+    <div class="col-12" id="designer-bio-container">
+      <h2 class="pb-3 pt-3">Bio</h2>
+      <hr>
     </div>
+    <div class="col-sm-12 col-md-6 push-to-center">
+      <p class="pt-4">{{ designer.bio }}</p>
+    </div>
+    {% if not request.user.is_authenticated%}
+      <div class="button-container pt-3 text-center">
+        <hr>
+        <p class="pb-4 pt-4">
+          <i>Like what you see?
+            <br>
+            <br>
+            Create an Account to make a booking with{{ designer.first_name }}
+          </i>
+        </p>
+        <button type="button" class="btn btn-primary">
+          <a href="{% url 'account_signup' %}">Sign up</a>
+        </button>
+      </div>
+    {% endif %}
   </div>
 </div>
 
-<!--Designer Bio section-->
-<div class="container-fluid">
-  <div class="col-12" id="designer-bio-container">
-      <h2>Bio</h2>
-      <p>{{ designer.bio }}</p>
-  </div>
-</div>
+
+
 
 
 

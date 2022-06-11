@@ -331,6 +331,7 @@ footer a:hover {
 #designer_info {
 	padding-left: 1rem;
 	margin-bottom: 2rem;
+	text-align: center;
 }
 
 #designer_info h2 {
@@ -339,22 +340,32 @@ footer a:hover {
 
 #designer_info p {
 	font-size: 16px;
-	margin-left: 0;
+}
+
+#designer_info hr {
+	width: 50%;
+	margin: 0 auto;
 }
 
 #designer-bio-container {
-	text-align: left;
-	margin-left: 1rem;
+	text-align: center;
+}
+
+#designer-bio-container hr {
+	width: 50%;
+	margin: 0 auto;
+}
+
+#designer-bio-container h2 {
 	padding-right: 0;
-	margin-top: 4rem;
+	margin-right: 0;
 }
 
 #designer-bio-container p {
 	font-size: 16px;
-	padding-right: 1rem;
-	margin-left: 0;
+	padding-left: 2rem;
+	padding-left: 1rem;
 }
-
 
 .button-container-left {
 	margin-top: 10%;
@@ -403,6 +414,10 @@ footer a:hover {
 
 .page-title-container h1, p {
 	margin-left: 1%;
+}
+
+.page-title-container a {
+	color:#55595C;
 }
 
 #form-container {
@@ -589,10 +604,6 @@ footer a:hover {
 	.button-container-left {
 		margin-top: 4%;
 		margin-left: 0;
-	}
-
-	.title-container {
-		margin-bottom: 10%;
 	}
 
 	/* -------------> login.html  */
