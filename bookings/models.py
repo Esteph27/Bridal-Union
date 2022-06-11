@@ -48,6 +48,8 @@ class CustomerProfile(models.Model):
     customer_name = models.CharField(max_length=40, null=True, blank=True)
     customer_email = models.CharField(max_length=20, null=True, blank=True)
 
+    def __str__(self):
+        return self.customer_name
 
 
 class Booking(models.Model):

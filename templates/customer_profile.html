@@ -3,32 +3,52 @@
 {% block content %}
 
 <!--Account welcome-->
-<div class="title-container container-fluid">
-  <h1>Welcome {{user.username}}</h1>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col text-center mt-5 mb-5">
+      <h1>Welcome {{profile.customer_name }}</h1>
+    </div>
+  </div>
 </div>
 
 <!--View bookings section -->
 <div id="customer-booking-section" class="container-fluid">
-  <div class="ontop-of-opacity">
-    <p>Your Bookings: number of bookings {{ get_bookings | length }}</p>
-  </div>
-
-  <!--card  from bootswatch lux theme -->
-  <div id="booking-card" class="card text-white bg-primary mb-3 ontop-of-opacity" style="max-width: 20rem;">
-    <div class="card-body">
-      <p class="card-text">Namer of Designer</p>
-      <p class="card-text">12th October</p>
-      <p class="card-text">1pm</p>
-      <p class="card-text">Reschdule / Cancel</p>
+  <div class="row">
+    <div class="col-12">
+      <div class="ontop-of-opacity">
+        <p>Your Bookings {{ bookings | length }}</p>
+      </div>
     </div>
   </div>
-
-  <div id="account-actions" class="ontop-of-opacity">
-    <p>Log Out</p>
-    <p>Update Personal Details</p>
-    <p>Delete Account</p>
+  <div class="row">
+    {% for booking in bookings %}
+      <div class="col-sm-12 col-md-3">
+        <!--cards from bootswatch lux theme -->
+          <div id="booking-card" class="card text-white bg-primary ontop-of-opacity" style="max-width: 20rem;">
+            <div class="card-body">
+              <p class="card-text">Designer: {{ booking.designer_name}}</p>
+              <p class="card-text">Date: {{ booking.booking_date | date:"d M Y" }}</p>
+              <p class="card-text">Time: {{ booking.select_time }}</p>
+              {% if booking.status == 'Confirm Booking' %}
+                <p class="card-text">Status: Your booking has been confirmed</p>
+                {% else %}
+                <p class="card-text">Status: Confirmation pending</p>
+              {% endif %}
+            </div>
+            <div class="card-footer">
+              <p class="card-text">Reschdule / Cancel</p>
+            </div>
+          </div>
+      </div>
+    {% endfor %}
   </div>
 </div>
 
+
+<div id="account-actions" class="ontop-of-opacity">
+  <p>Log Out</p>
+  <p>Update Personal Details</p>
+  <p>Delete Account</p>
+</div>
 
 {% endblock %}
