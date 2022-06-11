@@ -9,4 +9,5 @@ urlpatterns = [
     path('booking/<designer_id>', views.booking, name="booking"),
     path('customer_profile/', views.customer_profile, name="customer_profile"),
     path('edit_booking/<booking_id>/', views.edit_booking, name="edit_booking"),
+    path('delete_booking/<booking_id>/', views.delete_booking, name="delete_booking"),
 ]

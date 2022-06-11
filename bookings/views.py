@@ -84,3 +84,14 @@ def edit_booking(request, booking_id):
 
     return render(request, template, context)
 
+
+@login_required
+def delete_booking(request, booking_id):
+    '''
+    Delete a customer booking
+    '''
+ 
+    booking = Booking.objects.get(pk=booking_id)
+    booking.delete()
+    messages.success(request, 'Your Booking has been canceled successfully!')
+    return redirect('customer_profile')
