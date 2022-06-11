@@ -67,12 +67,16 @@ def edit_booking(request, booking_id):
     get customer booking and save changes
     '''
 
-    get_booking = get_object_or_404(Booking, booking_id=booking_id)
+    get_booking = get_object_or_404(Booking, pk=booking_id)
+    form = BookingForm()
 
     template = 'edit_booking.html'
+
     context = {
         'get_booking': get_booking,
         'from_profile': True,
+        'form': form,
     }
 
     return render(request, template, context)
+

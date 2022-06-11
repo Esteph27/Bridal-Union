@@ -26,6 +26,7 @@
         <!--cards from bootswatch lux theme -->
           <div id="booking-card" class="card text-white bg-primary ontop-of-opacity" style="max-width: 20rem;">
             <div class="card-body">
+              <p class="card-text">Booking ref: {{ booking.booking_id}}</p>
               <p class="card-text">Designer: {{ booking.designer_name}}</p>
               <p class="card-text">Date: {{ booking.booking_date | date:"d M Y" }}</p>
               <p class="card-text">Time: {{ booking.select_time }}</p>
@@ -36,7 +37,7 @@
               {% endif %}
             </div>
             <div class="card-footer">
-              <p class="card-text"><a href="{% url 'edit_booking' booking.id %}">Reschdule</a> / <a href="#">Cancel</a></p>
+              <p class="card-text"><a href="{% url 'edit_booking' booking.booking.id %}">Reschdule</a> / <a href="#">Cancel</a></p>
             </div>
           </div>
       </div>
