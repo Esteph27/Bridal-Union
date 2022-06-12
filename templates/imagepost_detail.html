@@ -9,11 +9,14 @@
         <i class="fa-solid fa-chevron-left"></i>
         <a href="{% url 'discover_designers' %}">Back</a>
     </small>
-    <div class="row container-cetner">
-        <div class="col-md-5 push-to-center">
+    <div class="row g-0 container-center">
+        <div class="col-md-5 py-0 push-to-center">
             <!-- image post detail -->
-            <div class="card mb-4">
-                <img class="card-img-top" src="{{ image_post.image.url }}">
+            <div class="card mb-4 mt-5">
+                <a  href="{% url 'view_designer_profile' image_post.designer.pk %}">
+                    <h5>{{ image_post.designer }}</h5>
+                    <img class="card-img-top" src="{{ image_post.image.url }}">
+                </a>
                 <div class="card-body">
                     <div class="d-flex justify-content-between align-items-center">
                         <div class="justify-content-start">
@@ -58,8 +61,8 @@
         </div>
     </div>
     <!-- comments -->
-    <div class="row container-cetner">
-        <div class="col-md-5 push-to-center">
+    <div class="row g-0 container-cetner">
+        <div class="col-md-5 py-0 push-to-center">
             {% for comment in comments %}
                 <div class="card-body comments">
                     <div>
@@ -75,9 +78,9 @@
             {% endfor %}
         </div>
     </div>
-    <!-- ccomment form -->
-    <div class="row container-cetner">
-        <div class="col-md-5 push-to-center">
+    <!-- comment form -->
+    <div class="row g-0 container-cetner">
+        <div class="col-md-5 py-0 push-to-center">
             <div class="card-body comments">
                 {% if commented %}
                 <div>
