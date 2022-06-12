@@ -48,11 +48,13 @@ def customer_profile(request):
     display customer's profile and bookings
     '''
 
-    profile = get_object_or_404(CustomerProfile, user=request.user)
+    profile, created = CustomerProfile.objects.get_or_create(
+        user=request.user,
+    )
+
     bookings = profile.customer.all()
 
     template = 'customer_profile.html'
-
     context = {
         'profile': profile,
         'bookings': bookings,

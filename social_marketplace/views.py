@@ -30,7 +30,7 @@ class ViewAbout(TemplateView):
 class ViewDiscoverDesigners(generic.ListView):
     '''
     render discover designers page.
-    shows all posts posted by designers via the admin
+    shows all posts posted by designers
     '''
 
     model = ImagePosts
@@ -134,10 +134,4 @@ class ViewDesigner(DetailView):
         context["images"] = images
 
         return context
-
-
-class ViewCustomerAccount(TemplateView):
-    '''render customer account page'''
-
-    template_name = 'customer_account.html'
 

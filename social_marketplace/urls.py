@@ -14,6 +14,4 @@ urlpatterns = [
     path('<slug:slug>/', views.ImagePostDetail.as_view(), name='imagepost_detail'),
     path('like/<slug:slug>/', views.ImagePostLike.as_view(), name='imagepost_like'),
     path('designer_profile/<pk>/', views.ViewDesigner.as_view(), name='view_designer_profile'),
-    # user account
-    path('customer_account/', views.ViewCustomerAccount.as_view(), name='view_account'),
 ]
