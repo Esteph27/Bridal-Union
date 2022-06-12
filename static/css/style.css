@@ -237,10 +237,12 @@ footer a:hover {
 	padding-left: 1rem;
 	padding-right: 1rem;
 	font-size: 16px;
+	color: #55595C;
 }
 
 .text-container-about a {
 	text-decoration: none;
+	color: #55595C;
 }
 
 .text-container-about a:hover {
