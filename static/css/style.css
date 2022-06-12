@@ -153,26 +153,25 @@ footer a:hover {
 
 .text-container a {
 	text-decoration: none;
+	color: #55595C;
 }
 
 .text-container a:hover {
 	text-decoration: underline;
 }
 
-
 .button-container {
 	margin-top: 2rem;
 	margin-bottom: 5rem;
 }
 
-.button-container a {
+.button-container button {
 	color: white;
 	text-decoration: none;
 	letter-spacing: 2px;
-	padding: 2rem;
 }
 
-.button-container a:hover {
+.button-container button:hover {
 	text-decoration: underline;
 	color: white;
 }

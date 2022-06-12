@@ -51,9 +51,11 @@
             Need to book someone one in?
           </p>
           <div class="col-12 button-container d-flex justify-content-center">
-            <button type="button" class="btn btn-primary">
-                <a href="{% url 'discover_designers'%}" aria-label="visit our discover designers page">Discover Designers</a> 
-            </button>
+            <a href="{% url 'discover_designers'%}" aria-label="visit our discover designers page">
+              <button type="button" class="btn btn-primary">
+                <i>Discover Designers</i>
+              </button>
+            </a> 
           </div>
       </div>
     {% endfor %}

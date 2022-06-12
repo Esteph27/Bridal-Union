@@ -39,10 +39,12 @@
         </p>
         <!-- button from bootswatch lux theme -->
         {% if request.user.is_authenticated %}
-          <div class="button-container">
+          <div class="button-container" id="booking-btn">
+            <a href="{% url 'booking' designer.id %}">
               <button type="button" class="btn btn-primary">
-                  <a href="{% url 'booking' designer.id %}">Make a Booking</a>
+                <i>Make a Booking</i>
               </button>
+            </a>
           </div>
         {% endif %}
       </div>
@@ -60,7 +62,7 @@
       <p class="pt-4">{{ designer.bio }}</p>
     </div>
     {% if not request.user.is_authenticated%}
-      <div class="button-container pt-3 text-center">
+      <div class="pt-3 text-center">
         <hr>
         <p class="pb-4 pt-4">
           <i>Like what you see?
@@ -69,9 +71,14 @@
             Create an Account to make a booking with{{ designer.first_name }}
           </i>
         </p>
-        <button type="button" class="btn btn-primary">
-          <a href="{% url 'account_signup' %}">Sign up</a>
-        </button>
+        <div class="button-container">
+          <a href="{% url 'account_signup' %}">
+            <button type="button" class="btn btn-primary">
+              <i>Sign Up</i>
+            </button>
+          </a>
+        </div>
+       
       </div>
     {% endif %}
   </div>
