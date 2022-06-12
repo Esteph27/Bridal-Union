@@ -249,6 +249,14 @@ footer a:hover {
 	text-decoration: underline;
 }
 
+.text-container-about .button-container a {
+	color: white;
+}
+
+#back-home-link a {
+	color: #55595C;
+}
+
 /* -------------------------------> discover_designers.html */ 
 
 .title-container {
