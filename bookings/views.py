@@ -48,6 +48,7 @@ def customer_profile(request):
     display customer's profile and bookings
     '''
 
+    # get customer profile, otherwise create profile
     profile, created = CustomerProfile.objects.get_or_create(
         user=request.user,
     )
@@ -92,8 +93,9 @@ def delete_booking(request, booking_id):
     '''
     Delete a customer booking
     '''
- 
+
     booking = Booking.objects.get(pk=booking_id)
     booking.delete()
     messages.success(request, 'Your Booking has been canceled successfully!')
     return redirect('customer_profile')
+

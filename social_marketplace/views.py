@@ -134,4 +134,3 @@ class ViewDesigner(DetailView):
         context["images"] = images
 
         return context
-

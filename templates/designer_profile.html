@@ -5,6 +5,10 @@
 
 <!--album template from Bootstrap --->
 <main class="image-container" role="main">
+  <small id="back-link">
+    <i class="fa-solid fa-chevron-left"></i>
+    <a href="{% url 'discover_designers' %}">Back</a>
+  </small>
   <div class="album py-4">
     <div class="container">
       <div class="row">
@@ -24,21 +28,25 @@
 
 <!--Designer info-->
 <div class="container-fluid">
-  <div id="designer_info">
-    <h2 class="pb-2">{{ designer.first_name }}</h2>
-    <hr>
-    <p class="pt-4">Location: {{ designer.location }}</p>
-    <p>
-      Starting Price: £{{ designer.starting_price }}
-    </p>
-    <!-- button from bootswatch lux theme -->
-    {% if request.user.is_authenticated %}
-      <div class="button-container">
-          <button type="button" class="btn btn-primary">
-              <a href="{% url 'booking' designer.id %}">Make a Booking</a>
-          </button>
+  <div class="row g-0">
+    <div class="col-12 py-0">
+      <div id="designer_info">
+        <h2 class="pb-2">{{ designer.first_name }}</h2>
+        <hr>
+        <p class="pt-4">Location: {{ designer.location }}</p>
+        <p>
+          Starting Price: £{{ designer.starting_price }}
+        </p>
+        <!-- button from bootswatch lux theme -->
+        {% if request.user.is_authenticated %}
+          <div class="button-container">
+              <button type="button" class="btn btn-primary">
+                  <a href="{% url 'booking' designer.id %}">Make a Booking</a>
+              </button>
+          </div>
+        {% endif %}
       </div>
-    {% endif %}
+    </div>
   </div>
 </div>
 <!--Designer Bio section-->
@@ -48,7 +56,7 @@
       <h2 class="pb-3 pt-3">Bio</h2>
       <hr>
     </div>
-    <div class="col-sm-12 col-md-6 push-to-center">
+    <div class="col-sm-12 col-md-6 push-to-center text-center">
       <p class="pt-4">{{ designer.bio }}</p>
     </div>
     {% if not request.user.is_authenticated%}
