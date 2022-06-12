@@ -249,17 +249,25 @@ footer a:hover {
 
 /* -------------------------------> discover_designers.html */ 
 
-.title-container{
-	margin-top: 10%;
-	margin-bottom: 5%;
-	height: 110px;
-	line-height: 110px;
-	margin-left: 1%;
+.title-container {
+	margin-top: 6rem;
+	margin-bottom: 4rem;
+	text-align: center;
 }
 
 .title-container h1 {
 	text-align: center;
 	font-size: 22px;
+}
+
+.title-container p {
+	font-size: 14px;
+}
+
+.title-container hr {
+	margin: 0 auto;
+	width: 50%;
+	margin-top: 2rem;
 }
 
 .card {
