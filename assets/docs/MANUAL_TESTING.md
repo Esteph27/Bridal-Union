@@ -129,7 +129,7 @@ A logged in user can view their account where their booking information is displ
 
 The reschedule link takes the user to view their initial booking form which is pre-populated with their previous booking information, the user can then review and edit the necessary information. On submission, the user is redirected  back to their account where their booking card information will show the updated details 
 
-![edit booking form](/assets/images/edit-designer.png)
+![edit booking form](/assets/images/edit-form.png)
 
 The delete link automatically deletes the User’s booking and their profile page is then updated. However there is no functionality included to for the user to confirm if they want to delete  their booking, or if it was an accident. 
 
