@@ -2,6 +2,7 @@
 
 {% block content %}
 
+<!-- header --->
 <div class="container-fluid title-container">
   <div class="row g-0">
     <div class="col-12 py-0">
@@ -28,7 +29,7 @@
             <div class="col-md-4">
               <!-- image --->
               <div class="card mb-4" id="designer-post">
-                <a href="{% url 'view_designer_profile' image.designer.pk %}">
+                <a href="{% url 'view_designer_profile' image.designer.pk %}" aria-label="a link to view the designer portfolio">
                   <h5>{{ image.designer }}</h5>
                   <img class="card-img-top" src="{{ image.image.url }}">
                 </a>

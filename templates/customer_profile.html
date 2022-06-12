@@ -36,8 +36,8 @@
             </div>
             <div class="card-footer">
               <p class="card-text">
-                <a href="{% url 'edit_booking' booking.id %}">Reschdule</a> / 
-                <a href="{% url 'delete_booking' booking.id %}">Cancel <i class="fa-solid fa-arrow-right"></i></a>
+                <a href="{% url 'edit_booking' booking.id %}" aria-label="edit your exisiting booking">Reschdule</a> / 
+                <a href="{% url 'delete_booking' booking.id %}" aria-label="cancel your existing booking">Cancel <i class="fa-solid fa-arrow-right"></i></a>
               </p>
             </div>
           </div>  
@@ -52,7 +52,7 @@
           </p>
           <div class="col-12 button-container d-flex justify-content-center">
             <button type="button" class="btn btn-primary">
-                <a href="{% url 'discover_designers'%}">Discover Designers</a> 
+                <a href="{% url 'discover_designers'%}" aria-label="visit our discover designers page">Discover Designers</a> 
             </button>
           </div>
       </div>
