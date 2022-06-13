@@ -251,28 +251,52 @@ Another goal for the abou page is to encourage new users to sign up, to achive t
 
 **Discover Designers page:**
 
-As mentioned above, this is one of the main pages of the app. This page is where the social media inspired elements comes to play where the user can scroll through to view posts by different designers (like they would if they were on Instagram). The image posts includes the name of the designer so they user can see who it was posted by, the date posted, hashtags, view the number of ‘likes’ and 'comments' a post has recived so they can see which one has been more popular. The ‘comment’ and ‘like’ features are only avaible for logged in users, for logged out users these features are disabled. 
+As mentioned above, this is one of the main pages of the app. This page is where the social media inspired elements comes to play where the user can scroll through to view posts by different designers (like they would if they were on Instagram). The image posts includes the name of the designer so they user can see who it was posted by, the date posted, hashtags, view the number of ‘likes’ and 'comments' a post has recieved so they can see which one has been more popular. All users can view the number of likes and comments, however only logged in users are able to like and post a comment on a post (more about this below)
 
 ![discover designer page](/assets/images/discover_designers_page.png)
 
-This page also displays a small description underneath the page title so that first time users know what to click on:
+The like feature is represented by a heart icon and has the number of likes next to it. If the user 'likes' an image they can click on the heart icon and number count will increase by one. If the user decides to unlike the image they can click on the heart icon again and number count will decrease by one.
 
+![like icon with number of likes](/assets/images/heart-outline.png)
 
+This page also displays a small description underneath the page title so that first time users can better understand how to use this page:
 
-![discover deisgners page]()
+![discover their works](/assets/images/discover-their-works.png)
+
 
 **Image Post Detail page:**
 
+This page displays all comments a particular post has reiceved. The user can access this page by clicking on the 'view all messages' link at the bottom of the image post:
+
+![view all comments](/assets/images/view-comment-link.png)
+
+The aim for this page is to encourage users to connect with the designer by commeting on their post and by joining in a conversation, similar to a blog post. For logged in users, the comment form appears at the bottom of the comment list so that it's easy to find. The comment form also tells the user that they are posting by their username:
+
+![comment form](/assets/images/comment-form.png)
+
+For users who are not logged in or unregistered the comment form is unavaible, instead appears a call-to-action button to prompt the user to create an account in order to 'join the conversation':
+
+![comment sign up](/assets/images/comment-signup.png)
+
+The comment themselves consist of the user name to show who the comment was posted by, the date it was posted and the comment itself. The comments are also ordered in descending order so that the most recent comment is at the top:
+
+![comment example](/assets/images/comment-example.png)
+
+The like feature is also available in this page, however it's a little bit more visual for the user. If the user clicks on the heart icon, the number count will increase by one as well as the heart will turn into a sold heart. If the user decides to unlike the post then the heart icon will revert back to an outline and the number count will decrease by one. 
+
+![like icon with number of likes](/assets/images/heart-solidpng)
+
 **Designer Profile page:**
 
-Together with the ‘discover designer’ page, this is another main page where the user can find out more information about the designer. This page displays the designer’s; biography so the user can find out about the designer’s background and way of working, the designer’s location and starting price so the user can see where the designer is based and if their prices are suitable for them, all of the designer’s posts are also displayed in this page so the user can view all their work in one place. 
+Together with the ‘discover designer’ page, this is another main page where the user can find out more information about the designer. This page displays the designer’s biography so the user can find out more the designer and their way of working, their location to see if the designer is local to them and starting price so the user can see if their prices are suitable for them.
 
-All of the information mentioned is to help the user feel like they can make an informed decision as to booking this designer in. To encourage this action, the booking button has been placed at the top of the page making it convenient and easy for the user to click on. 
+All of the information mentioned is to help the user feel like they can make an informed decision as to booking this designer. To encourage this action, the booking button has been placed under the designer name aking it convenient and easy for the user to click on:
 
-Another feature of the this page is the ‘Reviews’ section which is at the bottom of the page. This section is to also provide more helpful information to the user to help them decide whether they want to boom this designer in or not. Also, logged in users are able to leave a review. However due to time constraints, this feature has not been completed for this version so a placeholder section has been used in the meantime.  
+![designer profile page](/assets/images/designer-profilepage-2.png)
 
-![designer profile page](media/designer_profile_1_small.png)
+Another main feature of this page is the designer post. At the top of the page are all the posts which a deisgner has posted, this is so that the user can view a specific designer's post all in one location. This section acts like a sort of portfolio where the user can see all the work a designer has done to help the user decide if this designer is the one to book:
 
+![designer profile image posts](/assets/images/designer-profile-imageposts.png)
 
 **Booking page:**
 
