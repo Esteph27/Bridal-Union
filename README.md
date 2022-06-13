@@ -1,6 +1,6 @@
 # BRIDAL-UNION
 
-![BU multiple devices](media/screens.png)
+![BU multiple devices](/assets/images/amiresponsive.png)
 
 This is a full-stack framework project built using Django, Python, HTML, CSS, BootStrap and JavaScript. This is a social media inspired application designed to connect freelance wedding dress designers with future brides-to-be. The user can explore a range of designers, like and comment on images posted by a designer, as well as create, edit and delete bookings with their designer of choice. 
 
@@ -114,6 +114,8 @@ Version 1;
 - Javascript and CSS animation features to enhance the overall UX.
 
 For future release, please see the Scaleability section below outlining the features Bridal would hope to include.
+
+I also used Figma Flow chart to help me work out the logic and scope, you can view the flow chart [here](https://www.figma.com/file/VRJIS0Jez7m0iz5XoQzQv6/Bridal-Union-Flow-chart) 
 
 ---
 
@@ -444,7 +446,7 @@ Back end languages - Python3
 
 <a href="https://favicon.io/" target="_blank">Favicon.io</a> - used to create favicon's for Birdal-Union.
 
-<a href="https://www.figma.com/?fuid=" target="_blank">Figma</a> - for wireframe building.
+<a href="https://www.figma.com/?fuid=" target="_blank">Figma</a> - for wireframe building and flow chart.
 
 <a href="https://drawsql.app/" target="_blank">drawSQL</a> - for Entity Relation Diagrams.
 
@@ -785,8 +787,6 @@ Code Institute - for zoom animation on hero image
 
 <a href="https://ccbv.co.uk/" target="_blank">ccvv.co.uk</a> - for information on clased based view
 
-<a href="https://simpleisbetterthancomplex.com/2015/12/04/package-of-the-week-django-widget-tweaks.html" target="_blank">Simple is better than Complex, Django Widget Tweaks</a> - for information on django tweaks to edit forms.
-
 <a href="https://simpleisbetterthancomplex.com/tutorial/2016/07/22/how-to-extend-django-user-model.html" target="_blank">Simple is better than Complex, How to Extend Django User Model</a> - for further information on the Django User model and how to extend it.
 
 Dennis Ivy, <a href="https://www.youtube.com/watch?v=llbtoQTt4qw" target="_blank">Django To Do List App With User Registration & Login</a> - youtube video to show CRUD functionailty.
@@ -813,55 +813,35 @@ I’d like to thank my fellow peers Harry Dhillon, Daisy Gunn and Francesa for t
 
 ## SCALEABILITY:
 
-**Profile Handle:**
+**Designer Profile Handle:**
+- This would be added to the designer profile page. All profile pages on Instagram have a handle which is used add a short introductory tag about the user which is a nice feature to have. Having this in the designer profile page will allow site users to gain a quick understanding of who they are before reading their bio.
 
-This would be added to the designer profile. All profile pages on Instagram have a handle which is used a short introductory tag and allows the user to have a quick understanding of what they are about. 
-
-**Portfolio page:**
-At the moment, the designer profile page displays all the post which have been posted by that one designer. The more images a designer posts, the less likely the user will take notice of the designer’s biography and other important information. With this in mind, I had an idea to have a new page called the ‘portfolio’ page where the users can view all of the work by one designer in a single place where the images are displayed in a professional way and in much larger scales, like they would in a physical portfolio. This would enhance the user’s experience and promote of the work of the designer better.
+**Designer Portfolio page:**
+- At the moment, the designer profile page displays all the post which have been posted by that one designer. The more images a designer posts, the less likely the user will take notice of the designer’s biography which will be pushed to the bottom of the screen. With this in mind, I had an idea to have a new page called the ‘portfolio’ page where the users can view all of the work by one designer in a single place where the images are displayed in a professional way and in a much larger scale, like they would in a physical portfolio. This would enhance the user’s experience and promote of the work of the designer better.
 
 **'Follow' feature:**
-
-This would be featured on the designer profile page. 
+- This feature is common in social media apps such as Instagram. It allows another way for the user to connect and support the designers they like the most. By 'following' a designer the user will be able to see all of the designer's post and keep up to date with thier work.
+- To have this feature, a 'follow' page will be included where the user can view a list of all the designers they are following. This page will also allow the user to manange their 'follows' by 'unfollowing' any designer they no longer wish to follow, this action will remove the designer from their follow list. 
 
 **Reviews:**
+- If this was real life application it would be good for the users to be able to post reviews on designers so they can write about the designers service. Users who are looking for a service often rely on reviews before proceeding with a service so having a reviews section will be a useful feature to include. 
 
-As explained previously, this feature is displayed at the bottom of the ‘designer profile’ page. 
-
-**Customer Account:**
-
-Allow them to update their default information and ability to delete account
+**Update Customer Account Information:**
+- Currently, the Customer Account only displays the current bookings a user has. To provide a better experince the customer account will also be able to store and update their default account information such as name, email address and contact detials so that they can keep their personal information up to date. 
+- The user will also have the ability to delete their account if they no longer need it. 
 
 **Booking Status Updates:**
-- Although the bookin card displays the current status of the user's booking, the user does not recieve any email notifications or other form of notifications to inform them of theis booking status. If this was to be a proper web application and used in real likfe then an email functionality would be built in to allow for this as this is good UX.
+- At the moment, the user has to log back into their account each time they want to check the status of their booking which can be tedious. In future, an email functionlaity would be put in place so that a user is notified of any changes to their booking status outside of the website providing a more convenient and easy experience for the user. 
 
-**Delete message:**
-- handle user error, not be automatic. allow the user to coinfirm before deleteing 
+**Delete Booking Confirmation:**
+- Currently, whenever the user deletes a booking it is done automatically, which is not a good UX if the user accidently clicks on it. To imporove this, in future there would be a fucntion to check with the user first that they want to delete the booking. 
 
-## REFLECTIONS:
+**Delete User Comments:**
+- Currently, the admin user is the only user with the ability to delete comments. In future, I would extend this feature so that site users are able to delete their own comments
 
-The current release of Bridal Union is not as it’s tended to be, there are many features which have been left out due to time limitations (which have already been mentioned above). I started out this project not fully understanding Django and as a result, I’ve spent vital development time trying to learn Django along the way. As a result my approach to designing the back end in particular, I feel has been quite naive in some respects and I certainly over complicated things along the way due to lack of organisation and understanding of logic. However this project has been a **big** learning curve and there are many things that now understanding Django better, I would approach differently, below are a few of those changes:
-
-**App Design:**
-
-At the moment, the current app structure is quite weighty as all of the core functionality is held in one app. If I were to do this again, I would have separated Bridal Union into four main apps for better maintainability and efficiency:
-
-1. Social - social media functionality 
-
-2. Bookings - booking functionality 
-
-3. Portfolio - designer portfolio display 
-
-4. Django alltuh - registration and account management
-
-
-**Model Planning:**
-
-I had pre planned my models by building Entity Relationship Diagrams, however I underestimated how much time pre planning is involved when designing database structures. Also, with my limited understanding of Django at the start of this project, when it came to building my models there was a lot of stop, start, deleting and updating fields which caused various delays in development and most likely contributed to the migration errors mentioned above. In future, I would dedicate much more time in pre planning my database’s structures and relationships so that their functionalities are clearly defined from the start for better organisation and development. 
-
-**Views:**
-
-One of the biggest challenges I faced was trying to understand the logic behind Django class based views, as a result pages like my Customer Account and Booking page are not connected to the backend. I took a lot of time out of developing watching YouTube videos and reading various online resources to learn and better understand the logic and and inheritance of class based views, however I found classed based views quite abstract and hard to fully comprehend. In future I would start off with function based views so that I could have a better understanding of the logic needed which would then allow me to fully grasp the functionalities of class based views. 
+**Confirm Booking via the front end:**
+- At the moment, the admin user is able to manage everything via the back end, however to improve their experince further it would be nice to allow the user to handle things on the front end with a nice and more intuitive user interface.
+- To achive this there would have to be authentication so that only admin user are able to access these features.
 
 ---
 
