@@ -12,11 +12,11 @@ The live site can be found <a href="https://bridal-union.herokuapp.com/" target=
 
 Birdal-Union (BU) was built with two main intentions; to promote and to connect. With this in mind and following UX core principles, the UX had to be easy to navigate, intentional and pleasurable for the user, all whist encouraging user action. 
 
-The first steps for structuring the UX were to outline the user’s needs collectively. For BU there are two main users; the designer (admin user) and the bride-to-be (end user). Both of which can full-fill each other’s needs; the bride needs a dress and the designer needs business, therefore the focus is to get both users to connect. To target this, the UX is based on social media platforms (such as Instagram) where the end user can connect with the designer through familiar features such as ‘follow’, ‘like’ and ‘comment’. 
+The first steps for structuring the UX were to outline the user’s needs collectively. For BU there are two main users; the designer (admin user) and the bride-to-be (site user). Both of which can full-fill each other’s needs; the bride needs a dress and the designer needs business, therefore the focus is to get both users to connect. To target this, the UX is based on social media platforms (such as Instagram) where the end user can connect with the designer through familiar features such as ‘follow’, ‘like’ and ‘comment’, as well as the abiltiy to book a designer.
 
 When thinking of the user needs separately: for a future bride, wedding dress hunting can often be time-consuming and overwhelming, therefore the UX intends to take that away by offering something that is clean, focused as well as intuitive. We can also assume that this user will most likely be using their mobile phones more frequently than desktops screens (especially as a busy bride planning her wedding, most of the time looking for dresses are done on the commute to work). Therefore, responsivity and navigation are integral to the design and flow of the site. I have used the Bootstrap grid system, a selection of <a href="https://getbootstrap.com/" target="_blank">Bootstrap elements</a>, <a href="https://bootswatch.com/lux/" target="_blank">Bootswatch Lux</a> theme elements and custom CSS to allow for this. 
 
-For the designer, promoting their work can also be challenging and time-consuming, to target this, the UX intends to promote their work in an elegant, interactive and efficient way. With this in mind, the focal point throughout the site are the images posted by the designers, therefore the responsiveness of the images is very important. To allow for this I have used Bootstrap elements, Bootstrap Album example together with custom CSS so that the images can be viewed seamlessly across different screen sizes without visualising impairing them and allowing for better UX. In addition, the UX has to enables the user to intuitively navigate through out the site to view the relevant designer information with less clicks, to target this I have used call to action buttons in convenient places for the user to click on. 
+For the designer, promoting their work can also be challenging and time-consuming, to target this, the UX intends to promote their work in a modern, interactive and efficient way. With this in mind, the focal point throughout the site are the images posted by the designers, therefore the responsiveness of the images is very important. To allow for this I have used Bootstrap elements, Bootstrap Album example together with custom CSS so that the images can be viewed seamlessly across different screen sizes without visualising impairing them and allowing for better UX. In addition, the UX has to enables the user to intuitively navigate through out the site to view the relevant designer information with less clicks, to target this I have used call to action buttons in convenient places as well as a responsive nav bar. 
 
 ------
 
@@ -24,79 +24,76 @@ For the designer, promoting their work can also be challenging and time-consumin
 
 As outlined previously, there are two main users for Bridal-Union:
 
-**User 1** - A freelance wedding dress designer who is looking to promote their work, get client bookings and sell their services whilst expanding their clientele. 
+**User 1 (admin user)** - A freelance wedding dress designer who is looking to promote their work, get client bookings and sell their services whilst expanding their clientele. 
 
-**User 2** - A future bride-to-be who is looking for a wedding dress designer to make their dream dress for their big day. 
+**User 2 (site user)** - A future bride-to-be who is looking for a wedding dress designer to make their dream dress for their big day. 
 
 **User stories:**
 
-Below are user story scenarios and how Bridal-Union intends to meet those needs:
+Please find all my defined user stories and their acceptance criteria in the probject board [here](https://github.com/Esteph27/Bridal-Union/projects/1)
 
-**As a wedding dress designer (admin user):**
+- As an Admin User I can update a Designer's profile information to ensure my profile is always up-to-date.
 
-- I can easily post any images of my work via the admin panel so that I can share and promote my work  to a wider audience.
+- As a Site User, I can add a new designer or delete an existing designer to manage the designers being promoted on the site.
 
-- I can log in to the admin panel so that I can access the site’s backend.
+- As an Admin User I can create draft posts so that I can finish writing the content later.
 
-- I can easily log out of the admin panel as needed.
+- As a Site User I can manage my existing bookings so that this information is always up to date.
 
-- Using the admin panel I can add important information to my profile such as location, starting price and biography so the user can easily view this information. 
+- As a Site User I can easily see if I'm logged in or not so that I can choose to log in or log out depending on what I'm doing.
 
-- I can update my profile information via the admin panel to ensure my profile is always up-to-date.
+- As a Site User I can register an account so that I can comment and like on posts, make a booking with a designer and manage my existing bookings.
 
-- I can use the admin panel to delete images I no longer wish to have displayed on site. 
+- A Site User can create an account via the allauth registration forms.
 
-- When uploading my images, I can add a description to provide context for the user via the admin panel. 
+- A new Site User will be assigned a profile page where they can view their existing bookings.
 
-- I don’t have to worry about resizing any images prior to upload as the admin panel takes care of that for me.
+- As a Site User I easily can browse through the app to get inspiration for my wedding dress by viewing posts/images from different designers.
 
-- I can add hashtags to my images to help target my intended audience and help follow trends.
+- As a Site User I can find relevant contact information easily.
 
-- In the admin panel, I can reply back to comments left on my posts so I can interact and engage with the end user. 
+- As a Site User I can easily and intuitively navigate my way through the site to find the relevant information I'm looking for with little amount of clicks.
 
-- I can delete customer reviews if they are deemed bad via the admin panel. 
+- As a Site User I can use the navigation bar to easily navigate throughout the different pages to view the desired content.
 
-- I can confirm / decline customer booking if needed via the admin panel and the user will be notified of any changes.
+- As an Admin user I can approve or disapprove comments so that I can filter out objectionable comments.
 
-**As a bride-to-be (end user):**
+- As an Admin User, I don’t have to worry about resizing any images prior to upload as the admin panel takes care of that for me.
 
-- I easily can browse through the app to get inspiration for my wedding dress by viewing posts/images from different designers. 
+- As an Admin Uyser I can confirm or decline bookings to help me manage the designer's booking efficiently.
 
-- I can view all images posted by a single designer by visiting their portfolio page. 
+- As a Site User I can easily interact with the designer by liking and commenting on their posts so that I can form a connection with the designer.
 
-- Using the navigation bar and links throughout the site, I can navigate easily throughout the different pages to view the desired content.
+- As a Site User can I comment on a post when logged in.
 
-- I can view a designer’s profile to find out more information about their services and work by visiting their profile page.  
+- As a Site User I receive notifications to confirm actions taken on the site.
 
-- I can easily interact with the designer by liking and commenting on their posts.
+- As a Site User I can click on a post so that I can view all comments.
 
-- I can connect with the designer by following them via the follow feature so I can keep up to date with them.
+- As a Site User, I can view a designer's information to get information about a specific designer. I can find out who they are and how they work in order to help me decide if they are the designer to make my wedding dress or not.
 
-- I can easily book an appointment with my designer of choice using the booking form. 
+- As a Site User / Admin I can view comments on an individual post so that I can read the conversation.
 
-- I can easily create a customer account where I can manage and view my existing bookings. 
+- As a Site User I can easily see if I'm logged in or not so that I can choose to log in or log out depending on what I'm doing.
 
-- I can log into my account to cancel and/or reschedule a booking if needed.
+- As a Site User I can like or unlike a post so that I can interact with the content.
 
-- If the designer has cancelled or rescheduled my booking, I will be notified.
-
-- I can log into my account to update and edit my account information so that it is always up to date.
-
-- I can easily log in and log out of my account as needed.
-
-- I have the options to delete my account if I no longer need it.
+- As a Site User / Admin User I can view the number of likes on each post so that I can see which is the most popular or viral.
 
 ------
 
 ## SCOPE
 
-In order to achieve the desired user’s needs and business goals, the following features have been considered. However, kindly note that the full scope has not been met due to time constraints, please visit ‘Features left to implement’ below to see the features which have not been included in this current version of Bridal-Union. 
+When planning the initial design for this project, I had to outline which features were absolutely essential to include in this current release, and other features that would become part of the scalability plan to include in future releases. The following features have been considered for this current release:
 
+Version 1;
 - Responsive navigation that will link to various pages throughout the site, collapse when viewed on specific screen sizes to allow for seam free navigation across all screen sizes.
 
 - Landing page with hero image, tag line, short introduction and links to intuitively take the user to different parts of the website. 
 
-- Discover Designers page where the user can scroll through the page to view, ‘follow’, ‘like’ and ‘comment’ on images posted by different designers. 
+- Discover Designers page where the user can scroll through the page to view, ‘like’ and ‘comment’ on images posted by different designers. 
+
+- 'Follow' features were a logged in user can 'follow' a deisgner (like a person would 'follow' someone on Istagram).
 
 - Designer profile page where the user can read more information about a designer such as number of followers, biography, location and starting price.
 
@@ -110,9 +107,13 @@ In order to achieve the desired user’s needs and business goals, the following
 
 - Customer Account page where logged in users can edit/delete existing bookings and manage their customer account details 
 
-- Email notifications to inform the customer when their booking has been confirmed, canceled or rescheduled by the designers. 
+- Email notifications to inform the customer when their booking has been confirmed, canceled or rescheduled by the designers.
+
+- Review section where a user can view and post reviews on designers
 
 - Javascript and CSS animation features to enhance the overall UX.
+
+For future release, please see the Scaleability section below outlining the features Bridal would hope to include.
 
 ---
 
@@ -122,9 +123,9 @@ In order to achieve the desired user’s needs and business goals, the following
 
 For this current release, Birdal-Union is made up of two main apps:
 
-- social_marketplace - main functionality including bookings and social media actions
+- social_marketplace - core functionality including social media actions
 
-- Django Allauth - user registration and account management
+- Bookings - booking functionlaity and managment, display customer account
 
 **Database:**
 
@@ -136,11 +137,11 @@ It was advised to use cloud based databases given Heroku’s ephemeral file syst
 
 **Django Models:**
 
-To achieve the current functionality, the social_marketplace app requires 4 main custom models and the Django built in User model:
+I have created Entity Relation Diagrams to illustrate the database models and the relationships to each other.
 
-**Django User model:**
+You can view them [here](https://drawsql.app/esteph/diagrams/bridal-union)
 
-I used <a href="https://docs.djangoproject.com/en/4.0/ref/contrib/auth/" target="_blank">Django’s built in User model</a> to handle all the user account information. 
+### To achieve the current functionality, the social_marketplace app requires 3 main models:
 
 **Designer model:**
 
@@ -148,23 +149,33 @@ Contains information about the designer such as name, location, starting price a
 
 **ImagePosts model:**
 
-This model contains image information, number of likes and handles image upload and resizing. For the front end, each image that is posted displays the name of designer, date posted, number of likes, image description and hashtags for the end user’s information. For backend admin users, this models enables the admin to handle the status of the post by selecting either ‘draft’ or ‘posted’. It also handels image resizing through Cloudinary's URL transformation so the admin can upload instantly without having to rescale or crop their images in any particular way. The admin can also add or delete as many images as they desire. 
+This model contains and handles posts made by the admin user. It handels and displays number of likes a post has recieved as well as image upload and resizing images. This information is used to build the discover designers page where each 'post' made by the admin is featured on this page with key information such as date posted, hashtags and likes. For backend admin users, this models enables the admin to handle the status of the post by selecting either ‘draft’ or ‘posted’, as well as delete enabling the admin to manage their content easily. It also handels image resizing through Cloudinary's URL transformation so the admin can upload instantly without having to rescale or crop their images in any particular way.
 
 This model has a Foreign Key relationship to the Designer model so that an image can be access by the designer it was posted by (as well as its image id (again, default id by Django)).
 
-Please note that due to time limitations the 'likes' function has not been connected to the front end therefore the user is currently unable to 'like' an image post.
-
 **ImageComments model:**
 
-This models is to displays and handles comments left by the end user on posts. Comments are subject to approval by the admin user and can be rejected if deemed bad. This model has a Foreign key relationship with ImagePosts in the ‘post’ field to ensure all respective comments are deleted in the event of an image post being deleted.
+This models is to handle and display user and admin comments made for a specific post. This model has a Foreign Key relationship  with the ImagePost model so that it can specify the the post the comment is being left on and can be accessed via the front end. It also has another FK relatitionship with the Django built in user model so that a comment can be made only by logged in users. Comments are also subject to approval by the admin user and can be rejected if deemed bad, this is done by the boolean feield in the 'approved' field. 
 
-Pease note that due to time limitaions, this model has not been connected to the front end therefore the user is currently unable to leave any comments.
+This model has a built in method to arranage the comments in desencindg order via date posted, this is so that the comments to appear in order starting with the most recent date at the top.
+
+
+### To achieve the current functionality, the bookings app requires 2 models:
+
+**CustomerProfile model:**
+
+I extended <a href="https://docs.djangoproject.com/en/4.0/ref/contrib/auth/" target="_blank">Django’s built in User model</a> to create user profiles for each logged in user so that a user can view their booking information via the front end. 
 
 **Booking model:**
 
-This model displays and handles the booking information needed for the booking form. A booking can only between one end user and one designer at a time, as a result this model has a One to One relationship with the Django built in User model and a Foreign Key relationship with the Designer Model, as well as a unique booking ref. Bookings are also subject to approval by the admin user which they can manage on the back end.
+This model handles and displays bookings made the site user, as well as contain the information needed for the booking form.
 
-Pease note that due to time limitaions, this model has not been connected to the front end therefore the user is currently unable to make a booking.
+A single booking can only be made between one site user and one admin/designer at a time, as a result this model has a FK relationship with the CustomerProfile model and a FK relationship with the Designer Model, as well as a unique booking ref in order to help identify individual bookings. Bookings are also subject to approval by the admin user, this is managed by the booking status field where the admin user can select a status of 'confirm booking' or 'decline booking'.
+
+Using the related name between the CustomerProfile, a user's booking can be displayed on the front end. It's also used to pre popukate the edit booking form with the relative booking inforamtion.
+
+The site user is given the option to select a time and date for their appointment with the deisgner, however due to time contraints this model does not handle checking time and date availabilities, or site user erros such as selecting a date that's in the past.  
+
 
 ## STRUCTURE / FRONT END 
 
@@ -182,6 +193,12 @@ Again, minimalistic a main design component throughout Bridal-Union, in oder to 
 
 ![color palette](media/colour%20pallete.png)
 
+**black #00000:** this colour has been used for solid and sharp shapes such as button background and footer background colour in order to adhere to the modern and clean element of designer. It's also used for the nav bar links for when the user hovers over the links so that they're highlighted for the user imporving UX and accessbility. 
+
+**grey #55595C:** this colour is the main text colour. Initially the text was going to be black but found it was to harsh against, so I then switch to this grey colour which adds a softer touch to the overal design.
+
+**white #fffff:** this is the main background colour. As the main emphasis is on the post and designer profile, I wanted a neutral background to act as a canvas so I stuck to the regular white. This white is bright and modern which compliments the design theme. 
+
 **Responsiveness:**
 
 To allow for seam free navigation between the pages and for the images to adjust proportionately on various screen devices, I’ve used a mix of Bootstrap classes and image elements, Bootswatch buttons, cards and navigation bar to enable this.
@@ -190,7 +207,7 @@ I’ve also used custom CSS and media queries to allow for this.
 
 **Visual effects:**
 
-The previous plan when designing the front end was to include gentle animation and visual effects to compliment certain features as well as provide more visual pleasure for the user. However, due to time constraints, there is only one animation feature (hero image on the landing page) in this current version. 
+The previous plan when designing the front end was to include gentle animation and visual effects to compliment certain features as well as provide more visual pleasure for the user. However, due to time constraints, there is only one zoom animation feature (hero image on the landing page) in this current version. 
 
 **Wireframes:**
 
@@ -200,24 +217,51 @@ You can view the wireframes <a href="https://www.figma.com/file/kvbIiuHdZFGnj4ih
 
 ---
 
-## CURRENT FEATURES:
+## FEATURES:
 
 **Home page:**
 
 When the user opens the app, this is the first page they will see therefore I used a strong hero image to capture the attention of the user. A zoom effect has also been applied to the hero image to visually excite the user.
-This page has been kept simple in terms of design as it’s more of an introductory page to the app, to help with this a short tag line has been used to tell the user what this app is intended for. 
 
-The first main page where BU intends to take the user is the ‘discover designers’ page (more information below), to allow for this I have included a large call-to-action button (underneath the tag line) which links to the ‘discover designer’ page so the user can intuitively and quickly navigate to the next page. The button design is from Bootswatch Lux Theme.
+![hero image](/assets/images/hero-image.png)
 
-![discover deisgners button](media/discover-designer-btn.png)
+This page has been kept simple in terms of design as it’s more of an introductory page to the app, to help with this there are three main sections; the first one is a short introduction as to what the user can expect to find. This is underneath the hero image so that the user can instantly understand what this webstie is about. There is also a call-to-action button inviting the user to view the 'discover designers' page which is one of the main pages of the site:
+
+![discover deisgners button](/assets/images/aboutpage.png)
+
+The second part addresses logged out and unreguistered users. For logged in users, having the login link in the homepage is convienent which is good for UX. Whilst for unregistered users, they are encouraged to create an account by displaying the create account link. This is also good for the business as their goal would to get an amuy users to sign up as possible:
+
+![login or sign up link](/assets/images/loggedin-unregistered-user-links.png)
+
+The third part is a button to take the user to the About page so that users can quickly find more information about the website:
+
+![about us button](/assets/images/about-us-btn.png)
+
+**About page:**
+
+The aim of this page is to provide further and useful informaiton to the user about Bridal Union. It contains information about who they are, who and how they work with so that the user can get a better understanding of the website and it's intentions. 
+
+This page also features a hero image with a zoom aniation feature (the same as the hero image in the landing page) to create visual impact and a nicer UX.
+
+![about us page](/assets/images/about-us-image.png)
+
+Another goal for the abou page is to encourage new users to sign up, to achive this encouraing text, a call to action button and image to visually entice the user:
+
+![join the union](/assets/images/joing-the-uion.png)
 
 **Discover Designers page:**
 
-As mentioned above, this is one of the main pages of the app. This page is where the social media inspired elements comes to play where the user can scroll through to view posts by different designers (like they would if they were on Instagram). The image posts includes the name of the designer so they user can see who it was posted by. The user can also click on the designer’s name at the tope of image which will take the user to the ‘designer profile’ page where the user can see more images and information on the designer. Other features on the image posts also include date posted, hashtags, ‘comment’ and ‘like’. 
+As mentioned above, this is one of the main pages of the app. This page is where the social media inspired elements comes to play where the user can scroll through to view posts by different designers (like they would if they were on Instagram). The image posts includes the name of the designer so they user can see who it was posted by, the date posted, hashtags, view the number of ‘likes’ and 'comments' a post has recived so they can see which one has been more popular. The ‘comment’ and ‘like’ features are only avaible for logged in users, for logged out users these features are disabled. 
 
-For the ‘comment’ and ‘like’ features, only logged in users are able to ‘like’ and leave a ‘comment’ on the posts. However please note that due to time constraints the ‘like’ and ‘comment’ features are not currently working in this version. 
+![discover designer page](/assets/images/discover_designers_page.png)
 
-![discover deisgners page](media/discover_designers_small.png)
+This page also displays a small description underneath the page title so that first time users know what to click on:
+
+
+
+![discover deisgners page]()
+
+**Image Post Detail page:**
 
 **Designer Profile page:**
 
@@ -299,32 +343,9 @@ These are images posted by the designer. I used <a href="https://getbootstrap.co
 
 A custom favicon displays on the top left corner of the website tab so the user can clearly identify Bridal-Union amongst the other tabs the user might have open. This is also improves the overall UX.
 
-## FEATURES LEFT TO IMPLEMENT:
-
-Due to time constraints, the following features have not yet been implemented to this version of the app. 
-
-**About page:**
-
-The about page will provide more detail and information to the user about Bridal Union and how it can be used 
-
-**Profile Handle:**
-
-This would be added to the designer profile. All profile pages on Instagram have a handle which is used a short introductory tag and allows the user to have a quick understanding of what they are about. 
-
-**Portfolio page:**
-At the moment, the designer profile page displays all the post which have been posted by that one designer. The more images a designer posts, the less likely the user will take notice of the designer’s biography and other important information. With this in mind, I had an idea to have a new page called the ‘portfolio’ page where the users can view all of the work by one designer in a single place where the images are displayed in a professional way and in much larger scales, like they would in a physical portfolio. This would enhance the user’s experience and promote of the work of the designer better.
-
-**'Follow' feature:**
-
-This would be featured on the designer profile page. 
-
 **'Like' and 'Comment':**
 
 As explained previously, these features are currently displayed on the image posts but are not yet working. 
-
-**Reviews:**
-
-As explained previously, this feature is displayed at the bottom of the ‘designer profile’ page. 
 
 **Booking Form:**
 
@@ -589,6 +610,24 @@ I’d like to thank the Code Institute tutors who helped me fixed the bugs menti
 I’d like to thank my fellow peers Harry Dhillon, Daisy Gunn and Francesa for their support and feedback. 
 
 ---
+
+## SCALEABILITY:
+
+**Profile Handle:**
+
+This would be added to the designer profile. All profile pages on Instagram have a handle which is used a short introductory tag and allows the user to have a quick understanding of what they are about. 
+
+**Portfolio page:**
+At the moment, the designer profile page displays all the post which have been posted by that one designer. The more images a designer posts, the less likely the user will take notice of the designer’s biography and other important information. With this in mind, I had an idea to have a new page called the ‘portfolio’ page where the users can view all of the work by one designer in a single place where the images are displayed in a professional way and in much larger scales, like they would in a physical portfolio. This would enhance the user’s experience and promote of the work of the designer better.
+
+**'Follow' feature:**
+
+This would be featured on the designer profile page. 
+
+**Reviews:**
+
+As explained previously, this feature is displayed at the bottom of the ‘designer profile’ page. 
+
 
 ## REFLECTIONS:
 
