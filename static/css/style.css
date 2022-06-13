@@ -165,13 +165,17 @@ footer a:hover {
 	margin-bottom: 5rem;
 }
 
-.button-container button {
+.button-container .btn {
+	padding: 1rem;
+}
+
+.button-container a {
 	color: white;
 	text-decoration: none;
 	letter-spacing: 2px;
 }
 
-.button-container button:hover {
+.button-container a:hover {
 	text-decoration: underline;
 	color: white;
 }

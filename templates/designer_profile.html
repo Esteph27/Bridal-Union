@@ -37,13 +37,11 @@
         <p>
           Starting Price: £{{ designer.starting_price }}
         </p>
-        <!-- button from bootswatch lux theme -->
+        <!-- button classes from bootswatch lux theme -->
         {% if request.user.is_authenticated %}
           <div class="button-container" id="booking-btn">
-            <a href="{% url 'booking' designer.id %}">
-              <button type="button" class="btn btn-primary">
-                <i>Make a Booking</i>
-              </button>
+            <a href="{% url 'booking' designer.id %}" class="btn btn-primary">
+              <i>Make a Booking</i>
             </a>
           </div>
         {% endif %}
@@ -72,10 +70,8 @@
           </i>
         </p>
         <div class="button-container">
-          <a href="{% url 'account_signup' %}">
-            <button type="button" class="btn btn-primary">
+          <a href="{% url 'account_signup' %}" class="btn btn-primary">
               <i>Sign Up</i>
-            </button>
           </a>
         </div>
        
