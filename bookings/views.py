@@ -7,6 +7,7 @@ from .models import Booking, CustomerProfile
 from social_marketplace.models import Designer
 
 
+@login_required
 def booking(request, designer_id):
     '''
     a view to handle customer bookings

@@ -284,7 +284,7 @@ The comment themselves consist of the user name to show who the comment was post
 
 The like feature is also available in this page, however it's a little bit more visual for the user. If the user clicks on the heart icon, the number count will increase by one as well as the heart will turn into a sold heart. If the user decides to unlike the post then the heart icon will revert back to an outline and the number count will decrease by one. 
 
-![like icon with number of likes](/assets/images/heart-solidpng)
+![like icon with number of likes](/assets/images/heart-solid.png)
 
 **Designer Profile page:**
 
@@ -300,11 +300,13 @@ Another main feature of this page is the designer post. At the top of the page a
 
 **Booking page:**
 
-This page is where the designer can make a booking with their designer of choice using a simple booking form. To make a booking a user will have to be logged in. The booking form will take in important information such as the users name, designer’s name, date of wedding, date and time picker as well as a message box. This form is kept simple so that the user can have a nice and easy experience
+This page is where the user can make a booking with their designer of choice using a simple booking form. The booking form will take in important information such as the users name, designer’s name, date of the user's wedding, and the user will be able to select a date and time aviable. The user will also be able to select a price bracket to indicate to the designer how much they are willing to spend on their wedding dress. The form also has a 'customer message' box where the user can include more information about their dress and ideas. 
 
-Please kindly note that due to time constraints the booking form is currently not connected to the backend so the user is currently unable to make any bookings. 
+
 
 ![booking form](media/booking_small.png)
+
+To make a booking a user will have to be logged in.
 
 **Create Account page:**
 
