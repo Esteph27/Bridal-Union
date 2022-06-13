@@ -270,9 +270,11 @@ This page displays all comments a particular post has reiceved. The user can acc
 
 ![view all comments](/assets/images/view-comment-link.png)
 
-The aim for this page is to encourage users to connect with the designer by commeting on their post and by joining in a conversation, similar to a blog post. For logged in users, the comment form appears at the bottom of the comment list so that it's easy to find. The comment form also tells the user that they are posting by their username:
+The aim for this page is to encourage users to connect with the designer by commeting on their post and by joining in a conversation, similar to a blog post. For logged in users, the comment form appears at the bottom of the comment list so that it's easy to find. The comment form also tells the user that they are posting by their username. Once the user has submitted their comment, a message will display on screen notyfing the user that their comment will be waiting approval. An alert message will also appear at the top of the screen to notify that their message has been recived:
 
 ![comment form](/assets/images/comment-form.png)
+
+![comment waiting approval](/assets/images/comment-waiting-approval.png)
 
 For users who are not logged in or unregistered the comment form is unavaible, instead appears a call-to-action button to prompt the user to create an account in order to 'join the conversation':
 
@@ -290,9 +292,13 @@ The like feature is also available in this page, however it's a little bit more 
 
 Together with the ‘discover designer’ page, this is another main page where the user can find out more information about the designer. This page displays the designer’s biography so the user can find out more the designer and their way of working, their location to see if the designer is local to them and starting price so the user can see if their prices are suitable for them.
 
-All of the information mentioned is to help the user feel like they can make an informed decision as to booking this designer. To encourage this action, the booking button has been placed under the designer name aking it convenient and easy for the user to click on:
+All of the information mentioned is to help the user feel like they can make an informed decision as to booking this designer. To encourage this action, the booking button has been placed under the designer name aking it convenient and easy for the user to click on. However this booking button is only aviable for logged in users:
 
 ![designer profile page](/assets/images/designer-profilepage-2.png)
+
+If the user is not logged in or registered, intead of this button is a message to inform the user that they will need to create an account or log in if they would like to proceed with the booking:
+
+
 
 Another main feature of this page is the designer post. At the top of the page are all the posts which a deisgner has posted, this is so that the user can view a specific designer's post all in one location. This section acts like a sort of portfolio where the user can see all the work a designer has done to help the user decide if this designer is the one to book:
 
