@@ -2,6 +2,8 @@
 
 ![BU multiple devices](/assets/images/amiresponsive.png)
 
+## Welcome to Bridal-Union
+
 This is a full-stack framework project built using Django, Python, HTML, CSS, BootStrap and JavaScript. This is a social media inspired application designed to connect freelance wedding dress designers with future brides-to-be. The user can explore a range of designers, like and comment on images posted by a designer, as well as create, edit and delete bookings with their designer of choice. 
 
 This project has been built on GitHub workspaces and deployed on Heroku. This project was built for educational purposes. 
@@ -479,6 +481,7 @@ Back end languages - Python3
 I have tested this project manually myself across different devices and screen sizes.
 
 Please click ![here](/assets/docs/MANUAL_TESTING.md) for the manutal testing report.
+
 
 ### Unit Testing
 Due to time contraints, no unit tests were undertaken for this release for Birdal Union.
