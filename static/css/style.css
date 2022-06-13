@@ -544,7 +544,7 @@ footer a:hover {
 	padding-left: 2px;
 }
 
-/* -------------------------------> media queries */ 
+/* -----------------------------------------------------------> media queries */ 
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media screen and (min-width: 992px) {
@@ -656,7 +656,7 @@ footer a:hover {
 }
 
 /* Medium devices (ipad screens, 580px - 1020px) */
-@media only screen and (min-device-width : 580px) and (max-device-width : 1020px) {
+@media only screen and (min-width: 580px) and (max-width: 1020px) {
 
 	/* -------------> login.html  */
 
@@ -694,7 +694,7 @@ footer a:hover {
 
 
 /* Small devices (mobile screens, 320px - 580px) */
-@media screen and (min-width: 320px) and (max-device-width : 580px) {
+@media screen and (min-width: 320px) and (max-width: 580px) {
 
 	/* -------------> login.html  */
 
