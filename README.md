@@ -141,7 +141,7 @@ I have created Entity Relation Diagrams to illustrate the database models and th
 
 You can view them [here](https://drawsql.app/esteph/diagrams/bridal-union)
 
-### To achieve the current functionality, the social_marketplace app requires 3 main models:
+**To achieve the current functionality, the social_marketplace app requires 3 main models:**
 
 **Designer model:**
 
@@ -160,7 +160,7 @@ This models is to handle and display user and admin comments made for a specific
 This model has a built in method to arranage the comments in desencindg order via date posted, this is so that the comments to appear in order starting with the most recent date at the top.
 
 
-### To achieve the current functionality, the bookings app requires 2 models:
+**To achieve the current functionality, the bookings app requires 2 models:**
 
 **CustomerProfile model:**
 
@@ -251,7 +251,9 @@ Another goal for the abou page is to encourage new users to sign up, to achive t
 
 **Discover Designers page:**
 
-As mentioned above, this is one of the main pages of the app. This page is where the social media inspired elements comes to play where the user can scroll through to view posts by different designers (like they would if they were on Instagram). The image posts includes the name of the designer so they user can see who it was posted by, the date posted, hashtags, view the number of ‘likes’ and 'comments' a post has recieved so they can see which one has been more popular. All users can view the number of likes and comments, however only logged in users are able to like and post a comment on a post (more about this below)
+As mentioned above, this is one of the main pages of the app. This page is where the social media inspired elements comes to play where the user can scroll through to view posts that have been posted by different designers/admin users (like they would if they were on Instagram). I used <a href="https://getbootstrap.com/docs/4.0/examples/album/" target="_blank">Bootstrap's Album</a>  example as a template to hold the images, I then customised it to the better suite the aesthetic of the website.
+
+The image posts includes the name of the designer so they user can see who it was posted by, the date posted, hashtags, view the number of ‘likes’ and 'comments' a post has recieved so they can see which one has been more popular. All users can view the number of likes and comments, however only logged in users are able to like and post a comment on a post (more about this below)
 
 ![discover designer page](/assets/images/discover_designers_page.png)
 
@@ -292,13 +294,13 @@ The like feature is also available in this page, however it's a little bit more 
 
 Together with the ‘discover designer’ page, this is another main page where the user can find out more information about the designer. This page displays the designer’s biography so the user can find out more the designer and their way of working, their location to see if the designer is local to them and starting price so the user can see if their prices are suitable for them.
 
-All of the information mentioned is to help the user feel like they can make an informed decision as to booking this designer. To encourage this action, the booking button has been placed under the designer name aking it convenient and easy for the user to click on. However this booking button is only aviable for logged in users:
+All of the information mentioned is to help the user feel like they can make an informed decision as to booking this designer. To encourage this action, the booking button has been placed under the designer name making it convenient and easy for the user to click on. However this booking button is only aviable for logged in users:
 
 ![designer profile page](/assets/images/designer-profilepage-2.png)
 
 If the user is not logged in or registered, intead of this button is a message to inform the user that they will need to create an account or log in if they would like to proceed with the booking:
 
-
+![sign up to make booking](/assets/images/signup-to-make-booking.png)
 
 Another main feature of this page is the designer post. At the top of the page are all the posts which a deisgner has posted, this is so that the user can view a specific designer's post all in one location. This section acts like a sort of portfolio where the user can see all the work a designer has done to help the user decide if this designer is the one to book:
 
@@ -308,29 +310,59 @@ Another main feature of this page is the designer post. At the top of the page a
 
 This page is where the user can make a booking with their designer of choice using a simple booking form. The booking form will take in important information such as the users name, designer’s name, date of the user's wedding, and the user will be able to select a date and time aviable. The user will also be able to select a price bracket to indicate to the designer how much they are willing to spend on their wedding dress. The form also has a 'customer message' box where the user can include more information about their dress and ideas. 
 
+![booking form](/assets/images/booking-form.png)
 
+Once a user has submitted their booking form, an alert message will appear on screen to tell them that their booking has been successful and they can view their booking information in their account page:
 
-![booking form](media/booking_small.png)
-
-To make a booking a user will have to be logged in.
-
-**Create Account page:**
-
-A user can create an account easily and quickly if they haven’t already done so. A user will need to create an account if they wish to make bookings and access other features of the site. 
-
-The functionality and validations of this template are from Django alltuh with applied custom CSS, Bootstrap and Bootswatch elements for styling.
-
-**Log in and Log out page:**
-
-To access all features such as making a booking, ‘like’ and ‘commenting’ in images and ‘following’ a designer, the user will have to be logged in. A logged in user can also sign out easily.
-
-The functionality and validations of these pages are from Django alltuh with applied custom CSS, Bootstrap and Bootswatch elements for styling.
+![booking alert message](/assets/images/messages1.png)
 
 **Customer Account page:**
 
-This page is where the user can manage all of their booking and account information. Here the user can view any existing bookings they have made. The bookings are currently displayed on card which are provided by Bootswatch Lux theme. The booking cards show the name of the designer, the time and date of their booking. The booking cards also show ‘cancel’ and ‘edit’ links to allow the user to manage their booking as needed. The user also has the option to update their account details, delete their account or log out from their account. 
+This page is where the user can view and manage all of their exisiting bookings. The bookings are currently displayed on cards which are provided by Bootswatch Lux theme. The booking cards show the name of the designer, the time and date of their booking as well as a booking status which is handeled by the admin. The booking cards also show ‘reschedule’ and ‘cancel’ links to allow the user to manage their booking as needed.
 
-Please note that due to time constraints, this page is currently static and is not yet connected to the back end to access functionality. 
+![booking card exmaple](/assets/images/user-profile-booking.png)
+
+Once a booking has been confirmed by the admin, the 'booking status' will change from 'Confirmation pending' to 'Your booking has been confirmed' so the user is updated accordingly:
+
+![booking card status confirmed](/assets/images/booking-card-status.png)
+
+This page also tells the user the number of bookings a user has so that it is instantly clear and visible to the user. If the user does not have any bookings their account page will show a message to confirm they have no bookings and are encouraged to make a booking by displaying a button to take them to the 'discover designers' page:
+
+![booking card exmaple](/assets/images/user-profile-nobooking.png)
+
+The user is also able to log out from their account by clicking on the log out link aviable at the bottom of the page. This makes it convenient for the user.
+
+**Edit and Delete Booking:**
+
+The user can can access these features via the 'Reschedule' and 'Cancel' links provided at the bottom of the booking cards:
+
+![reschedule or cancel booknig links](/assets/images/edit-cancel-booking-links.png)
+
+The Edit link takes the user to the Edit Booking page where they can view their booking detials. The Booking Form is displayed and is pre-populated with their prevoius booking information so the user can easily review the information that needs to be edited. At the top of the page is also the booking id so that the user can be sure of which booking they are editing:
+
+![edit booking form](/assets/images/edit-form.png)
+
+Once the details have been updated and the user clicks on the submit button, the user is directed back to their account page where the booking card will show the new and updated details. An alert message will also appear to confirm to the user thar their booking has been updated successfully:
+
+![booking updated](/assets/images/booking-edit-success.png)
+
+The Cancel links automatically deletes a booking. Once this link has been clicked, the booking card is then removed and their number of bookings will update accordingly. A message will also appear to notify and confirm to the user that their booking as been deleted:
+
+![delete booking message](/assets/images/messages2.png)
+
+**Sign Up page:**
+
+A user can create an account easily and quickly if they haven’t already done so. A user will need to create an account if they wish to make bookings and access other features of the site. 
+
+The functionality and validations of this template are from Django allatuh with applied custom CSS, Bootstrap and Bootswatch elements for styling.
+
+![sign up form](/assets/images/sign-up-form.png)
+
+**Log in and Log out page:**
+
+A user can log in and out of their account as needed. The functionality and validations of these template are from Django allatuh with applied custom CSS, Bootstrap and Bootswatch elements for styling.
+
+![sign in](/assets/images/sign-in.png) ![sign out](/assets/images/sign-out.png)
 
 **Navigation bar:**
 
@@ -344,52 +376,49 @@ On small screen devices, the nav bar then collapses to hamburger icon. When clic
 
 ![hamburger nav bar](media/hamburger-nav-bar.png)
 
-When the user is signed in, the ‘log out’ and ‘customer account’ links will be displayed in the nav bar. 
-When the user is signed out, the ‘sign in’ and  ‘create account’ links will be displayed in the nav bar. This allows for more intuitive and easy navigation for the user. 
+The nav bar links also update according to a users signed / signed out status. When the user is signed in, the ‘log out’ and ‘customer account’ links will be displayed in the nav bar. When the user is signed out, the ‘sign in’ and  ‘create account’ links will be displayed in the nav bar. This allows for more intuitive and easy navigation allows the user to clearly see their signed / signed out status:
+
+![nav bar link](/assets/images/nav-bar-link.png)
 
 **Footer:**
 
-The footer is kept simple and is located at the usual place (at the bottom of the pages) to allow easy navigation and accessibility for the user. At the moment, the footer only has one social media link that when clicked on, the link opens up in a new tab in the browser so that the user can easily jump between the social media tab and the web site app easily to improve their user experience. 
+The footer displays Bridal Unions email address and link to their Instgram account. These are key information a user will normally look for so have them in the footer allows the user to access this information easily no matter where on the site they are:
 
-![footer](media/footer.png)
+![footer](/assets/images/footer.png)
+
+**Notifications:**
+
+Throughout the site the user is informed of their actions by the alert messages. These appear whenever a user has logged in / out, made a booking, deleted or edited a booking and commented on a post. These messages are to confirm to the user that their actions have been confirmed so that the user is reasured they have happened:
+
+![message example](/assets/images/messages4.png) ![message example](/assets/images/messages5.png)
 
 **Zoom out effect:**
 
-The hero image on the landing page as custom CSS animation to enhance user experience.
+The hero image on the landing page and the first image in the About page have custom CSS zoon animation to enhance user experience.
 
 **Buttons:**
 
 All buttons are provided by Bootswatch lux theme. 
 
-‘Discover Designers’ buttons - takes the user to the discover designer’s page
-
-‘Book Appointment’ button - allows the user to book an appointment with the designer and redirects them to the booking page
-
-**Image posts:**
-
-These are images posted by the designer. I used <a href="https://getbootstrap.com/docs/4.0/examples/album/" target="_blank">Bootstrap's Album</a>  example as a template to hold the images, I then customised it to the better suite the aesthetic of the app.
-
-![discover designers image posts](media/discover_designers_album.png)
+![button exmaple](/assets/images/discover-designer-btn.png)
 
 **Favicon:**
 
 A custom favicon displays on the top left corner of the website tab so the user can clearly identify Bridal-Union amongst the other tabs the user might have open. This is also improves the overall UX.
 
-**'Like' and 'Comment':**
+![fav icon](/assets/images/favicon-tabs.png)
 
-As explained previously, these features are currently displayed on the image posts but are not yet working. 
+***
+
+## FEATURES LEFT TO IMPLEMENT:
 
 **Booking Form:**
+- At the moment the booking form isn't as quite user friendly as it needs to be. Right now the user has to manully input the their name, their email and the name of the designer, for better UX this information should already be pre-populated as they are already signed in users with an account that holds this inforamtion. Due to time constraints I was not able to build this feature for this form. 
 
-The form is currently static and not yet connected to the back end.
+- The selete date and time fields currently do not have a date or time picker and there is no fucntionality to check wether a time and date has already been booked. The admin will have to check this on the back end which is tedeaous to do. Due to time constraints I was not able to address this issue. 
 
-**Booking management on Customer Account page:**
+- When a user if Editing an exisiting booking, there is currently no fucntionality to handle user errors if they accidently choose a date that's in the past, or select a date / time that has already been taken. Due to time constraints, I was not able to add this functionality. 
 
-The user is supposed to be able to create, edit and delete bookings as needed however the logic and functionality has not been implemented. 
-
-**Notifications:**
-
-I planned for modals to appear throughout the site to tell the user when an action has been completed or when an error has been made, however the functionality has not yet been impelemented. 
 
 ---
 
@@ -417,6 +446,8 @@ Back end languages - Python3
 
 <a href="https://www.figma.com/?fuid=" target="_blank">Figma</a> - for wireframe building.
 
+<a href="https://drawsql.app/" target="_blank">drawSQL</a> - for Entity Relation Diagrams.
+
 <a href="https://developer.chrome.com/docs/devtools/" target="_blank">Google Dev Tools</a> - used for fixing any CSS issues, finding bugs and testing responsiveness across the project.
 
 <a href="https://github.com/" target="_blank">Git</a> - used for version control by utilising the Gitpod terminal to commit to Git and Push to GitHub.
@@ -427,17 +458,65 @@ Back end languages - Python3
 
 <a href="https://id.heroku.com/login" target="_blank">Heroku</a> - selected platform to deploy this project 
 
+<a href="https://validator.w3.org/" target="_blank">W3C HTML validator</a> - for HTML code validation
+
+<a href="https://www.w3.org/" target="_blank">W3C CSS validator</a> - for CSS code validation
+
+<a href="https://jshint.com/" target="_blank">JSHint</a> - for JavaScript validation
+
+<a href="https://wave.webaim.org/" target="_blank">Wave</a> - for Accessibility evalutation
+
+<a href="https://color.a11y.com/" target="_blank">Color a11y</a> - for colour contrast accessibility validation
+
 ---
 
 ## TESTING
 
-Due to time constraints, no tests have been carried out for this version of Bridal Union.
+### Manutal Testing 
+
+I have tested this project manually myself across different devices and screen sizes.
+
+Please click ![here](/assets/docs/MANUAL_TESTING.md) for the manutal testing report.
+
+### Unit Testing
+Due to time contraints, no unit tests were undertaken for this release for Birdal Union.
+
+### Code Validation
+
+All of my code has been validated using online validators specific to the language, results are below:
+
+- <a href="https://validator.w3.org/" target="_blank">W3C Markup Validation Service</a>
+    - Used to validate HTML code written and used in this webpage.
+    - Passed with zero errors
+
+![html validation](/assets/images/html-validation.png)
+
+
+- <a href="https://www.w3.org/" target="_blank">W3C CSS Validation Service</a> 
+    - Used to validate CSS code written and used in this webpage.
+    - Code passed with 4 errors and 876 warnings, but these are coming from the vendor extensions from the BootSwatch CDN links and so are not erros on my behalf.
+
+![css validation](/assets/images/css-validation.png)
+
+
+- <a href="https://wave.webaim.org/" target="_blank">Wave Accessibility evalutation</a>
+    - Used to test the accessibility of the website
+    - No errors were detected and the website accessibility came out with a good result
+
+![assessibility report](/assets/images/accessibility-validation.png)
+
+
+- <a href="https://color.a11y.com/" target="_blank">Colour contrast accessibility validation</a>
+    - Used to check the colour contrast of the wesbtie 
+    - Passed with no issues 
+
+![color contrast validation report](/assets/images/colour-contrast-validation.png)
 
 ---
 
 ## FIXED BUGS
 
-**Failed to load favicon in initial deployment:**
+- **Failed to load favicon in initial deployment:**
 
 During the initial deployment stages on Heroku, the favicon failed to load. The below steps fixed the problem:
 
@@ -446,7 +525,7 @@ During the initial deployment stages on Heroku, the favicon failed to load. The 
 (This was only a temporary variable to set up the initial deployment on Heroku as I did not have any static files at the time. I shortly added my static files so there was no need to readd this back to my config vars).
 
 
-**Failed to load static files in deployment:**
+- **Failed to load static files in deployment:**
 
 The file path was incorrect, the below changes fixed the above:
 
@@ -454,7 +533,7 @@ The file path was incorrect, the below changes fixed the above:
 
 ![screenshot of css file path](media/css-file-path.png)
 
-**Error with migrations and database:**
+- **Error with migrations and database:**
 
 Whilst updating my Designer model I kept getting the below ProgrammingError;
 
@@ -488,7 +567,7 @@ The above meant that either my migrations need to be ran again or, the fixtures 
 
 10. Complete - both local and deploymennt db have been reset 
 
-**Error with migrations:**
+- **Error with migrations:**
 
 When working with my previous customer model I kept receiving the below error in the terminal when running my migrations:
 
@@ -504,11 +583,100 @@ Reserving my migrations fixed the above issue, I took the below steps to do this
 - ***python3 manage.py makemigrations***
 - ***python3 manage.py migrate***
 
-## EXISTING BUGS
 
-- In Deployment, when viewing the 'Sign In' page on media screens below 500px, the 'sign in' button doesn't work 
+- **ValueError:**
 
-- In Deployment, when viewing the 'Sign Up' page on media screens below 580px, the 'sign up' button doesn't work
+I received the below error when updating ImageComment models. 
+
+ValueError: Field ‘id’ expected a number but got ‘user name’
+
+![valueerror](/assets/images/valuerror_field_id.png)
+
+In one of my fields it needed a default value, so I added 'default=user_name', run migrations again but then my terminal said it was expecting an Int value, I then updated my default value to 0 (default=0), ran migrations again but then kept getting the same error
+
+I fixed the error by removing 'user name' from migration file 0005_auto_2022060_1525.py 
+
+
+- **IntegrityError:**
+
+I received the below error when submitting a comment in my comment form:
+
+![integrity error message](/assets/images/intergrityerror.png)
+
+I added ‘null=True’ and ‘blank=True’ to the ‘post’ and ‘user’ fields in my ImagePost model and this fixed the issue. However, this means that when on the admin panel the admin user will have to manually select the User and Post id, if this was a real world app then this would leave lots of room for error. However as this is a small scale up and built for education purposes with only one test user, I left the issue as it is. 
+
+- **ValidationError:**
+
+I received the below error when updating my Booking model:
+
+![validation error datetime field](/assets/images/validationerror-datefield.png)
+
+I previously had my ‘date_of_wedding’ DateField() empty but it didn’t allow me to have an empty value so it request I add a default value. I added ‘default=2022-06-08” as the default date but then it threw the above error. I then tried the below but they didn’t work:
+
+import datetime
+
+date = models.DateField(_("Date"), default=datetime.date.today)
+
+date = models.DateField(default=datetime.date.today)
+
+date = models.DateField(null=True)
+
+Neither of the above worked and I kept getting the same error so I reversed my migrations by following the below steps:
+    - Run python3 manage.py migrate bookings 0001
+    - manually deleted the migrations files up until 0001 (but NOT including 0001)
+    - Run python3 manage.py makemigrations
+    - In the terminal it prompted me to add a default value to ‘date_of_wedding’, I selected 1 so that it would add a default value for the moment 
+    - Run python3 manage.py migrate
+
+The above only temporarily fixed the issue, when going back to my Booking model I made the below updates and migrated again and this time there were no errors;
+    - imported date from datetime 
+    - added ‘default=date.today which fixed the error.
+
+- **Connection Refused Errors:**
+
+I received a Connection Refused Error when a new user was creating an account. When looking into this it seemed this error was due to not specifying an email backend in my settings.py file which meant that when a new user was creating an account, their email address could not be verified. I added the below code to my settings.py and this fixed the error:
+
+if 'DEVELOPMENT' in os.environ:
+    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+    DEFAULT_FROM_EMAIL = 'info@casaarana.com'
+else:
+    EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+I got help from this [source code](https://github.com/cookiecutter/cookiecutter-django/issues/323)
+
+
+- **Page not found:**
+
+I kept getting this error when a new user was clicking on ‘view account’ link:
+
+![page not found](/assets/images/pagenotfound.png)
+
+It turns out that in my CustomerProfile view I was not checking to see wether a new user had been added to the CustomerProfile database. I initially had the below cod ein my view, which was working fine if the customer profile has been added via the admin panel, however it’s not good UX if the user is having to wait for the admin to match up their accounts via the backend, it should be automatic:
+
+    profile = get_object_or_404(CustomerProfile, user=request.user)
+        bookings = profile.customer.all()
+
+So then I changed the above to user the get_or_create method and this fixed the error:
+
+    profile, created = CustomerProfile.objects.get_or_create(
+        user=request.user,
+    )
+
+
+- **TypeError: __str__ returned non-string (type NoneType);**
+
+After I fixed the above bug, I then got this error when I clicked on the user name to view their profile via the admin panel.
+
+In my CustomerProfile model I previously has this:
+
+    def __str__(self):
+            return self.customer_name
+
+I then changed it to the below and it fixed the error:
+
+    def __str__(self):
+            return self.user.username
+
 
 ---
 
@@ -660,6 +828,15 @@ This would be featured on the designer profile page.
 
 As explained previously, this feature is displayed at the bottom of the ‘designer profile’ page. 
 
+**Customer Account:**
+
+Allow them to update their default information and ability to delete account
+
+**Booking Status Updates:**
+- Although the bookin card displays the current status of the user's booking, the user does not recieve any email notifications or other form of notifications to inform them of theis booking status. If this was to be a proper web application and used in real likfe then an email functionality would be built in to allow for this as this is good UX.
+
+**Delete message:**
+- handle user error, not be automatic. allow the user to coinfirm before deleteing 
 
 ## REFLECTIONS:
 
